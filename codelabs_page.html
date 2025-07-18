@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Codelabs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #202124;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)" /></svg>');
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .intro h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #1a73e8;
+            margin-bottom: 1rem;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            color: #5f6368;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .module-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #e8eaed;
+        }
+
+        .module-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .module-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .module-image.android {
+            background: linear-gradient(135deg, #3ddc84 0%, #2e8b57 100%);
+        }
+
+        .module-image.web {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        }
+
+        .module-image.cloud {
+            background: linear-gradient(135deg, #4285f4 0%, #1a73e8 100%);
+        }
+
+        .module-content {
+            padding: 1.5rem;
+        }
+
+        .module-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #202124;
+            margin-bottom: 0.5rem;
+        }
+
+        .module-description {
+            color: #5f6368;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .module-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #e8eaed;
+        }
+
+        .module-duration {
+            color: #1a73e8;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .module-difficulty {
+            background: #e8f0fe;
+            color: #1a73e8;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .module-difficulty.intermediate {
+            background: #fef7e0;
+            color: #f9ab00;
+        }
+
+        .module-difficulty.advanced {
+            background: #fce8e6;
+            color: #ea4335;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .cta-button {
+            background: #1a73e8;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #1557b0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Glean Codelabs</h1>
+            <p class="subtitle">Guided, tutorial, hands-on coding experiences to help you build amazing applications</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <h2>Learn by Doing</h2>
+            <p>Our codelabs provide step-by-step instructions to build real applications and add new features. Each tutorial is designed to be practical, engaging, and easy to follow.</p>
+        </div>
+
+        <div class="modules-grid">
+            <div class="module-card" onclick="openModule('android')">
+                <div class="module-image android">
+                    📱
+                </div>
+                <div class="module-content">
+                    <h3 class="module-title">The Glean AI Assistant</h3>
+                    <p class="module-description">Learn the fundamentals of Android development by creating a simple to-do app. You'll work with Activities, Fragments, and RecyclerView to build a fully functional mobile application.</p>
+                    <div class="module-meta">
+                        <span class="module-duration">⏱️ 45 minutes</span>
+                        <span class="module-difficulty">Beginner</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="module-card" onclick="openModule('web')">
+                <div class="module-image web">
+                    🌐
+                </div>
+                <div class="module-content">
+                    <h3 class="module-title">Enterprise Search</h3>
+                    <p class="module-description">Dive into modern web development by building a responsive portfolio website. Learn React hooks, component architecture, and deployment strategies for production-ready applications.</p>
+                    <div class="module-meta">
+                        <span class="module-duration">⏱️ 60 minutes</span>
+                        <span class="module-difficulty intermediate">Intermediate</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="module-card" onclick="openModule('cloud')">
+                <div class="module-image cloud">
+                    ☁️
+                </div>
+                <div class="module-content">
+                    <h3 class="module-title">Easter Egg Hunt</h3>
+                    <p class="module-description">Master cloud architecture by building a scalable serverless application. Learn about microservices, API Gateway, Lambda functions, and database integration in the cloud.</p>
+                    <div class="module-meta">
+                        <span class="module-duration">⏱️ 90 minutes</span>
+                        <span class="module-difficulty advanced">Advanced</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3 style="margin-bottom: 1rem; color: #202124;">Ready to Start Learning?</h3>
+            <p style="margin-bottom: 2rem; color: #5f6368;">Choose any module above to begin your hands-on coding journey</p>
+            <button class="cta-button" onclick="scrollToModules()">Explore All Modules</button>
+        </div>
+    </div>
+
+    <script>
+        function openModule(moduleType) {
+            const moduleUrls = {
+                android: "./module-1-the-glean-ai-assistant/index.html",
+                web: "./react-web/index.html",
+                cloud: "./serverless-cloud/index.html"
+            };
+            
+            // Add a subtle animation to show interaction
+            event.target.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                //event.target.style.transform = 'scale(1)';
+                // Navigate to the module page
+                window.location.href = moduleUrls[moduleType];
+            }, 150);
+        }
+
+        function scrollToModules() {
+            document.querySelector('.modules-grid').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Add some interactive animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.module-card');
+            
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 200 * (index + 1));
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Module 2: Enterprise Search</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="module-2-enterprise-search"
+                  title="Module 2: Enterprise Search"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Overview" duration="0">
+        <p>In this lab you are going to learn about the core of the Glean Platform; Enterprise Search.  Glean started out as an Enterprise Search Platform and quickly became the World&#39;s Best Enterprise Search Engine.  Glean&#39;s class leading set of Enterprise Search capabilities has allowed their customers to be able rapidly take advantage of Generative AI capabilities through the Glean Assistant (refer to Lab 1).  This is due to the fact that relevant GenAI responses require a retrieval engine first to provide relevant information to the LLM in order to achieve the most accurate results.</p>
+<p>The Search Page of Glean is designed to provide a comprehensive and customizable search experience. The search box supports autocomplete functionality, allowing users to see suggestions as they type, while the search results component displays the relevant documents and information. Additionally, the search page can be customized with various themes and supports authentication mechanisms to ensure secure access. This setup allows for a seamless and efficient search experience, tailored to the specific needs of the organization.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Step 1: Navigate to the Glean Search Page" duration="0">
+        <p class="image-container"><img style="width: 396.50px" src="img/b3eb08457a3d45f1.png"></p>
+<ol type="1" start="1">
+<li>If you have just completed the Glean Assistant lab, then navigate to the Glean Search Page by clicking the <img style="width: 22.96px" src="img/7ade7fbfffcd7768.png"> or Magnifying Glass / Search (Home) in the top left corner of the Glean Web App.  Feel free to go directly to Step 2: Execute your First Search.<br><br>If you are <strong>NOT</strong> currently logged in, then navigate in your browser to <a href="https://app.glean.com" target="_blank">https://app.glean.com</a> which will be redirected to the glean login page.<br><br>                <br><br>Enter the credentials provided for you by the Workshop Moderator.  First enter the email address and click the &#34;Log in&#34; button.<br><br>You will be presented with a screen similar to the following.  Enter the password provided by your Workshop Moderator and click the &#34;Sign in&#34; button.<br><br>Once completed, you will be redirected to the Glean Search page.<img style="width: 197.86px" src="img/50d78ca37733da7f.png"></li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Step 2: Execute your First Search" duration="0">
+        <ol type="1" start="1">
+<li>When you land on the homepage of the Glean Platform, you will be presented with a &#34;Google-Like&#34; interface for querying the indexed corpus of knowledge within the Glean Platform.  Glean is a personalized experience where you will also see Announcements that have been created for either your team or the company as a whole, recent documents you may have been working on, your calendar, as well as documents you&#39;ve been collaborating on.<img style="width: 377.10px" src="img/909ab9cb6c61ce15.png"></li>
+</ol>
+<p>Glean&#39;s advanced search filters enhance the precision and relevance of search results. Click on the icon ⓘ to find the advanced search details as shown.<br><br>Users can utilize quotes around specific words or phrases to ensure their presence in the search results, enhancing the accuracy of searches.<br><br>Click in the Search box and notice that an Autocomplete box opens up with past searches as shown:<br><br><img style="width: 546.45px" src="img/505be351caec495c.png"><br><br>Slowly type &#34;<strong>salesforce</strong>&#34; one letter at a time to see the Autocomplete feature in action.  Once satisfied, either click the &#34;<strong>salesforce</strong>&#34; search link or hit enter on your keyboard.</p>
+<ol type="1" start="2">
+<li>You&#39;ll be presented with the SERP (Search Engine Result Page) similar to the following:<br><img style="width: 568.00px" src="img/cd52fcb2a4d66dcf.png"><br><br>The SERP page provides many features such as:</li>
+</ol>
+<ol type="1" start="1">
+<li>The documents returned in order based upon <strong>relevancy</strong></li>
+<li>List of indexed sources on the right side including how many documents were found in each source</li>
+<li>Filtering mechanisms for date, authors, and data types.</li>
+</ol>
+<p><br>You can of course click any document to be redirected directly to the document from its datasource.  Glean does not create a copy of the documents, it only stores an index and allows the user to link directly to the document within its native source.<br><br>Hover over any of the documents and notice how a &#34;Summarize&#34; button shows up.<br><br>Click the &#34;<strong>Summarize</strong>&#34; button when you hover over the &#34;Salesforce Connector Overview | Glean Help Center&#34; Glean Developers document as shown:<br><br><img style="width: 682.02px" src="img/4b505af76039c125.png"><br></p>
+<p>A popup window will present itself similar to the following:<br><br><img style="width: 606.18px" src="img/ed29d532540e9a58.png"><br><br>As you can see, a summary of the document is presented as well as an AI Assistant conversation chat window to ask any questions you may have concerning this document.<br><br>Tight integration between the SERP and the AI Assistant drives deep value for Glean Customers.</p>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 39.38px" src="img/ee4808bbe152a91b.jpeg"></p>
+</td><td colspan="1" rowspan="1"><p><strong>NOTE</strong>:  Imagine being able to quickly summarize a large document with many pages such as a 10-K financial report or a large Product Manual.  Or how helpful it could be to ask questions of a SOC II compliance document to ascertain potential security concerns, etc...</p>
+</td></tr>
+</table>
+<p><br>If you wish, feel free to ask a followup question of this document.  Maybe something like:<br><br><strong>Tell me more about the installation process</strong></p>
+<ol type="1" start="3">
+<li>Close the popup window by clicking the X button in the top right of the popup.</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Step 3: Navigate to and Interact with a Search Result Document" duration="0">
+        <ol type="1" start="1">
+<li>Next, click the &#34;Salesforce Connector Overview | Glean Help Center&#34; document as shown below to open it in a new tab.<br><br><img style="width: 544.44px" src="img/4b505af76039c125.png"><br><br></li>
+<li>You have been redirected to Glean Public Help Docs on <a href="https://help.glean.com" target="_blank">https://docs.glean.com</a>.  Specifically the help document surrounding the Salesforce Connector.  You can of course read this document as necessary.  But the purpose of having you accomplish this is to show another feature of the Glean Platform that is affectionately known as &#34;Glean Where you Work&#34;<br><br>Having ready access to your company knowledge during your normal workflow can drastically enhance your productivity.  Glean Customers will install a plugin/extension to their browser(s) in order to be able to popup Glean literally at their fingertips.<br><br>If you have the <a href="https://help.glean.com/en/articles/3643252-installing-the-browser-extension" target="_blank">Glean Extension installed</a> you can press Cmd+J (Mac) or Alt+J (Windows) to popup a sidebar with the full power of the Glean Platform.<br><br>Since most of you will not have this installed, you can either install it if you have time and the privilege to do so on your laptop, or you can view the screenshot below.</li>
+</ol>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 39.38px" src="img/ee4808bbe152a91b.jpeg"></p>
+</td><td colspan="1" rowspan="1"><p><strong>Note</strong>:  If you wish to install the plugin/extension, navigate back to the tab with the Glean SERP page and search for:<br><br><a href="https://help.glean.com/en/articles/3643252-installing-the-browser-extension" target="_blank">Install the Glean extension</a><br><br>The first link should be &#34;Installing the browser extension | Glean Help Center&#34;.  Open that document and follow the directions included to install the extension.<br><br>This extension can also be pushed via your IT Admins in an automated fashion during an Glean implementation rollout.</p>
+</td></tr>
+</table>
+<p><br>Here is a screenshot of the sidebar that pops up when you have the Glean Extension installed in your browser.<br><br><img style="width: 601.53px" src="img/5b1b14b6cbf72bb9.png"><br><br>As you can see above you are able to see a summary of the document/page you have open, search the entire corpus of knowledge, and/or see recommended documents that are related to the content on the current page.<br></p>
+<ol type="1" start="3">
+<li>Navigate back to the browser tab with the Glean SERP.</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Step 4: AI Assistant as Part of the SERP" duration="0">
+        <ol type="1" start="1">
+<li>In the Search Bar enter the following (It is formulated into a question on purpose):<br><br><strong>How do I install the Confluence Connector?<br><br></strong>As you can see the SERP responded the same as it did earlier with a series of documents in relevant order.  However, since you entered a question into the Search Bar, it also popped the Glean AI Assistant Card as the top result in order to answer your question in Natural Language as shown:<br><br><img style="width: 537.53px" src="img/e42f4a7a9f848965.png"><br><img style="width: 421.50px" src="img/e80b515a38b81fd1.png"></li>
+<li>Expand the AI Assistant answer by clicking the <img style="width: 111.70px" src="img/64915fbc511ff344.png">button at the bottom of the Assistant Card.<br><br>You can now see the full AI Assistant answer and are able to fully interact with the AI Assistant directly from the SERP.  You can ask follow-up questions/clarifications as necessary and see citations as you learned in the previous lab.<br></li>
+</ol>
+<p class="image-container"><img style="width: 458.97px" src="img/1b898eb3a500f2f2.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Step 5: Automatically Generated Answers" duration="0">
+        <ol type="1" start="1">
+<li>Glean automatically generates a Glossary of Terms as well as Answers while it is indexing your company&#39;s corpus of knowledge.  Let&#39;s show an example of this.<br><br>Enter the following into the Search Box:<br><br><strong>What is a go link?<br><br></strong>As you can see an Answer Card responds as the first Search Result as shown:<br><br><img style="width: 526.90px" src="img/275042f0f35560fc.png"><br><br>Glean Customers use Go Links extensively to quickly get access to web applications that are typically difficult to remember or have very long URLs.</li>
+<li>Hover over the <img style="width: 22.00px" src="img/72db2a78dc14d645.png">icon in the Answer Card as shown:<br><br><img style="width: 403.00px" src="img/7a12d371762e7e91.png"><br><br>As you can see the Answer was automatically detected in the &#34;How Go Links work | Glean Help Center&#34; document.  Feedback can be shared if the user of the Glean Platform believes this automatically generated Answer is incorrect.  (DO NOT share feedback at this point, the answer in this case is accurate).<br></li>
+<li>As mentioned earlier, Glean also automatically generates a Glossary of Terms based upon the indexed content.  This helps the Glean Platform understand how employees speak within your organization.  Since this is a Public Instance of Glean without extensive data from any specific organization, the Glossary has not been detected automatically.<br><br>To show the concept however, consider the following screenshot from Glean&#39;s Internal Production instance:<br><br><img style="width: 502.50px" src="img/77fdfac48453c72.png"><br><br>The user in this case asked what QE meant.  QE could mean many different things depending on the company.  However, within Glean QE means Query Endpoint.  <br></li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Step 6: Find an Expert within your Company" duration="0">
+        <p>Oftentimes you would like to find out who is considered an expert in a certain area or topic within your organization.  This type of activity typically involves either asking somebody else who hopefully knows the answer, or by attempting to figure it out by reading a bunch of content on the topic.<br><br>Well... Since Glean IS reading your entire company content and is staying up to date with changes, it knows who the experts are in your company.<br></p>
+<ol type="1" start="1">
+<li>In the Search Box enter the following:<br><br><strong>Who&#39;s the expert on the Confluence Connector?<br><br></strong>You should see results similar to the following:<br><br>As you can see the user &#34;CEO Sandbox&#34; is the expert on the Atlassian Connector?  If this were a production instance, it would be a real user within your organization.  But, how did the platform figure out that CEO Sandbox is the expert?<br><br>As mentioned above, Glean is reading your entire company knowledge and learning who is creating/modifying content and correlating that information with the context of the content itself.  Glean also knows where the user(s) are within the company&#39;s hierarchy. </li>
+</ol>
+<p>This is also taken into account when answering questions such as this:<img style="width: 412.50px" src="img/2484c47fcd2c571e.png"></p>
+<p class="image-container"><img style="width: 404.50px" src="img/6dd7f448afe46753.png"></p>
+<p>If you ever want to understand a bit of &#34;why&#34; Glean has responded in a certain way, or in this case, expert identification. Go ahead and ask Glean in the &#34;Ask a follow-up question&#34; box:</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Conclusion" duration="0">
+        <p>This lab provides a comprehensive overview of the Glean Platform&#39;s core functionalities, emphasizing its role as a leading enterprise search engine. The lab guides users through the process of navigating the Glean Search Page, executing searches, and interacting with search results, showcasing the platform&#39;s advanced features such as autocomplete, secure access, and customizable themes. By integrating the AI Assistant, Glean enhances the search experience, allowing users to quickly summarize documents and ask follow-up questions, thereby improving the efficiency and accuracy of information retrieval. The lab also highlights the importance of having access to company knowledge within the user&#39;s workflow through the Glean browser extension, which significantly boosts productivity by providing relevant information at the user&#39;s fingertips.</p>
+<p>Furthermore, the document underscores Glean&#39;s ability to automatically generate answers and glossary terms, demonstrating its adaptability to the specific language and needs of an organization. This feature ensures that users can quickly find accurate information without extensive manual input. The lab also introduces the concept of expert search, enabling users to identify subject matter experts within their organization based on content creation and modification activities.</p>
+<p>In the next lab you&#39;ll learn about the Glean Platform&#39;s extensibility as well as get registered for some sweet Glean SWAG!</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
