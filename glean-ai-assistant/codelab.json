@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2025-07-18T19:13:45Z",
+  "id": "glean-ai-assistant",
+  "duration": 0,
+  "title": "Module 1: The Glean AI Assistant",
+  "authors": "Dejim Juang",
+  "summary": "In this codelab, you'll build an installable, Progressive Web App, which loads quickly, even on flaky networks, and when launched looks like any other installed app.",
+  "source": "1gt0-bndhHOrFFh8I294aq7HIxIDlgrKXF1_egM-8Fac",
+  "theme": "web",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "web"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/dejim-juang-glean/glean-workshop/issues",
+  "ga": "G-LR18FBLQHK",
+  "url": "glean-ai-assistant"
+}
