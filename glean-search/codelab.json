@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2025-07-18T22:10:03Z",
+  "id": "glean-search",
+  "duration": 0,
+  "title": "Module 2: Enterprise Search",
+  "authors": "Dejim Juang",
+  "summary": "In this codelab,",
+  "source": "1t5soprQEu37pG8H1RuX5w2j8S66-tsUbBlyKu7wPqes",
+  "theme": "web",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "web"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/dejim-juang-glean/glean-workshop/issues",
+  "ga": "G-LR18FBLQHK",
+  "url": "glean-search"
+}
