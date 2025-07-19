@@ -36,11 +36,21 @@
       </google-codelab-step>
     
       <google-codelab-step label="Step 1: Navigate to Glean Assistant" duration="0">
-        <p>Go to <a href="https://app.glean.com/chat" target="_blank">https://app.glean.com/chat</a>.<br><br>Because Glean is a logged in experience and this is the first time you&#39;ve accessed the platform, you will be redirected to the glean login page.<br><br><img style="width: 294.48px" src="img/b3eb08457a3d45f1.png"><br></p>
-<p>Enter the credentials provided for you by the Workshop Moderator.  First enter the email address and click the &#34;Log in&#34; button.</p>
-<p class="image-container"><img style="width: 214.50px" src="img/50d78ca37733da7f.png"></p>
-<p><br>You will be presented with a screen similar to the following.  Enter the password provided by your Workshop Moderator and click the &#34;Sign in&#34; button.<br></p>
-<p>You will then be redirected back to the Glean Assistant Application.   [NOTE- you may need to select Chat on the left side]  From here we can interact with your company data via a conversation interface similar to how ChatGPT works.<br><br>This instance of Glean has various data sources connected and indexed to support public demonstrations and workshops.  Some of this include but are not limited to:<br><br>- Glean Website Data (glean.com, help.glean.com, and developers.glean.com)<br>- GCP (Google Cloud) Support Data<br>- Publicly available Glean Technical information in the form of Google Docs<br>- Publicly available Kubernetes Documentation<br>- A few GitHub Repositories<br>- etc....<br><br>You&#39;ll see from the interface that you can start a conversation from scratch with the Glean Assistant <br><br><img style="width: 624.00px" src="img/c418455fa43dd8d.png"><br><br>Hold off on clicking on any of the Agents below the chat field. We&#39;ll cover those in a later module.</p>
+        <p>Go to <a href="https://app.glean.com/chat" target="_blank">https://app.glean.com/chat</a>.<br><br>Because Glean is a logged in experience and this is the first time you&#39;ve accessed the platform, you will be redirected to the glean login page.<br><br><img style="width: 624.00px" src="img/a3714ffdb1c1bbc6.png"><br></p>
+<p>Enter the credentials provided for you by the Workshop Moderator.  First enter the email address and click the <strong>Log in</strong> button.</p>
+<p class="image-container"><img style="width: 331.50px" src="img/40f8de2eda2b840f.png"></p>
+<p><br>You will be presented with a screen similar to the following.  Enter the password provided by your Workshop Moderator and click the &#34;Sign in&#34; button. You will then be redirected back to the Glean Assistant Application.  </p>
+<p class="image-container"><img style="width: 624.00px" src="img/ce792156aaa8b3b9.png"></p>
+<aside class="warning"><p><strong>Note: </strong>You may need to select Chat on the left side</p>
+</aside>
+<p>From here we can interact with your company data via a conversation interface similar to how ChatGPT works.<br><br>This is a private instance of Glean that was setup for this workshop and has various data sources connected and indexed.  Some of this include but are not limited to:</p>
+<ul>
+<li>Glean Website Data (glean.com, help.glean.com, and <a href="http://developers.glean.com" target="_blank">developers.glean.com</a>)</li>
+<li>Publicly available Glean Technical information in the form of Google Docs</li>
+<li>Etc....</li>
+</ul>
+<p>You&#39;ll see from the interface that you can start a conversation from scratch with the Glean Assistant <br><br><img style="width: 624.00px" src="img/c9e003e8a96d5fa1.png"><br><br>Click on the plus &#34;+&#34; sign to see what you can add to the conversation with the Assistant.</p>
+<p class="image-container"><img style="width: 624.00px" src="img/34078a713b09f2db.png"></p>
 
 
       </google-codelab-step>
@@ -110,7 +120,7 @@
 <p>Click the <img style="width: 101.79px" src="img/b2eae32e6c4f55d.png"> link underneath the <img style="width: 110.64px" src="img/8f779a26a49a5a03.png"> button<br></p>
 <p>From here you can search for Existing prompts or Create a new Prompt to assist you.  Let&#39;s first explore an existing prompt we&#39;ve created.<br><br>In the Search Prompts bar, enter:<br><br> <strong>Connector<br><br></strong>The available prompts should filter out and you should see a prompt called:  Glean Connector Info.  Select this prompt.<br></p>
 <p>As you can see the prompt flew out from the right side of your screen.  As shown below, notice how you as a user only need to enter a name of a connector of interest, and the Prompt runs Agents in the background to execute a search on your behalf, and curate the search results into a neatly formatted response.<br><br><img style="width: 489.50px" src="img/15791d5c7442ac9b.png"><br></p>
-<p>Enter:<br><br><strong>GitHub<br><br></strong>into the &#34;connectorName&#34; box and click the <img style="width: 92.49px" src="img/9c1d4846b5ec940.png"> button.<br><br>Watch how the platform runs Agents in the background to Search Glean, Read the content from the Search Results, Summarize the Content, and format it based upon the Prompt Instructions.<br></p>
+<p>Enter:<br><br><strong>GitHub<br></strong>into the &#34;connectorName&#34; box and click the <img style="width: 92.49px" src="img/9c1d4846b5ec940.png"> button.<br><br>Watch how the platform runs Agents in the background to Search Glean, Read the content from the Search Results, Summarize the Content, and format it based upon the Prompt Instructions.<br></p>
 <p>Let&#39;s create a brand new prompt to show how easy it can be to employ Agents on your behalf.<br><br>Navigate back to Assistant (Chat) and click again into the Prompt Library section (Review the first 2 sub-steps of Step 4 above if you get lost).<br><br>Click the <img style="width: 117.79px" src="img/80b79ab8f79679ae.png">button to begin.<br></p>
 <p>At the top of the Create Prompt fly out window, Select the &#34;Advanced&#34; tab and click the &#34;Start from scratch&#34; button.  The previous prompt we engaged with above was a &#34;Simple&#34; (Single-step) Prompt (Search &amp; Respond Only).  In this example, we are going to create a Multi-Step Prompt where we can employ multiple searches, think steps, response steps, etc...<br><br>Let&#39;s begin by giving this a Title.  Select &#34;Untitled Advanced Prompt&#34;<br><br>And name this prompt:<br><br><strong>Prepare for Prospect Conversation - &lt;Your Name&gt;<br><br></strong>Replace &lt;Your Name&gt; with your actual name (this will avoid collisions with other users in the workshop).  So if your name was John Doe, this should be called:<br><br><strong>Prepare for Prospect Conversation - John Doe<br></strong></p>
 <p>In the &#34;Goal&#34; box enter a description such as:<br><br><strong>Search the public internet for press releases from a specific company.  Ascertain that company&#39;s priorities and align Glean Features to fulfill those priorities.<br></strong></p>
