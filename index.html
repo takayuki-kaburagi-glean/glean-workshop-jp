@@ -131,6 +131,10 @@
             background: linear-gradient(135deg, #4285f4 0%, #1a73e8 100%);
         }
 
+        .module-image.agent {
+            background: linear-gradient(135deg, #bd27e7 0%, #9b04b9 100%);
+        }
+
         .module-content {
             padding: 1.5rem;
         }
@@ -253,34 +257,51 @@
         </div>
 
         <div class="modules-grid">
-            <div class="module-card" onclick="openModule('assistant')">
-                <div class="module-image android">
-                    🤖
-                </div>
-                <div class="module-content">
-                    <h3 class="module-title">The Glean Assistant</h3>
-                    <p class="module-description">Learn about Glean Assistant, this lab will guide users through using Glean Chat to perform enterprise searches, interact with company knowledge, and receive accurate, cited answers.</p>
-                    <div class="module-meta">
-                        <span class="module-duration">⏱️ 45 minutes</span>
-                        <span class="module-difficulty">Beginner</span>
-                    </div>
-                </div>
-            </div>
-
             <div class="module-card" onclick="openModule('search')">
                 <div class="module-image web">
                     🔎
                 </div>
                 <div class="module-content">
-                    <h3 class="module-title">Enterprise Search</h3>
+                    <h3 class="module-title">Glean Search</h3>
                     <p class="module-description">Explore the core features of the Glean Platform's Enterprise Search, including how to navigate the search page, execute searches, leverage advanced filters, interact with AI-powered summarization, and use expert identification. </p>
                     <div class="module-meta">
-                        <span class="module-duration">⏱️ 45 minutes</span>
-                        <span class="module-difficulty intermediate">Intermediate</span>
+                        <span class="module-duration">⏱️ 30 minutes</span>
+                        <span class="module-difficulty">Beginner</span>
                     </div>
                 </div>
             </div>
 
+            <div class="module-card" onclick="openModule('assistant')">
+                <div class="module-image android">
+                    💬
+                </div>
+                <div class="module-content">
+                    <h3 class="module-title">Glean Assistant</h3>
+                    <p class="module-description">Learn about Glean Assistant, this lab will guide users through using Glean Chat to perform enterprise searches, interact with company knowledge, and receive accurate, cited answers.</p>
+                    <div class="module-meta">
+                        <span class="module-duration">⏱️ 30 minutes</span>
+                        <span class="module-difficulty">Beginner</span>
+                    </div>
+                </div>
+            </div>           
+
+            <div class="module-card" onclick="openModule('agent')">
+                <div class="module-image agent">
+                    🤖
+                </div>
+                <div class="module-content">
+                    <h3 class="module-title">Glean Agents</h3>
+                    <p class="module-description">A hands-on lab that challenges you to use Glean’s indexing, retrieval, and assistant features to uncover hidden “Easter Eggs” and automate knowledge-based processes within an organization.</p>
+                    <div class="module-meta">
+                        <span class="module-duration">⏱️ 30 minutes</span>
+                        <span class="module-difficulty intermediate">Intermediate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modules-grid">
+            
             <div class="module-card" onclick="openModule('egghunt')">
                 <div class="module-image cloud">
                     🥚
@@ -289,10 +310,18 @@
                     <h3 class="module-title">Easter Egg Hunt</h3>
                     <p class="module-description">A hands-on lab that challenges you to use Glean’s indexing, retrieval, and assistant features to uncover hidden “Easter Eggs” and automate knowledge-based processes within an organization.</p>
                     <div class="module-meta">
-                        <span class="module-duration">⏱️ 90 minutes</span>
+                        <span class="module-duration">⏱️ 30 minutes</span>
                         <span class="module-difficulty intermediate">Intermediate</span>
                     </div>
                 </div>
+            </div>
+
+            <div class="module-card">
+                
+            </div>
+
+            <div class="module-card">
+                
             </div>
         </div>
 
@@ -308,7 +337,8 @@
             const moduleUrls = {
                 assistant: "./glean-assistant/index.html",
                 search: "./glean-search/index.html",
-                egghunt: "./module-3-easter-egg-hunt/index.html"
+                egghunt: "./module-3-easter-egg-hunt/index.html",
+                agent: "./glean-agents/index.html"
             };
             
             // Add a subtle animation to show interaction
