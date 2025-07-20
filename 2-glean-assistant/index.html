@@ -1,0 +1,250 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Glean Assistant</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LR18FBLQHK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LR18FBLQHK');
+</script>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid="G-LR18FBLQHK"
+                  codelab-ga4id=""
+                  id="2-glean-assistant"
+                  title="Glean Assistant"
+                  environment="web"
+                  feedback-link="https://github.com/dejim-juang-glean/glean-workshop/issues">
+    
+      <google-codelab-step label="Overview" duration="1">
+        <p class="image-container"><img style="width: 624.00px" src="img/c888aa965161bab9.png"></p>
+<p><br>The Glean Assistant is a part of Glean&#39;s generative AI products. It&#39;s designed to function similarly to a knowledgeable colleague within the company, providing personalized responses based on the company&#39;s knowledge and work graph. <br><br>The primary entry point for interacting with the Assistant is through Glean Chat, which enables users to ask questions and receive answers as if they were consulting a fellow employee. This feature is aimed at harnessing the collective knowledge of the organization to assist users in various tasks, such as summarizing projects, identifying subject matter experts, and providing updates on topics of interest.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Login to Glean" duration="1">
+        <p>Go to <a href="https://app.glean.com/chat" target="_blank">https://app.glean.com/chat</a>.<br><br>Because Glean is a logged in experience and this is the first time you&#39;ve accessed the platform, you will be redirected to the Glean login page. If you&#39;re already logged in, you can proceed to the next step.<br></p>
+<p class="image-container"><img style="width: 624.00px" src="img/a3714ffdb1c1bbc6.png"></p>
+<p>Enter the credentials provided for you by the Workshop Moderator.  First enter the email address into the <strong>Work email</strong> field and click the <strong>Log in</strong> button.</p>
+<p class="image-container"><img style="width: 331.50px" src="img/40f8de2eda2b840f.png"></p>
+<p><br>You will be presented with a screen similar to the following.  Enter the password provided by your Workshop Moderator and click the <strong>Sign in</strong> button. You will then be redirected back to the Glean Assistant.  </p>
+<p class="image-container"><img style="width: 624.00px" src="img/ce792156aaa8b3b9.png"></p>
+<aside class="warning"><p><strong>Note: </strong>You may need to select Chat on the left side if you don&#39;t see the screen above.</p>
+</aside>
+<p>From here we can interact with your company data via a conversation interface similar to how ChatGPT works.<br><br>This is a private sandbox instance of Glean that was set up for this workshop and has various data sources connected and indexed. Some of this include but are not limited to:</p>
+<ul>
+<li>Glean Website Data (glean.com, help.glean.com, and <a href="http://developers.glean.com" target="_blank">developers.glean.com</a>)</li>
+<li>Publicly available Glean Technical information in the form of Google Docs</li>
+<li>Etc....</li>
+</ul>
+<p>You&#39;ll see from the interface that you can start a conversation from scratch with the Glean Assistant. </p>
+<p class="image-container"><img style="width: 624.00px" src="img/c9e003e8a96d5fa1.png"><br></p>
+<p>In the next section we&#39;ll start our first conversation with Glean Assistant. Go ahead and click on <strong>Next </strong>below.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Start a Conversation with Glean Assistant" duration="5">
+        <p><br>Let&#39;s see if Glean Assistant can help us understand how crawling/indexing works within the Glean Platform.<br>Enter the following in the conversation window and hit <strong>Enter</strong> or click the <img style="width: 32.00px" src="img/173ba9967715e767.png"> button:<br></p>
+<aside class="special"><p><strong>Does Glean support crawling content from Confluence and Sharepoint? Please include specific connector setup steps for each connector.</strong></p>
+</aside>
+<p class="image-container"><img style="width: 624.00px" src="img/c67de213d58d6bd4.png"></p>
+<p>The Glean Assistant will now perform a few things for you under the covers:</p>
+<ol type="1" start="1">
+<li>Ascertain the context of the natural language query and convert it to one or more enterprise searches against the indexed company corpus.</li>
+<li>Execute the enterprise search(es).</li>
+<li>Read the top results (As you recall the Workshop Moderator explained how Relevancy works within Glean to provide Accurate/Contextual results).</li>
+<li>Match the read documents with the context of the original query.</li>
+<li>Send the relevant snippets from the document to the Large Language Model (LLM) for content generation.</li>
+<li>Present the results with citations.</li>
+</ol>
+<p>Once the generation is complete, let&#39;s go back and navigate through the interface to see the flow provided above in Step 2.<br><br>Right underneath your question, you should see something similar to the following showing the search(es) that were executed, and the documents that were read. You may need to click the carrot next to <strong>Show thinking</strong> to expand and see the steps that Glean performed based on your query.<br></p>
+<p class="image-container"><img style="width: 624.00px" src="img/a68f7d0e3c28edf9.png"></p>
+<p>You should also see a natural language summary explaining how Glean supports crawling content from both Confluence and Sharepoint.  It may also respond telling you that Glean supports crawling over 100 source applications or may tell you how the source application connectivity works.<br><br>Glean limits and/or completely removes the concerns around LLM hallucinations by searching only content within your company&#39;s corpus as well as citing all content within the answer provided.  Hover over any of the citations similar to what is shown below to learn the detail of the citation.  All citations are clickable to send you directly to the source.</p>
+<p class="image-container"><img style="width: 624.00px" src="img/994b7f1b2d28437f.png"><br></p>
+<p>If the citation was from a document authored by a user within your organization you would also see the Author and be able to click the Author link to be able to learn more about the author themselves.  Since this is a public citation from a crawled website (help.glean.com and developers.glean.com) we do not see the authorship in this instance.  </p>
+<p>However, since its public documentation one can assume Authoritative Authorship.</p>
+<p>You&#39;ll also notice suggested prompts for continued follow-up / learning.  An example of what might popup is shown below:</p>
+<p class="image-container"><img style="width: 624.00px" src="img/cb4d23ede7a9f2f1.png"></p>
+<p>For the purposes of this workshop, ignore the suggested prompts and type this follow-up question in the conversation window:<br></p>
+<aside class="special"><p><strong>How does Glean handle indexing content from the above Connectors?</strong></p>
+</aside>
+<p class="image-container"><img style="width: 624.00px" src="img/1f7a938165434b86.png"></p>
+<p>You&#39;ll see the conversation continue.  The context of the new response will take into account the previous question/answer to narrow down your knowledge query. Right below your follow-up question, you&#39;ll see that the search remembered the context (Confluence &amp; Sharepoint) and used that context for the enterprise search to drive your new results:<br></p>
+<p>To show the power of LLM Generation with highly relevant data, let&#39;s ask Glean Assistant to write an email with the above information but formatted as a table.<br><br>Enter the following in the conversation window:</p>
+<aside class="special"><p><strong>Please help me write an email to [replace with your first name] with the above details formatted as a table with a column each for Sharepoint and Confluence.</strong></p>
+</aside>
+<p>(Replace put your first name here with your actual first name - remove the brackets as well).  Your screen should look similar to the following:</p>
+<p class="image-container"><img style="width: 624.00px" src="img/65c15139ff943f14.png"></p>
+<p>The response should be a table formatted response that you could choose to copy/paste into your favorite email program.  In this instance of Glean there is a configuration which integrates directly with Gmail.  This could also integrate with Outlook for customers using Microsoft Solutions. </p>
+<aside class="warning"><p><strong>NOTE:</strong> There is no need to actually send an email for the purposes of this workshop.  This is here to show the capability in a real production scenario.</p>
+</aside>
+<p><br>The data may look similar to the following (depends on if updated content exists from the time of creating this workshop lab):</p>
+<p class="image-container"><img style="width: 540.62px" src="img/a8872941d4437f52.png"></p>
+<p>You can see how the power of the world&#39;s leading Enterprise Class Out-of-the-box (OOTB) Retrieval Augmented Generation (RAG) architecture from Glean coupled with the capabilities of the LLM can provide extreme value for users.<br>If this was a real scenario, you could then click the <img style="width: 31.00px" src="img/17d2a12e5e1996a6.png">icon in the lower right corner of the Assistant response which will copy the table to the clipboard.  From there you could paste it into an email program final edit before sending. (Unnecessary if you&#39;re Glean instance has been set up to integrate with your email program directly)</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Start a New Conversation" duration="5">
+        <p>Let&#39;s switch gears and execute some queries surrounding HR related issues.  A few mocked up documents for a fictitious company were indexed surrounding company policies including HR related policies.  Let&#39;s ask questions related to those documents.</p>
+<p>Click the <strong>New chat </strong>button in the top left of the screen to remove all previous context and start a new conversation.</p>
+<p class="image-container"><img style="width: 512.50px" src="img/fc43ce8160c453db.png"></p>
+<p>Enter the following text into the conversation window similar to what is shown below:<br></p>
+<aside class="special"><p><strong>What is our PTO policy?</strong></p>
+</aside>
+<p class="image-container"><img style="width: 624.00px" src="img/889d0d4fc208b034.png"><br></p>
+<p>Let&#39;s ask a follow-up question:<br></p>
+<aside class="special"><p><strong>Are there any restrictions on when PTO can be taken, such as blackout dates or busy periods?</strong></p>
+</aside>
+<aside class="warning"><p><strong>Hint</strong>: This MAY be one of the suggested follow-up questions.  If it is there (or a similar question is there), feel free to click it.</p>
+</aside>
+<p>Notice the result....</p>
+<p class="image-container"><img style="width: 624.00px" src="img/3f1ace0476a67fc7.png"></p>
+<p><br>While it seems that the platform didn&#39;t do a good job answering the question, it&#39;s actually quite accurate and what our customers have enjoyed from the platform. The Glean Platform did not &#34;hallucinate&#34; by guessing at an answer when there were no documents explicitly discussing blackout dates and/or busy periods. The Glean platform instead clearly stated that there are no documents available discussing this topic and provides a suggested next step for them.<br><br>In this case, the HR department would take the question and recognize that no documents exist to answer questions such as this which can be easily rectified by a new version of the HR policy document.</p>
+<aside class="warning"><p><strong>NOTE:</strong> This could also be rectified by creating an Answer in the Glean platform that could be used as a reference for these kinds of queries.  The next section will discuss the value of how the Answers feature can assist queries such as this.</p>
+</aside>
+<p>Scroll up to the first question in this conversation.  You&#39;ll notice that the Assistant read various documents to answer the PTO policy question.  In the &#34;Reading&#34; section, find the document called &#34;(Demo) CGo. Leave Policy Overview.docx&#34; and click on it to open the document in another tab.  Refer to the below image for assistance (You may have to expand the &#34;Search&#34; portion under the original query to see the searches and documents being read).</p>
+<p class="image-container"><img style="width: 624.00px" src="img/5a625bdcf01e5a44.png"></p>
+<p>Inspect the document, specifically refer to the &#34;Sabbatical Leave&#34; section of the document.  Notice how the paragraph discusses the terms of a Sabbatical Leave, but does not provide context/options for what an employee might do during a Sabbatical...<br><br>Now that we know the authoritative document on Sabbatical Leaves does not discuss this, let&#39;s ask the question anyway and see the results.</p>
+<p><a href="https://help.glean.com/en/articles/3643252-installing-the-browser-extension" target="_blank">If you have installed the Glean extension</a>, quickly try pressing Cmd+J (Mac) or Alt+J (Windows) to popup a sidebar. </p>
+<p>Switch back to the <strong>Chat | Glean</strong> browser tab and enter the following into the conversation window as shown:</p>
+<aside class="special"><p><strong>What do employees typically do on a Sabbatical? Display the results as a bulleted list.</strong></p>
+</aside>
+<p class="image-container"><img style="width: 624.00px" src="img/6f119affc7114fe8.png"></p>
+<p><br>Notice how one of the documents that was read in order to generate the results has an icon with a dialog box and checkmark.</p>
+<p class="image-container"><img style="width: 422.00px" src="img/7f4381022a12e1f1.png"></p>
+<p><br><br>That icon means the document is an Answer that was created for this specific question because none of the documents in the company corpus contain information on how employees have used their Sabbatical Leave (And clearly someone else asked HR directly and therefore an Answer was created).<br><br>Answers can be manually created by users with the appropriate Role, however, Answers are also automatically generated by the platform during content indexing.  Consider the following conversation in Glean&#39;s Internal Production Instance of the Glean Platform (Yes Glean eats their own dog food).</p>
+<aside class="warning"><p><strong>NOTE:</strong> Don&#39;t ask this question, the following is showing you how Glean&#39;s Internal Production Instance can be used to ask real product questions and provide valuable results.</p>
+</aside>
+<p class="image-container"><img style="width: 551.11px" src="img/f68bb6e0663fc3b0.png"></p>
+<p><br>As you can see the Glean platform uses AI models during indexing to automatically create Answers to support common FAQs that already exist within your company corpus.</p>
+<p>In the Sabbatical conversation earlier, click the Answer Citation similar to what is shown below:<br><br><img style="width: 419.00px" src="img/9172ed9c23972e3a.png"><br><br>This will redirect you to the created Answer itself for more details. <br><br>Hover over <strong>Workshop Glean</strong> user to create a Card Popup with information surrounding the Author of this Answer as shown below.</p>
+<p class="image-container"><img style="width: 565.12px" src="img/abea0f8c03e0fa19.png"></p>
+<p>Click the <strong>Workshop Glean</strong> name in the Card Popup to navigate to the user details.</p>
+<p class="image-container"><img style="width: 585.50px" src="img/3ab64b94a0b747da.png"></p>
+<p><br>What you see is a page dedicated to this specific user (which in a production deployment would represent an employee or contractor at your company).  You can see contact information, the users reporting line, and any recent activity surrounding your company knowledge this user has been involved in.</p>
+<p>After exploring the user on this page, click the <strong>View in org chart </strong>link.  </p>
+<p class="image-container"><img style="width: 624.00px" src="img/43731ee551ee4dd8.png"></p>
+<p>You will be redirected to the Org Chart feature of the Glean Platform.</p>
+<p class="image-container"><img style="width: 624.00px" src="img/6aaa8cd0931b3605.png"></p>
+<p><br>In this Org Chart, you will first see the current user in context which will highlight the Workshop Glean user and the user&#39;s reporting line.  Since this is a Sandbox Instance, there are only a few users available.  However, in a production deployment, your entire company hierarchy would be available.<br><br>Feel free to navigate around this page to ascertain its features.</p>
+<aside class="special"><p><strong>HINT</strong>: some of the users are managers with direct reports, click on one of them to expand their direct reports</p>
+</aside>
+<p>You can directly access this feature from the Glean Platform Menu on the left side of the browser window.  Hover over the People (Directory) icon as shown to see this navigation location:</p>
+<p class="image-container"><img style="width: 303.50px" src="img/9eb7c180819310f5.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Other Assistant Options" duration="6">
+        <p>Now that you&#39;ve had a chance to chat with Glean Assistant, let&#39;s see some of the other features that are available. Click on <strong>New chat </strong>on the top left to start a new session.</p>
+<p class="image-container"><img style="width: 403.50px" src="img/4000dbef5a3e4268.png"></p>
+<p>Click on the plus ‘+&#39; sign in the chat box to see some options.</p>
+<h2 is-upgraded>Tag People or Documents</h2>
+<p class="image-container"><img style="width: 490.50px" src="img/f148e2f195a432ce.png"></p>
+<p>Select <strong>Tag people or docs. </strong>This will insert an @ symbol into the chat box and allow you to include people or a document that has been crawled or indexed into the conversation with Glean Assistant.</p>
+<p>Go ahead and type in the following after the @ symbol and select the first result</p>
+<aside class="special"><p>what objects are supported?</p>
+</aside>
+<p class="image-container"><img style="width: 540.16px" src="img/e71cc19eddf408cd.png"></p>
+<p>The chat box should look like the following below. Go ahead and click on the <strong>Send</strong> button to see the response.</p>
+<p class="image-container"><img style="width: 557.50px" src="img/533d792be866562.png"></p>
+<p>As you can see, Glean allows you to filter the chat context down to a specific resource. </p>
+<p class="image-container"><img style="width: 462.50px" src="img/694ca9e792fe3447.png"></p>
+<p>Because your content is already crawled and indexed, it saves you valuable time from having to upload any documents.</p>
+<h2 is-upgraded>Filter Data</h2>
+<p>Click on <strong>New chat </strong>on the top left to start a new session and see what <strong>Filter data </strong>allows you to do with Glean Assistant.</p>
+<p class="image-container"><img style="width: 403.50px" src="img/4000dbef5a3e4268.png"></p>
+<p>Click on the plus ‘+&#39; sign in the chat box and select <strong>Filter data</strong> this time.</p>
+<p class="image-container"><img style="width: 394.50px" src="img/664a8186baad551.png"></p>
+<p>You&#39;ll see a list of available data sources this time. This is similar to the list of indexed sources on the right side of the SERP page. Select <strong>Glean Docs</strong> or a source that your workshop instructor will suggest.</p>
+<p class="image-container"><img style="width: 370.50px" src="img/71628f9bd734fda0.png"></p>
+<p>Instead of chatting with Glean Assistant on a single document, you can select multiple sources and provide a larger context of information for Glean Assistant to synthesize a response. </p>
+<h2 is-upgraded>Attach File</h2>
+<p>Let&#39;s learn about the <strong>Attach file</strong> option. You can either use the current chat session or just start a new one. </p>
+<p>Before starting a conversation with Glean Assistant, let&#39;s get a file to use. For this lab, you can download one by right-clicking on this link <a href="https://raw.githubusercontent.com/dejim-juang-glean/glean-workshop/refs/heads/main/assets/datachart.png" target="_blank">here</a> and select <strong>Save link as...</strong>. Be sure to remember where you save it.</p>
+<p class="image-container"><img style="width: 305.50px" src="img/c38aa231fc68d4c2.png"></p>
+<p>Next, click on the plus ‘+&#39; sign in the chat box and select the <strong>Attach file </strong>option.</p>
+<p class="image-container"><img style="width: 357.50px" src="img/1cb27c5ce7a97d48.png"></p>
+<p>Find the file that you just downloaded and select it to be uploaded. Once the file is uploaded, type in the following and click on <strong>Send.</strong></p>
+<aside class="special"><p>Convert the image into a markdown table</p>
+</aside>
+<p class="image-container"><img style="width: 624.00px" src="img/c870a7a176162685.png"></p>
+<p>The response from Glean Assistant should look like the following below.</p>
+<p class="image-container"><img style="width: 624.00px" src="img/1190b9e0997977f6.png"></p>
+<p>By attaching a file, this allows you to have a conversation with Glean Assistant using content that isn&#39;t crawled or indexed yet by Glean. You can upload 5 files with a maximum of 64MBs for each file. A list of supported filetypes can be found <a href="https://docs.glean.com/administration/assistant/features/file-upload#supported-file-formats" target="_blank">here</a>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="World Knowledge" duration="2">
+        <p>The last feature to check out before we wrap up this workshop is <strong>World knowledge. </strong>Click <strong>New chat</strong> on the top left and then click on <strong>Company </strong>in the chat box.</p>
+<p class="image-container"><img style="width: 345.00px" src="img/abc2ffb21931ba10.png"></p>
+<p>In the drop down, select <strong>World knowledge</strong> and click on the option <strong>Always search the web</strong>. </p>
+<p class="image-container"><img style="width: 400.67px" src="img/9f7c706a26c7f41d.png"></p>
+<p>Type the following into the search box now but replace the city with your location for today&#39;s workshop.</p>
+<aside class="special"><p>What is the weather in [City]?</p>
+</aside>
+<p class="image-container"><img style="width: 624.00px" src="img/c0e90378cdc4a6a7.png"></p>
+<p>Click <strong>Send. </strong>You should get something similar to the screenshot below.</p>
+<p class="image-container"><img style="width: 624.00px" src="img/92ee4a0767ac938e.png"></p>
+<p>While Glean defaults to search Company knowledge when running searches, you can also have Glean Assistant synthesize a response to a question using a web search. We&#39;ll see the benefit of this later when we build an Agent in Glean. This allows you to combine content from internal and external sources to generate the best response or analysis possible.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Conclusion" duration="1">
+        <p class="image-container"><img style="width: 624.00px" src="img/aff097302a732107.png"></p>
+<p>In this lab, you experienced firsthand how Glean Assistant revolutionizes enterprise knowledge access through intelligent AI-powered conversations. You learned to interact with Glean Chat as you would with a knowledgeable colleague, asking natural language questions and receiving precise, well-sourced responses drawn from your organization&#39;s indexed content.</p>
+<p>Throughout your hands-on exploration, you witnessed Glean&#39;s advanced Retrieval Augmented Generation (RAG) architecture in action. You saw how the Assistant seamlessly converted your queries into targeted enterprise searches, maintained conversational context across multiple exchanges, and presented information in various formats—from detailed explanations to structured tables ready for business communication.</p>
+<p>Your investigation of HR policies demonstrated one of Glean&#39;s most valuable characteristics: its commitment to accuracy over speculation. When you asked about blackout dates that weren&#39;t documented in company policies, the Assistant transparently acknowledged the information gap rather than fabricating an answer. This honest approach, combined with the platform&#39;s ability to automatically generate Answers for common questions, shows how Glean continuously improves to meet your organization&#39;s evolving knowledge needs.</p>
+<p>You also explored Glean&#39;s integration with organizational data, discovering how the platform connects you not just to documents, but to the people behind them—authors, subject matter experts, and team structures. Through features like tagging specific documents or people, filtering by data sources, and accessing world knowledge when needed, you learned how Glean provides comprehensive context that goes far beyond traditional search capabilities.</p>
+<p>By grounding every response in your actual organizational data and providing transparent citations, Glean Assistant has shown you how it can serve as a scalable extension of your company&#39;s collective expertise, helping eliminate information silos and ensuring reliable access to authoritative business knowledge across your entire organization.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById("arrow-back").href="#"; 
+      document.getElementById("done").href="#"; 
+      document.getElementById("arrow-back").addEventListener( 'click', function() { 
+        window.history.back();
+      }); 
+      document.getElementById("done").addEventListener( 'click', function() { 
+        window.history.back();
+      }); 
+    }, false);
+  </script>
+</body>
+</html>

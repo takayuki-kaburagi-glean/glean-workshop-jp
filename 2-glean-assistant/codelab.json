@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2025-07-20T20:09:29Z",
+  "id": "2-glean-assistant",
+  "duration": 21,
+  "title": "Glean Assistant",
+  "authors": "Dejim Juang",
+  "summary": "Discover Glean Assistant's capabilities through this lab, where users will learn to leverage Glean Chat for enterprise searches, engage with organizational knowledge bases, and obtain precise, well-sourced responses.",
+  "source": "1gt0-bndhHOrFFh8I294aq7HIxIDlgrKXF1_egM-8Fac",
+  "theme": "web",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "web"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/dejim-juang-glean/glean-workshop/issues",
+  "ga": "G-LR18FBLQHK",
+  "url": "2-glean-assistant"
+}
