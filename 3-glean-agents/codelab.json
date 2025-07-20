@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2025-07-20T20:22:15Z",
+  "id": "3-glean-agents",
+  "duration": 0,
+  "title": "Glean Agents",
+  "authors": "Dejim Juang",
+  "summary": "The Glean Agents lab guides you through hands-on exercises exploring, customizing, and building AI agents within the Glean platform, demonstrating how these agents can automate complex enterprise workflows, integrate with data sources, and enhance productivity while maintaining governance and security.",
+  "source": "1vRwtU9o6vCs5_udMS8TDqB-8p-qDgtO8HeaHC-7IM3g",
+  "theme": "web",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "web"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/dejim-juang-glean/glean-workshop/issues",
+  "ga": "G-LR18FBLQHK",
+  "url": "3-glean-agents"
+}
