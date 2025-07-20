@@ -19,6 +19,17 @@
     }
   </style>
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LR18FBLQHK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LR18FBLQHK');
+</script>
+
 <body>
   <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
   <google-codelab codelab-gaid="G-LR18FBLQHK"
@@ -225,6 +236,17 @@
   <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
   <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
   <script src="//support.google.com/inapp/api.js"></script>
-
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById("arrow-back").href="#"; 
+      document.getElementById("done").href="#"; 
+      document.getElementById("arrow-back").addEventListener( 'click', function() { 
+        window.history.back();
+      }); 
+      document.getElementById("done").addEventListener( 'click', function() { 
+        window.history.back();
+      }); 
+    }, false);
+  </script>
 </body>
 </html>
