@@ -19,17 +19,6 @@
     }
   </style>
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LR18FBLQHK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LR18FBLQHK');
-</script>
-
 <body>
   <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
   <google-codelab codelab-gaid="G-LR18FBLQHK"
@@ -51,14 +40,24 @@
 
       </google-codelab-step>
     
+      <google-codelab-step label="Login to Glean" duration="2">
+        <p>If you&#39;re already logged in, feel free to go directly to the next step otherwise follow the steps below to login first. <br></p>
+<p>Navigate in your browser to <a href="https://app.glean.com/chat/agents" target="_blank">https://app.glean.com/chat/agents</a> which will re-direct you to the Glean login page.</p>
+<p class="image-container"><img style="width: 624.00px" src="img/a3714ffdb1c1bbc6.png"></p>
+<p>Enter the email address provided for you by the Workshop Moderator.  First enter the email address in the <strong>Work email</strong> field and click the <strong>Log in</strong> button.<br><br>You will be presented with a screen similar to the following.  Enter the password provided by your Workshop Moderator and click the <strong>Sign in</strong> button.</p>
+<p class="image-container"><img style="width: 331.50px" src="img/40f8de2eda2b840f.png"></p>
+<p>Once completed, you will be redirected to the <strong>Glean Agents</strong> page. <br></p>
+<p class="image-container"><img style="width: 624.00px" src="img/4a4f5b11905d97e5.png"></p>
+<p><br>If you don&#39;t see the Glean Agents page, click on the <strong>Chat</strong> icon in the left of the screen and then select <strong>Agents</strong></p>
+<p class="image-container"><img style="width: 309.50px" src="img/6ac796267f7aee6b.png"></p>
+<p>Congrats! You have successfully completed this step of the guide. The single sign-on authentication process through Okta, demonstrating Glean&#39;s seamless integration with your organization&#39;s identity management system. This streamlined login experience eliminates the need for additional credentials while ensuring secure access to enterprise resources. </p>
+<p>Move on to the next step by clicking on <strong>Next </strong>below.</p>
+
+
+      </google-codelab-step>
+    
       <google-codelab-step label="Explore the Plan My Day Agent" duration="0">
-        <p>Go to <a href="https://app.glean.com/chat/agents" target="_blank">https://app.glean.com/chat/agents</a>.<br><br>Because Glean is a logged in experience and this is the first time you&#39;ve accessed the platform, you will be redirected to the glean login page.<br><br><img style="width: 475.50px" src="img/b3eb08457a3d45f1.png"><br></p>
-<p>Enter the credentials provided for you by the Workshop Moderator.  First enter the email address and click the &#34;Log in&#34; button.<br><br>You will be presented with a screen similar to the following.  Enter the password provided by your Workshop Moderator and click the &#34;Sign in&#34; button.</p>
-<p class="image-container"><img style="width: 222.52px" src="img/fe183aad842667c1.png"><br></p>
-<p>You will then be redirected back to the Glean Agent Library.  </p>
-<aside class="warning"><p><strong>Note:</strong> You may need to select Chat on the left menu and click Agents if you are not automatically redirected</p>
-</aside>
-<p>This Public instance of Glean has various pre-populated agents.  For the purposes of this workshop we will explore the <strong>Plan My Day Agent. <br><br></strong>Click the <strong>Plan My Day Agent</strong> card.</p>
+        <p>This private Sandbox instance of Glean has various pre-populated agents.  For the purposes of this workshop we will explore the <strong>Plan My Day Agent. <br><br></strong>Click the <strong>Plan My Day Agent</strong> card.</p>
 <aside class="warning"><p><strong>Note:</strong> You may have to search for it in the Search agents search bar as shown</p>
 </aside>
 <p class="image-container"><img style="width: 529.60px" src="img/d475e3c470e120b7.png"><br></p>
@@ -110,31 +109,7 @@
 <p>Now let&#39;s configure the Steps under the Branch if the user inquires about PTO.  In the Design Canvas click the <strong>Plus icon</strong> under the first Branch here:<br><img style="width: 223.27px" src="img/a3aa3bbb3996bc99.png"><br><br><br><img style="width: 410.60px" src="img/b1e7e079f8f3a73d.png"><br>In the Select Step search box, enter <strong>workday</strong> and select the <strong>Workday: Get PTO Availability</strong> Action as shown.<br><img style="width: 378.26px" src="img/1da865dab3b179de.png"></p>
 <p>This is a Custom Action registered in this Glean instance.  As you can see this Action makes a real-time callout via an API to retrieve the users PTO Balance.<br><br>Enter <strong>How much paid time off do I have left?</strong> In the Instructions window of the Workday: Get PTO Availability Action configuration screen.<br><br><br><br><br><br><br><br><br></p>
 <p>Now that we have received the Paid Time Off Balance for the user, we will need to respond to the user with the information.<br><br>Underneath the Workday: Get PTO Availability action, click the Plus icon to add a step.<br><br>Search for and select the <strong>Respond</strong> Action.<br><br>In the AI response instructions text box, enter:<br><br><strong>Tell the user their Paid Time Off Balance.<br><br></strong>Add another line of text to these instructions:<br><br><strong>Respond with all balance options in a bulleted list.<br><br></strong>Your Respond Action should look similar to the following:<br><br><img style="width: 385.50px" src="img/bf708c7ef24cf6ff.png"><br><br>Our new HR Q&amp;A Chatbot is now complete!  Click the <img style="width: 56.99px" src="img/956bf36819186a01.png">button in the upper right hand corner.<br></p>
-<p>Now it&#39;s time to test!  Click the <img style="width: 67.13px" src="img/9a6058071d2b0dd9.png">button in the upper right hand corner to open the test harness window.<br><br><img style="width: 362.10px" src="img/de288eceeaa67cd7.png"><br>You can see that Conversations starters can be used to pre-populate the Chat window with the text specified in the configuration.<br><br>Feel free to try both conversation starters and/or ask any question of the new Chatbot.<br><br><br><br><br><br><br><br>If you ask about Paid Time Off or use that conversation starter, the Chatbot should call the Workday: Get PTO Availability Action.  Otherwise the questions should be answered directly from the content within the (Demo) GCo. HR Policies folder.<br><strong>Note</strong>: At any time during testing, you can reset the test harness by clicking the <img style="width: 24.98px" src="img/2e6b58bedd932d17.png">icon in the upper right corner of the harness.</p>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="Hackathon: Build an Agent" duration="0">
-        <p>It&#39;s now your opportunity to build your own agent based upon what you&#39;ve already learned.  Pick one of the two options below.  And if you have time, build both 🙂.  Let&#39;s see what you can come up with.  If you get stuck at any time, or just need a nudge to get started, flag down one of the Glean Staff to get some assistance.<br><br>Notes before you build:</p>
-<ul>
-<li>Remember, this is a Public Sandbox environment and therefore the amount of data indexed and available is fairly limited.  This should not diminish your ability to build out an interesting Agent though.</li>
-<li>When you create the Agent, be sure to put your name as part of the Agent name so there are no conflicts with other workshop participants.</li>
-</ul>
-<h2 is-upgraded>Option 1: Pull Request Reviewer Agent</h2>
-<p>The purpose of this Agent will be to analyze a Pull Request in GitHub.  It should assist the analyzer in understanding whether the pull request is ready to be merged or whether it should be sent back to the engineering team to resolve.<br><br>As part of the analysis, it should look at the published Style Guides available in this Sandbox instance to check adherence of any changed code against the guides.  You can find these guides by searching for <strong>style guides</strong> in Glean Search (Home menu option).<br><br>Since this is a Public Sandbox instance, we don&#39;t have a ton of Pull Request to test your Agent against.  However, here are a couple pull request links you can test against:</p>
-<ul>
-<li><a href="https://github.com/glean-go-demo/mcp-server/pull/5" target="_blank">https://github.com/glean-go-demo/mcp-server/pull/5</a><br>The above should show a Typescript Change that is non-concerning (just some config changes)...<br></li>
-<li><a href="https://github.com/glean-go-demo/mcp-server/pull/6" target="_blank">https://github.com/glean-go-demo/mcp-server/pull/6</a><br>The above has some code changes that should be concerning...<br></li>
-</ul>
-<p>Hint:  In order to read the Diffs of the Pull Requests, you will need to take advantage of one of Glean&#39;s out-of-the-box Actions for GitHub called: GitHub PR Diff Fetcher.  It may also be interesting to branch for each language the style guides are evaluating...</p>
-<h2 is-upgraded>Option 2: Support Issue Resolver Agent</h2>
-<p>The purpose of this Agent is to resolve a customer issue by generating actionable next steps to debug.  The support agent will enter a natural language issue into the Agent to kick it off.  The agent should look for information in Confluence, Jira, Google Drive, and the Glean Docs website.  It should then take the knowledge it found and provide a response to the user on a suggested means of resolving the issue at hand.<br><br>As this is a Sandbox Environment we don&#39;t have access to a vast library of Knowledge Base Articles and closed Support Incidents, however there is some documentation that can provide value for a couple of issues.  Try out the following two inputs to the agent after you&#39;ve completed your agent build:</p>
-<ul>
-<li><strong>sharepoint credential error</strong></li>
-<li><strong>servicenow indexing problem</strong></li>
-</ul>
-<p>Hint:  It may be helpful to use the Company search Action with Manual search queries selected. This allows for specified search queries and also allows for multiple individual searches to be executed as part of the single action.  An example of a couple of these manual searches might be:<br><br><img style="width: 443.00px" src="img/da747d4aebb73085.png"></p>
+<p>Now it&#39;s time to test!  Click the <img style="width: 67.13px" src="img/9a6058071d2b0dd9.png">button in the upper right hand corner to open the test harness window.<br><br><img style="width: 362.10px" src="img/de288eceeaa67cd7.png"><br>You can see that Conversations starters can be used to pre-populate the Chat window with the text specified in the configuration.<br><br>Feel free to try both conversation starters and/or ask any question of the new Chatbot.<br><br>If you ask about Paid Time Off or use that conversation starter, the Chatbot should call the Workday: Get PTO Availability Action.  Otherwise the questions should be answered directly from the content within the (Demo) GCo. HR Policies folder.<br><strong>Note</strong>: At any time during testing, you can reset the test harness by clicking the <img style="width: 24.98px" src="img/2e6b58bedd932d17.png">icon in the upper right corner of the harness.</p>
 
 
       </google-codelab-step>
@@ -153,17 +128,6 @@
   <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
   <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
   <script src="//support.google.com/inapp/api.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.getElementById("arrow-back").href="#"; 
-      document.getElementById("done").href="#"; 
-      document.getElementById("arrow-back").addEventListener( 'click', function() { 
-        window.history.back();
-      }); 
-      document.getElementById("done").addEventListener( 'click', function() { 
-        window.history.back();
-      }); 
-    }, false);
-  </script>
+
 </body>
 </html>
