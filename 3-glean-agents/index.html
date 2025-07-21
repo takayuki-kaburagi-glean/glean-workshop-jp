@@ -56,40 +56,128 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Explore the Plan My Day Agent" duration="0">
-        <p>This private Sandbox instance of Glean has various pre-populated agents.  For the purposes of this workshop we will explore the <strong>Plan My Day Agent. <br><br></strong>Click the <strong>Plan My Day Agent</strong> card.</p>
-<aside class="warning"><p><strong>Note:</strong> You may have to search for it in the Search agents search bar as shown</p>
-</aside>
-<p class="image-container"><img style="width: 529.60px" src="img/d475e3c470e120b7.png"><br></p>
-<p>In the Popup Window select the <strong>View agent setup</strong> link to see the design of this agent:<br><br><img style="width: 377.46px" src="img/a06a0ec0c8a92b6e.png"></p>
-<p>Use your mouse to navigate the <strong>Plan My Day Agent</strong> canvas.  Notice how you are able to add sticky notes to the canvas from a documentation perspective as well as able to see this Agentic Workflow&#39;s Series of steps.<br></p>
-<table>
-<tr><td colspan="1" rowspan="4"><p class="image-container"><img style="width: 298.00px" src="img/769c887bcd7a4fe.png"></p>
-</td><td colspan="1" rowspan="1"><p><strong>Step 0</strong>: Defines how this Agent is Triggered</p>
-</td></tr>
-<tr><td colspan="1" rowspan="1"><p><strong>Step 1</strong>: Search Slack for messages where I was tagged yesterday</p>
-</td></tr>
-<tr><td colspan="1" rowspan="1"><p><strong>Step 2</strong>: Search for content that could assist in answering questions that were asked of me in the Slack Messages found<br></p>
-</td></tr>
-<tr><td colspan="1" rowspan="1"><p><strong>Step 3</strong>: Perform an email search for all emails from yesterday and today<br></p>
-</td></tr>
-<tr><td colspan="1" rowspan="3"><p class="image-container"><img style="width: 233.25px" src="img/3c690ae2f1622052.png"></p>
-</td><td colspan="1" rowspan="1"><p><strong>Step 4</strong>: Execute a Calendar search to find all of my meetings scheduled for today</p>
-</td></tr>
-<tr><td colspan="1" rowspan="1"><p><strong>Step 5</strong>: Search for meeting notes from previous meetings that have a similar title</p>
-</td></tr>
-<tr><td colspan="1" rowspan="1"><p><strong>Step 6</strong>: Respond to the user with all of the information desired in order to plan the user&#39;s day.</p>
-</td></tr>
-</table>
-<p>As you can see, the author has control over the formatting of the response including adding additional instructions for the Reasoning engine to assist in the output.  Note the Markdown syntax for the response formatting.  While this is not required, it can be helpful since LLMs deeply understand the Markdown syntax.</p>
-<p>Let&#39;s now execute this agent directly from the Design Canvas.  Click the <img style="width: 81.60px" src="img/372cef49bee67aaf.png">button in the upper right corner to expand the test window on the left side of the screen as shown:<br><br><img style="width: 571.60px" src="img/5a1d3c87e036c6e1.png"><br></p>
-<p>Click the <strong>Run agent</strong> button to execute.<br><img style="width: 387.50px" src="img/e573a1b64aeceee2.png"></p>
-<p><br>Follow the output similar to what you see on the right:<br><br>The above example could be beneficial as an Agent that runs automatically on a scheduled basis in the morning before you start your day.  The message could be fed automatically to Email, or your company&#39;s messaging program (Teams, Slack, etc...)<br><br>Think about how you extend this Agent to drive additional value (Look for only unread Slack/Email messages..).</p>
+      <google-codelab-step label="What are Agents?" duration="2">
+        <p>A Glean Agent is an AI-powered tool that automates tasks for you, from simple to complex workflows, by handling actions like gathering information, summarizing data, and making decisions based on previous steps.</p>
+<p>You can set up an Agent to start working when something specific happens, and it will carry out a series of actions that adapt to changing inputs, streamlining your work and saving you time on repetitive or detailed processes.</p>
+<h2 is-upgraded>Who are agents for?</h2>
+<p>Agents are intended for various types of users within an enterprise, including:</p>
+<ul>
+<li><strong>Builders</strong>: Individuals who create custom AI experiences. They often fall into subgroups such as function ops, IT personnel, power users, and drive-by users who need solutions for one-off problems.</li>
+<li><strong>Consumers</strong>: Users who utilize agents created by others but are unlikely to develop their own agents. These include employees across titles and functions who benefit from the predefined tasks and automation provided by agents.</li>
+<li><strong>Administrators</strong>: Responsible for managing and overseeing the adoption and governance of agents within the organization.</li>
+</ul>
+<h2 is-upgraded>Examples of agents you might create</h2>
+<p>When it comes to creating agents, the possibilities are almost limitless. You&#39;re free to create agents to help you solve any task however you want. Here are some examples of agents you might create:</p>
+<ol type="1" start="1">
+<li><a href="https://www.glean.com/agent-library/prospect-outreach-email" target="_blank">Sales prospect outreach</a>: Automates researching sales prospects and generating outreach messages.</li>
+<li><a href="https://www.glean.com/agent-library/support-ticket-next-steps" target="_blank">Support ticket next steps</a>: Summarizes ongoing support ticket activities and provides suggested next steps for resolution.</li>
+<li><a href="https://www.glean.com/agent-library/engineering-self-evaluation" target="_blank">Engineering self-evaluation</a>: Analyzes all of a user&#39;s past activity over a given time period to generate a self-evaluation document for performance reviews.</li>
+<li><a href="https://www.glean.com/agent-library/pull-request-review" target="_blank">Pull request reviewer</a>: Automates the review and description generation for software pull requests.</li>
+<li><a href="https://www.glean.com/agent-library/meeting-recap" target="_blank">Meeting recap</a>: Compiles a comprehensive review of a past meeting with action items, relevant documents, and experts to consult for additional feedback.</li>
+<li><a href="https://www.glean.com/agent-library/customer-sentiment-score" target="_blank">Customer sentiment score</a>: Mines internal company knowledge, conversations, support tickets, and more to generate a comprehensive satisfaction score.</li>
+<li>Daily Digest Agent: Provides a daily summary of relevant meeting notes, updates, and tasks that need attention.</li>
+</ol>
+<p>By deploying these agents, you can automate complex tasks to save time, avoid repetitive chores, and improve outcomes for your coworkers and customers.</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Create a Q&amp;A Chatbot Agent" duration="0">
+      <google-codelab-step label="Explore an Agent" duration="8">
+        <p>Before we dive into building an agent, let&#39;s examine one and test it out. This private sandbox instance of Glean has various pre-populated agents. For the purposes of this workshop we will explore the <strong>Plan My Day Agent. <br><br></strong>Click the <strong>Plan My Day Agent</strong> card under the <strong>Favorites</strong> section.</p>
+<aside class="warning"><p><strong>Note:</strong> You may have to search for it in the <strong>Search agents</strong> search bar if the <strong>Plan My Day Agent </strong>isn&#39;t showing up.</p>
+</aside>
+<p class="image-container"><img style="width: 578.50px" src="img/9cfcd8ab8590a4a7.png"><br></p>
+<p>In the Popup Window select the <strong>View agent setup</strong> link to see the design of this agent.</p>
+<p class="image-container"><img style="width: 556.50px" src="img/3f747865db79670d.png"></p>
+<p>You&#39;re now in the Glean Agent Builder in viewer mode. As the note states, you can edit and make changes to the Agent but you can&#39;t save them.</p>
+<p class="image-container"><img style="width: 624.00px" src="img/f87f1a976b28f5eb.png"></p>
+<p>Use your mouse to navigate the <strong>Plan My Day Agent</strong> canvas. Clicking and holding down the mouse button will allow you to reposition the view. You can click on the <strong>Recenter</strong> button on the bottom right of the screen to reset the view.</p>
+<p>Let&#39;s go ahead and walk through the different steps that make up this Agent. </p>
+<h2 is-upgraded>Step 0 - Trigger - Input Form Trigger</h2>
+<p>This defines how to trigger the Agent. For this one, it&#39;s an <strong>Input form trigger</strong> but this Agent doesn&#39;t have any fields configured. </p>
+<p class="image-container"><img style="width: 500.50px" src="img/5924d6e9ba2f3560.png"></p>
+<h2 is-upgraded>Step 1 - Company Search - Slack</h2>
+<p>Search Slack for all messages that mention the user running the Agent.</p>
+<p class="image-container"><img style="width: 530.50px" src="img/7f24ba0e2bd8a762.png"></p>
+<h2 is-upgraded>Step 2 - Company Search - Email</h2>
+<p>Perform an email search for all emails from yesterday and today. This searches across Outlook or Google Mail, depending on which one you have Glean configured to crawl and index.</p>
+<p class="image-container"><img style="width: 492.50px" src="img/b7504a07d4c5a272.png"></p>
+<h2 is-upgraded>Step 3 - Calendar Search</h2>
+<p>Execute a Calendar search to find all meetings scheduled for today for the user running the Agent.</p>
+<p class="image-container"><img style="width: 512.50px" src="img/8371429c9ecdd951.png"></p>
+<h2 is-upgraded>Step 4 - Read Document</h2>
+<p>Search for meeting notes from previous meetings that have a similar title</p>
+<p class="image-container"><img style="width: 528.50px" src="img/db23b467bc680713.png"></p>
+<h2 is-upgraded>Step 5 - Respond</h2>
+<p>Respond to the user with all of the information desired in order to plan the user&#39;s day.</p>
+<p class="image-container"><img style="width: 527.50px" src="img/e9be2ab460e77df0.png"></p>
+<p>Here are the AI response instructions below.</p>
+<aside class="warning"><p>Summarize the slack thread from  .</p>
+<p>Additionally, I need you to determine whether or not I have an action item in this thread.   For example, are others waiting on my response?</p>
+<p>The response should follow this structure:</p>
+<p># Slack Messages</p>
+<p>## &lt;Thread Title&gt;</p>
+<p>- &lt;bullet point summarizing thread&gt;</p>
+<p>- &lt;bullet point summarizing thread&gt;</p>
+<p>- &lt;bullet point summarizing thread&gt;</p>
+<p>Link to thread: &lt;insert slack thread link&gt;</p>
+<p>## Action Items:</p>
+<p>- &lt;recommended action item&gt;</p>
+<p>## Suggested Response: &lt;insert suggested response&gt;</p>
+<p>---------</p>
+<p>For each email referenced in  please provide a three-bullet point summary. </p>
+<p>The structure of the response for emails sent from humans should look like this:</p>
+<p># Email Messages</p>
+<p>## Email Topic: &lt;insert topic&gt;</p>
+<p>- &lt;insert first summary bullet point&gt;</p>
+<p>- &lt;insert second summary bullet point&gt;</p>
+<p>- &lt;insert third summary bullet point&gt;</p>
+<p>---------</p>
+<p>The response should be highly detailed and actionable.  Your task is to summarize what happened in the previous meeting for the Previous Meeting Notes Section.  </p>
+<p>Also, think about what happened last meeting and used what you found in the meeting notes to build a relevant agenda for the upcoming meeting.  Lastly, I&#39;d like for you to capture the sentiment of the previous meeting.</p>
+<p>Your response should be as follows:</p>
+<p># Today&#39;s Meetings</p>
+<p>## Meeting Details</p>
+<p>- *Title*: &lt; meeting title&gt;</p>
+<p>- *Attendees*: &lt; meeting attendees&gt;</p>
+<p>- *Date/Time* &lt;  meeting start and end date/time&gt;</p>
+<p>## Previous Meeting Notes</p>
+<p>- &lt;insert note&gt;</p>
+<p>- &lt;insert note&gt;</p>
+<p>- &lt;insert note&gt;</p>
+<p>- &lt;insert note&gt;</p>
+<p>### Sentiment</p>
+<p>- &lt;insert sentiment&gt;</p>
+<p>### Action Items From Last Meeting</p>
+<p>- &lt;insert note&gt;</p>
+<p>- &lt;insert note&gt;</p>
+<p>- &lt;insert note&gt;</p>
+<p>### Proposed Agenda for Upcoming Meeting</p>
+<p>- &lt;insert Agenda item 1&gt;</p>
+<p>- &lt;insert Agenda item 2&gt;</p>
+<p>- &lt;insert Agenda item 3&gt;</p>
+<p>- &lt;insert Agenda item 4&gt;</p>
+<p>---------</p>
+<p># Summary of my Day</p>
+<p>Lastly, your task is to summarize everything that I need to know for my day in a concise manner.  Consolidate and Summarize everything from the outputs of:</p>
+<p>1) Slack Threads</p>
+<p>2) Emails</p>
+<p>3) Calendars</p>
+<p>Please summarize this in the form of a table.</p>
+<p># Morning Plan</p>
+<p>Additionally, Plan my morning for me by listing out the steps I need to take to address each of these items.</p>
+</aside>
+<p>As you can see, the author has control over the formatting of the response including adding additional instructions for the Reasoning engine to assist in the output.  Note the Markdown syntax for the response formatting.  While this is not required, it can be helpful since LLMs deeply understand the Markdown syntax.</p>
+<p>Let&#39;s now execute this agent directly from the Design Canvas.  Click the <strong>Preview </strong>button in the upper right corner to expand the test window on the left side of the screen as shown:<br><br><img style="width: 624.00px" src="img/c34b24fa60f03712.png"><br></p>
+<p>Click the <strong>Run agent</strong> button to execute the Agent.</p>
+<p class="image-container"><img style="width: 376.50px" src="img/3e0d5f4db0ae1b13.png"></p>
+<p><br>The <strong>Plan My Day Agent</strong> will start running through the defined steps. When it gets to the <strong>Respond</strong> step, you&#39;ll see the output in the preview window like the example below. This will vary from user-to-user and workshop-to-workshop.</p>
+<p><img style="width: 443.50px" src="img/1f151115f0785e88.png"><br><br>The above example could be beneficial as an Agent that runs automatically on a scheduled basis in the morning before you start your day.  The message could be fed automatically to Email, or your company&#39;s messaging program (Teams, Slack, etc...)<br><br>Think about how you extend this Agent to drive additional value (e.g. Look for only unread Slack/Email messages..).</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create an Agent" duration="7">
         <p>Close the Navigate back to the Agent library by clicking the left arrow next to the title of the Plan My Day Agent as shown:<br><br><img style="width: 172.60px" src="img/e62a814b87091d31.png"><br><br>You can also navigate directly by going to <a href="https://app.glean.com/chat/agents" target="_blank">https://app.glean.com/chat/agents</a>, or by navigating the Glean Menu via this path:  Chat &gt; Agents.<br></p>
 <p>Click the <img style="width: 86.09px" src="img/1f32bef5af7dc483.png">in the upper right corner of the screen.  This will open up the Create agent popup window as shown:<br><br><img style="width: 347.40px" src="img/ba97a90b3a446822.png"><br><br>Feel free to look around at all of the Templates provided by Glean to jumpstart the build.  There is also the ability to create an agent by describing the agent intent in Natural Language (Use AI to generate a draft).<br><br>For the purposes of this Agent, we will use the template called <strong>Q&amp;A Chatbot</strong>. Click that Template Card.<br><br></p>
 <p>This will generate a new Agent with a Canvas that looks similar to the following:</p>
@@ -114,7 +202,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Conclusion" duration="0">
+      <google-codelab-step label="Conclusion" duration="2">
         <p>Throughout this lab, we explored the capabilities of Glean Agents as a robust platform for building, orchestrating, and managing AI agents within enterprise environments. Participants engaged hands-on with pre-built agents, extended their functionality, and progressed to creating custom agents from scratch. Key steps included analyzing the Plan My Day Agent&#39;s multi-step workflows, developing a Q&amp;A Chatbot tailored to HR policies, and using branching logic and external data integrations—demonstrating how Glean Agents facilitate personalized automation while maintaining compliance and data security. The structured walkthroughs and practical exercises illuminated the flexibility and utility of Glean&#39;s agentic reasoning engine in automating complex, data-driven tasks across different business functions.</p>
 <p>As a final step, the lab encouraged creative application through a hackathon—where users synthesized their learnings to design and implement agents for real-world challenges, such as pull request review automation or support issue resolution. Although the sandbox environment featured limited data, the exercise highlighted Glean Agents&#39; adaptability and potential to drive operational efficiencies and streamline decision processes. Moving forward, leveraging these foundational skills and the Glean platform&#39;s extensibility, users are well-positioned to address a broad range of enterprise automation scenarios, further enhancing productivity and innovation within their organizations.</p>
 
