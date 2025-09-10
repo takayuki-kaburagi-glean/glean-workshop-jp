@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <style>
     .success {
       color: #1e8e3e;
@@ -233,6 +234,33 @@
   <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
   <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
   <script src="//support.google.com/inapp/api.js"></script>
+  <script>
+    document.addEventListener('click', function(event) {
+      var path = event.composedPath ? event.composedPath() : [];
+      var isBack = path.some(function(el) {
+        try {
+          if (!el || !el.getAttribute) return false;
+          var id = el.id || '';
+          var aria = (el.getAttribute('aria-label') || '').toLowerCase();
+          var text = (el.textContent || '').trim();
+          return id === 'arrow-back' || aria === 'back' || text === 'Back';
+        } catch (e) { return false; }
+      });
+      var isDone = path.some(function(el) {
+        try {
+          if (!el || !el.getAttribute) return false;
+          var id = el.id || '';
+          var aria = (el.getAttribute('aria-label') || '').toLowerCase();
+          var text = (el.textContent || '').trim();
+          return id === 'done' || aria === 'done' || text === 'Done';
+        } catch (e) { return false; }
+      });
+      if (isBack || isDone) {
+        event.preventDefault();
+        window.history.back();
+      }
+    }, false);
+  </script>
 
 </body>
 </html>

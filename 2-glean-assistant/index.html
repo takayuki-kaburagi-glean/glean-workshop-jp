@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <style>
     .success {
       color: #1e8e3e;
@@ -237,15 +238,30 @@
   <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
   <script src="//support.google.com/inapp/api.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.getElementById("arrow-back").href="#"; 
-      document.getElementById("done").href="#"; 
-      document.getElementById("arrow-back").addEventListener( 'click', function() { 
+    document.addEventListener('click', function(event) {
+      const path = event.composedPath ? event.composedPath() : [];
+      const isBack = path.some(function(el) {
+        try {
+          if (!el || !el.getAttribute) return false;
+          const id = el.id || '';
+          const aria = (el.getAttribute('aria-label') || '').toLowerCase();
+          const text = (el.textContent || '').trim();
+          return id === 'arrow-back' || aria === 'back' || text === 'Back';
+        } catch (e) { return false; }
+      });
+      const isDone = path.some(function(el) {
+        try {
+          if (!el || !el.getAttribute) return false;
+          const id = el.id || '';
+          const aria = (el.getAttribute('aria-label') || '').toLowerCase();
+          const text = (el.textContent || '').trim();
+          return id === 'done' || aria === 'done' || text === 'Done';
+        } catch (e) { return false; }
+      });
+      if (isBack || isDone) {
+        event.preventDefault();
         window.history.back();
-      }); 
-      document.getElementById("done").addEventListener( 'click', function() { 
-        window.history.back();
-      }); 
+      }
     }, false);
   </script>
 </body>
