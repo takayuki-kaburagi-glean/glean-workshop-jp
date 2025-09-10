@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="theme-color" content="#4F7DC9">
   <meta charset="UTF-8">
-  <title>Glean Enterprise Search</title>
+  <title>Glean Search</title>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
@@ -19,178 +19,190 @@
     }
   </style>
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LR18FBLQHK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LR18FBLQHK');
-</script>
-
 <body>
   <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
   <google-codelab codelab-gaid="G-LR18FBLQHK"
                   codelab-ga4id=""
                   id="1-glean-search"
-                  title="Glean Enterprise Search"
+                  title="Glean Search"
                   environment="web"
                   feedback-link="https://github.com/dejim-juang-glean/glean-workshop/issues">
     
       <google-codelab-step label="Overview" duration="1">
         <p class="image-container"><img style="width: 624.00px" src="img/8e40021e85e1ebbf.png"></p>
-<p><br>In this hands-on lab, you will explore Glean&#39;s Enterprise Search platform and discover why it has become the world&#39;s leading enterprise search engine. You&#39;ll gain practical experience with Glean&#39;s core search capabilities that serve as the foundation for advanced AI-powered features.</p>
-<p><strong>Why Enterprise Search Matters</strong></p>
-<p>Enterprise search forms the backbone of effective generative AI implementation. Before any AI assistant can provide accurate, relevant responses, it needs access to high-quality, well-indexed information. Glean&#39;s superior search and retrieval capabilities enable organizations to unlock the full potential of generative AI tools like the Glean Assistant, which you&#39;ll examine in the next lab session.</p>
-<p><strong>Key Features You&#39;ll Explore</strong></p>
-<p>During this lab, you will work with Glean&#39;s search interface to understand its core components:</p>
+<p><br>このハンズオンラボでは、Glean のエンタープライズ検索プラットフォームを体験し、なぜそれが世界をリードするエンタープライズ検索エンジンとなったのかを理解します。</p>
+<p>また、Glean の高度な AI 搭載機能の基盤となる、コア検索機能について実践的に学ぶことができます。</p>
+<p><strong>高度なエンタープライズ検索がなぜ重要か？</strong></p>
+<p>エンタープライズ検索は、効果的な生成AI実装の中核を成します。</p>
+<p>どのようなAIアシスタントであっても、正確で関連性のある回答を提供するためには、高品質で適切にインデックス化された情報へのアクセスが必要です。</p>
+<p>Glean の優れた検索・検索精度の機能により、組織は Glean Assistant のような生成AIツールの潜在能力を最大限に引き出すことができます。</p>
+<p>次のラボセッションでは、この Glean Assistant を実際に確認していただきます。</p>
+<p><strong>このラボで試す重要な機能</strong></p>
+<p>このラボでは、Glean の検索インターフェースを操作し、その主要なコンポーネントについて理解していきます。</p>
 <ul>
-<li><strong>Smart Search Box</strong>: Test the autocomplete functionality that provides real-time suggestions as you type</li>
-<li><strong>Results Display</strong>: Navigate through search results and examine how Glean presents relevant documents and information</li>
-<li><strong>Customization Options</strong>: Explore theme settings and interface personalization features</li>
-<li><strong>Security Integration</strong>: Understand how authentication mechanisms ensure secure access to organizational content</li>
+<li><strong>スマート検索ボックス</strong>：入力中にリアルタイムで候補を提示するオートコンプリート機能をテストします</li>
+<li><strong>検索結果表示</strong>：検索結果をナビゲートし、Glean が関連するドキュメントや情報をどのように提示するかを確認します</li>
+<li><strong>カスタマイズオプション</strong>：テーマ設定やインターフェースのパーソナライズ機能を探ります</li>
+<li><strong>セキュリティ統合</strong>：認証メカニズムがどのように組織コンテンツへの安全なアクセスを保証するかを理解します</li>
 </ul>
-<p>By the end of this session, you&#39;ll understand how Glean&#39;s search platform creates an efficient, tailored search experience that meets your organization&#39;s specific requirements and prepares the groundwork for AI-enhanced productivity tools.</p>
+<p>このセッションの終わりには、Glean の検索プラットフォームがどのように効率的で組織に合わせた検索体験を実現し、AI による生産性向上ツールの基盤を整えているかを理解できるようになります。</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Login to Glean" duration="2">
-        <p>If you&#39;re already logged in, feel free to go directly to the next step, <strong>Execute your First Search</strong> or follow the steps below to login first. <br></p>
-<p>Navigate in your browser to <a href="https://app.glean.com" target="_blank">https://app.glean.com</a> which will re-direct you to the Glean login page.</p>
-<p class="image-container"><img style="width: 624.00px" src="img/a3714ffdb1c1bbc6.png"></p>
-<p>Enter the email address provided for you by the Workshop Moderator.  First enter the email address in the <strong>Work email</strong> field and click the <strong>Log in</strong> button.<br><br>You will be presented with a screen similar to the following.  Enter the password provided by your Workshop Moderator and click the <strong>Sign in</strong> button.</p>
-<p class="image-container"><img style="width: 331.50px" src="img/40f8de2eda2b840f.png"></p>
-<p>Once completed, you will be redirected to the Glean Search page. <br></p>
-<p class="image-container"><img style="width: 624.00px" src="img/3bdb478853138596.png"></p>
-<p><br>If you don&#39;t see the Glean Search page of the Home page, click on the logo of the <strong>Home</strong> icon in the top left corner of the screen.</p>
-<p class="image-container"><img style="width: 281.00px" src="img/1db91d1cd27d7306.png"></p>
-<p>Congrats! You have successfully completed this step of the guide. The single sign-on authentication process through Okta, demonstrating Glean&#39;s seamless integration with your organization&#39;s identity management system. This streamlined login experience eliminates the need for additional credentials while ensuring secure access to enterprise resources. Now that Glean has authenticated your identity, the platform can personalize your search experience, apply appropriate access controls based on your permissions, and deliver results tailored to your role and responsibilities within the organization. This identity-aware foundation enables Glean to provide you with relevant, authorized content while maintaining the security standards your enterprise requires.</p>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="Execute your First Search" duration="8">
-        <p>When you land on the homepage of the Glean Platform, you will be presented with a &#34;Google-Like&#34; interface for querying the indexed corpus of knowledge within the Glean Platform.  Glean is a personalized experience where you will also see announcements that have been created for either your team or the company as a whole, recent documents you may have been working on, your calendar, as well as documents you&#39;ve been collaborating on.</p>
-<p>Glean&#39;s advanced search filters enhance the precision and relevance of search results. Click on the icon ⓘ to find the advanced search details as shown.</p>
-<p class="image-container"><img style="width: 624.00px" src="img/fa75b0449e8937e9.png"></p>
-<p><br>Users can utilize quotes around specific words or phrases to ensure their presence in the search results, enhancing the accuracy of searches.</p>
-<p class="image-container"><img style="width: 368.50px" src="img/31c63b2750eb20ba.png"></p>
-<p><br>Click in the Search box and notice that an Autocomplete box opens up with past searches as shown:</p>
-<p class="image-container"><img style="width: 507.50px" src="img/9e65e13add7e7039.png"></p>
-<p><br>Slowly type &#34;<strong>salesforce</strong>&#34; one letter at a time to see the Autocomplete feature in action.  </p>
-<p class="image-container"><img style="width: 557.50px" src="img/dab30d1c2d464276.png"></p>
-<p>Once satisfied, either click the &#34;<strong>salesforce</strong>&#34; search link or hit enter on your keyboard.</p>
-<p>You&#39;ll be presented with the SERP (Search Engine Result Page) similar to the following:</p>
-<p class="image-container"><img style="width: 595.50px" src="img/4a5264626332b08d.png"></p>
-<p><br>The SERP page provides many features such as:</p>
+      <google-codelab-step label="Gleanへログイン" duration="2">
+        <p>すでにログインしている場合は、そのまま次のステップ <strong>「最初の検索を実行」</strong> に進んでください。</p>
+<p>まだの場合は、以下の手順に従って最初にログインしてください。</p>
 <ol type="1" start="1">
-<li>The documents returned in order based upon <strong>relevancy</strong></li>
-<li>List of indexed sources on the right side including how many documents were found in each source</li>
-<li>Filtering mechanisms for date, authors, and data types.</li>
+<li>ブラウザで<a href="https://app.glean.com" target="_blank">https://app.glean.com</a> にアクセスします。</li>
+<li>自動的に Glean のログインページにリダイレクトされます。</li>
 </ol>
-<p>You can of course click any document to be redirected directly to the document from its datasource.  Glean does not create a copy of the documents, it only stores an index and allows the user to link directly to the document within its native source.</p>
-<p>Click on <strong>Glean Docs </strong>in the list of data sources on the right.</p>
+<p class="image-container"><img style="width: 624.00px" src="img/a3714ffdb1c1bbc6.png"></p>
+<p>ワークショップモデレーターから提供されたメールアドレスを入力してください。</p>
+<p>まず「<strong>Work emai</strong>」欄にメールアドレスを入力し、「<strong>Log in</strong>」ボタンをクリックしてください。</p>
+<p>以下のような画面が表示されます。</p>
+<p>ワークショップモデレーターから提供されたパスワードを入力し、「<strong>Sign in</strong>」ボタンをクリックしてください。</p>
+<p class="image-container"><img style="width: 331.50px" src="img/40f8de2eda2b840f.png"></p>
+<p>完了後、Glean検索ページにリダイレクトされます。</p>
+<p class="image-container"><img style="width: 624.00px" src="img/3bdb478853138596.png"></p>
+<p><br>ホームページにGlean検索ページが表示されない場合は、画面左上のホームアイコンのロゴをクリックしてください。</p>
+<p class="image-container"><img style="width: 281.00px" src="img/1db91d1cd27d7306.png"></p>
+<p>おめでとうございます！ガイドのこのステップを無事に完了しました。</p>
+<p>Oktaを介したシングルサインオン認証プロセスにより、Gleanが組織のID管理システムとシームレスに連携していることが実証されました。この合理化されたログイン体験により、追加の認証情報を入力する必要がなくなり、企業リソースへの安全なアクセスが確保されます。Gleanがあなたを認証したことで、プラットフォームは検索体験をパーソナライズし、権限に基づいた適切なアクセス制御を適用し、組織内での役割と責任に合わせた結果を提供できるようになります。このアイデンティティを認識する基盤により、Gleanは関連性のある承認済みコンテンツを提供しつつ、企業が求めるセキュリティ基準を維持します。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="最初の検索を実行" duration="8">
+        <p>Gleanプラットフォームのホームページにアクセスすると、Gleanプラットフォーム内のインデックス化された知識コーパスを検索するための「Google風の」インターフェースが表示されます。</p>
+<p>Gleanはパーソナライズされた体験を提供し、チームまたは会社全体向けに作成されたお知らせ、最近作業した可能性のある文書、カレンダー、共同作業中の文書も表示されます。</p>
+<p>Gleanの高度な検索フィルターは、検索結果の精度と関連性を高めます。図のように詳細な検索オプションを表示するには、ⓘアイコンをクリックしてください。</p>
+<p class="image-container"><img style="width: 624.00px" src="img/fa75b0449e8937e9.png"></p>
+<p><br>ユーザーは特定の単語やフレーズを引用符で囲むことで、検索結果に確実に表示させ、検索精度を高めることができます。</p>
+<p class="image-container"><img style="width: 368.50px" src="img/31c63b2750eb20ba.png"></p>
+<p><br>検索ボックスをクリックすると、以下のように過去の検索履歴が表示されたオートコンプリートボックスが開きます：</p>
+<p class="image-container"><img style="width: 507.50px" src="img/9e65e13add7e7039.png"></p>
+<p>「<strong>salesforce</strong>」を1文字ずつゆっくり入力して、オートコンプリート機能が動作する様子を確認してください。</p>
+<p class="image-container"><img style="width: 557.50px" src="img/dab30d1c2d464276.png"></p>
+<p>キーボードのEnterキーを押してください。</p>
+<p>次のようなSERP（検索エンジン結果ページ）が表示されます：</p>
+<p class="image-container"><img style="width: 595.50px" src="img/4a5264626332b08d.png"></p>
+<p>SERPページには以下のような多くの機能があります：</p>
+<ol type="1" start="1">
+<li>関連性に基づいて順序付けられて返された文書</li>
+<li>右側にインデックス化された情報源の一覧を表示し、各情報源で検出された文書数を明記する</li>
+<li>日付、著者、データタイプに対するフィルタリング機能。</li>
+</ol>
+<p>もちろん、任意のドキュメントをクリックすると、そのデータソースから直接ドキュメントにリダイレクトされます。Gleanはドキュメントのコピーを作成せず、インデックスのみを保存し、ユーザーがネイティブソース内のドキュメントに直接リンクできるようにします。</p>
+<p>右側のデータソース一覧で「<strong>Glean Docs</strong>」をクリックしてください。</p>
 <p class="image-container"><img style="width: 624.00px" src="img/ab9b23c43e054e3d.png"></p>
-<p><br>Notice how the search results are just showing documents from the <strong>Glean Docs</strong> website now. What started as 2,000 results is now filtered down to 269 results. Next, click on the <strong>Type </strong>filter under the search box.</p>
+<p><br>検索結果がGlean Docsのウェブサイトからの文書のみ表示されていることに注目してください。当初2,000件あった結果が、269件に絞り込まれています。次に、検索ボックスの下にある「タイプ」フィルターをクリックしてください。</p>
 <p class="image-container"><img style="width: 480.50px" src="img/8b9750c798b57eaf.png"></p>
-<p>Since the items in Glean Docs are just Documents, that is the only filter available. Click on <strong>SharePoint </strong>now.</p>
+<p>Glean Docs内のアイテムはWebページのみであるため、利用可能なフィルターは&#34;Document&#34;のみです。次にSharePointをクリックしてください。</p>
 <p class="image-container"><img style="width: 562.50px" src="img/15c44f954f086d0e.png"></p>
-<p>You&#39;ll notice the filters under the Search Box have changed. Now click on the <strong>Type </strong>filter again and you will notice PDF and Spreadsheet are available because SharePoint can contain multiple document types.</p>
+<p>検索ボックスの下にあるフィルターが変更されていることに気づくでしょう。再度「種類」フィルターをクリックすると、PDFとスプレッドシートが利用可能になっていることがわかります。これはSharePointが複数のドキュメントタイプを格納できるためです。</p>
 <p class="image-container"><img style="width: 411.00px" src="img/dd991a49f169bd1d.png"></p>
-<p><br>Let&#39;s go back to the default search results and wrap up this section. Click on <strong>All </strong>on the list of indexed sources.</p>
+<p>デフォルトの検索結果に戻り、このセクションをまとめましょう。インデックス登録済みソースの一覧で「すべて」をクリックしてください。</p>
 <p class="image-container"><img style="width: 336.22px" src="img/24848cba75fcd827.png"></p>
-<p>Hover over any of the documents and notice how a &#34;<strong>Summarize</strong>&#34; button shows up.</p>
+<p>いずれかの文書にカーソルを合わせると、「要約」ボタンが表示されることに気づくでしょう。</p>
 <p class="image-container"><img style="width: 578.50px" src="img/572ab91aae93d498.png"></p>
-<p><br>Click the &#34;<strong>Summarize</strong>&#34; button when you hover over the &#34;Salesforce Connector Overview | Glean Help Center&#34; Glean Developers document. A popup window will present itself similar to the following:</p>
+<p><br>「Salesforce コネクタの概要 | Glean ヘルプセンター」の Glean Developers ドキュメントにカーソルを合わせ、「要約」ボタンをクリックしてください。以下のようなポップアップウィンドウが表示されます：</p>
 <p class="image-container"><img style="width: 511.50px" src="img/90e1e27be2146c47.png"></p>
-<p><br>As you can see, a summary of the document is presented as well as the Glean Assistant conversation chat window to ask any questions you may have concerning this document.<br><br>Tight integration between the search engine results page (SERP) and the Glean Assistant drives deep value for Glean Customers. We&#39;ll learn more about the Glean Assistant in an upcoming section and workshop module.</p>
-<aside class="warning"><p><strong>Note:</strong> Imagine being able to quickly summarize a large document with many pages such as a 10-K financial report or a large Product Manual.  Or how helpful it could be to ask questions of a SOC II compliance document to ascertain potential security concerns, etc...</p>
+<p>ご覧の通り、ドキュメントの概要が表示されるとともに、このドキュメントに関する質問を投げかけるためのGlean Assistantの会話チャットウィンドウも表示されます。</p>
+<p>検索エンジン結果ページ（SERP）とGlean Assistantの緊密な連携は、Gleanのお客様に深い価値をもたらします。Glean Assistantの詳細については、次回のセクションとワークショップモジュールでさらに学びます。</p>
+<aside class="warning"><p><strong>注：財務報告書や分厚い製品マニュアルなど、ページ数の多い大規模な文書を素早く要約できることを想像してみてください。あるいは、SOC II準拠文書に対して質問を投げかけ、潜在的なセキュリティ上の懸念などを確認できることがどれほど役立つか...</strong></p>
 </aside>
-<p>If you wish, feel free to ask a followup question of this document.  Maybe something like:<br></p>
-<aside class="special"><p><strong>Tell me more about the installation process</strong></p>
+<p>ご希望であれば、この文書について追加の質問を遠慮なくお尋ねください。例えば以下のような質問が考えられます：</p>
+<aside class="special"><p><strong>インストール手順について詳しく教えてください</strong></p>
 </aside>
 <p class="image-container"><img style="width: 624.00px" src="img/35125e48dba843bf.png"></p>
-<p>Close the popup window by clicking the <strong>X</strong> button in the top right of the popup.</p>
+<p>ポップアップウィンドウの右上にある×ボタンをクリックして閉じる。</p>
 <p class="image-container"><img style="width: 263.00px" src="img/fdec025aaecaf50f.png"></p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Glean Where you Work" duration="5">
-        <p>Glean doesn&#39;t restrict you to just searching for documents and answers through the web portal. Let&#39;s see how you can &#34;Glean&#34; from anywhere.</p>
-<p>In the SERP, click the &#34;<strong>Salesforce Connector Overview | Glean Help Center</strong>&#34; document as shown below to open it in a new tab.</p>
+      <google-codelab-step label="色々なところからGleanする" duration="5">
+        <p>Gleanは、ウェブポータル経由でのドキュメントや回答の検索だけに限定されません。どこからでも「Glean」する方法を見てみましょう。</p>
+<p>検索結果ページ（SERP）で、下図のように「Salesforce Connector Overview | Glean Help Center」ドキュメントをクリックし、新しいタブで開きます。</p>
 <p class="image-container"><img style="width: 624.00px" src="img/fc63370208ffd155.png"></p>
-<p><br>You have been redirected to Glean&#39;s Public Help Docs on <a href="https://help.glean.com" target="_blank">https://docs.glean.com</a>.  Specifically the help document surrounding the Salesforce Connector.  You can of course read this document as necessary.  But the purpose of having you accomplish this is to show another feature of the Glean Platform that is affectionately known as &#34;Glean Where you Work&#34;<br><br>Having ready access to your company knowledge during your normal workflow can drastically enhance your productivity.  Glean Customers will install a plugin/extension to their browser(s) in order to be able to popup Glean literally at their fingertips.</p>
+<p><br>https://docs.glean.com の Glean 公開ヘルプドキュメントにリダイレクトされました。具体的には Salesforce コネクタに関するヘルプドキュメントです。必要に応じてこのドキュメントをお読みいただけます。ただし、この操作を行っていただく目的は、Glean プラットフォームのもうひとつの機能「Glean Where you Work」をご紹介するためです。</p>
+<p class="image-container"><img style="width: 624.00px" src="img/36becd444c9e7b06.png"></p>
+<p>日常業務の流れの中で自社のナレッジに即座にアクセスできることは、生産性を飛躍的に向上させます。Gleanをご利用のお客様は、ブラウザにプラグイン/拡張機能をインストールすることで、文字通り指先ひとつでGleanをポップアップ表示できるようになります。</p>
 <p class="image-container"><img style="width: 275.50px" src="img/9fc51b1392c57519.png"></p>
-<p><br>If you have the <a href="https://help.glean.com/en/articles/3643252-installing-the-browser-extension" target="_blank">Glean Extension installed</a> you can press Cmd+J (Mac) or Alt+J (Windows) to popup a sidebar with the full power of the Glean Platform.<br><br>Since most of you will not have this installed, you can either install it if you have time and the privilege to do so on your laptop, or you can view the screenshot below.</p>
-<aside class="warning"><p><strong>Note: </strong>If you wish to install the plugin/extension, navigate back to the tab with the Glean SERP page and search for:<br><br><a href="https://help.glean.com/en/articles/3643252-installing-the-browser-extension" target="_blank">Install the Glean extension</a><br><br>The first link should be &#34;Installing the browser extension | Glean Help Center&#34;.  Open that document and follow the directions included to install the extension.<br><br>This extension can also be pushed via your IT Admins in an automated fashion during an Glean implementation rollout.</p>
+<p><br>Glean Extensionをインストール済みの場合、Cmd+J（Mac）またはAlt+J（Windows）を押すと、Glean Platformの全機能を備えたサイドバーが表示されます。</p>
+<p>大半の方はインストールされていないでしょう。お時間と権限があればノートPCにインストールするか、以下のスクリーンショットをご覧ください。</p>
+<aside class="warning"><p><strong>Note:</strong>プラグイン/拡張機能をインストールしたい場合は、Glean SERPページが表示されているタブに戻り、以下を検索してください：</p>
+<p>&#34;Install the Glean extension&#34;<br><br>最初のリンクは「Installing the browser extension - Glean Help Center」です。そのドキュメントを開き、記載されている手順に従って拡張機能をインストールしてください。</p>
+<p>この拡張機能は、Glean導入時のロールアウト中に、IT管理者を通じて自動的な方法で配布することも可能です。</p>
 </aside>
-<p>Here is a screenshot of the sidebar that pops up when you have the Glean Extension installed in your browser.</p>
+<p>以下は、ブラウザにGlean拡張機能をインストールした際に表示されるサイドバーのスクリーンショットです。</p>
 <p class="image-container"><img style="width: 624.00px" src="img/44205fc88c4d7a2d.png"></p>
-<p><br>As you can see above you are able to see a summary of the document/page you have open, search the entire corpus of knowledge, and/or see recommended documents that are related to the content on the current page.</p>
-<p>In addition to the browser extension, an iOS and Android application are also available in their respective app stores. </p>
-<p>Let&#39;s go ahead and navigate back to the browser tab with the Glean SERP from the previous step. We&#39;re going to continue to dive deeper into the SERP and the options available to users.</p>
+<p><br>上記のように、開いている文書/ページの概要を確認したり、知識のコーパス全体を検索したり、現在のページの内容に関連する推奨文書を表示したりできます。</p>
+<p>ブラウザ拡張機能に加え、iOSおよびAndroidアプリも各アプリストアで提供されています。</p>
+<p>それでは、前の手順で表示したGlean SERPを含むブラウザタブに戻りましょう。引き続きSERPの詳細とユーザーが利用できるオプションについて掘り下げていきます。</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Meet Glean Assistant" duration="5">
-        <p>Glean Assistant is a secure, enterprise-grade digital workplace assistant designed to enhance organizational productivity by utilizing Generative AI capabilities. It operates similarly to ChatGPT but is tailored specifically for your organization, taking into account data access permissions and delivering personalized answers based on the company&#39;s internal knowledge.<br><br>In the Search Bar enter the following (It is formulated into a question on purpose):</p>
-<aside class="special"><p><strong>How do I install the Confluence Connector?</strong></p>
+      <google-codelab-step label="Glean Assistant のと出会い" duration="5">
+        <p>Glean Assistantは、生成AI機能を活用して組織の生産性を向上させるために設計された、安全なエンタープライズグレードのデジタルワークプレイスアシスタントです。ChatGPTと同様に動作しますが、データアクセス権限を考慮し、企業の内部知識に基づいてパーソナライズされた回答を提供するなど、組織向けに特別にカスタマイズされています。</p>
+<p>検索バーに以下を入力してください（意図的に質問形式で作成されています）：</p>
+<aside class="special"><p><strong>Confluence Connectorのインストール方法は？</strong></p>
 </aside>
-<p>As you can see the SERP responded the same as it did earlier with a series of documents in relevant order.  However, since you entered a &#34;question&#34; into the Search Bar, it also popped the Glean Assistant as the top result in order to answer your question in Natural Language as shown:</p>
+<p>ご覧の通り、SERPは以前と同様に関連性の高い順に一連の文書を表示しました。ただし、検索バーに「質問」を入力したため、自然言語で質問に答えるべく、最上位の結果としてGlean Assistantが表示されました。以下に示します：</p>
 <p class="image-container"><img style="width: 588.50px" src="img/784425c4955ea0b5.png"></p>
-<p>Expand the Glean Assistant answer by clicking the <strong>More </strong>button at the bottom of the Assistant Card.<br></p>
+<p>アシスタントカードの下部にある「もっと見る」ボタンをクリックして、Glean Assistantの回答を展開してください。</p>
 <p class="image-container"><img style="width: 552.78px" src="img/cfa3d737390af9ef.png"></p>
-<p>You can now see the full Glean Assistant answer and are able to fully interact with the Assistant directly from the SERP.  You can provide feedback on the generated answer, ask follow-up questions/clarifications as necessary, and see citations as you learned in the previous lab.</p>
+<p>Glean Assistantの回答全文を閲覧できるようになり、SERPから直接アシスタントと完全にやり取りできます。生成された回答に対するフィードバックの提供、必要に応じた追加質問や確認事項の提示、前回のラボで学んだ引用情報の確認が可能です。</p>
 <p class="image-container"><img style="width: 557.50px" src="img/a94a3872a14e18fd.png"></p>
-<p>We&#39;ll cover the Glean Assistant in more detail in the next workshop module. For now, go ahead and move on to the next step.</p>
+<p>グリーンのアシスタントについては、次のワークショップモジュールで詳しく説明します。まずは次のステップに進んでください。</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Options for Search Results" duration="5">
-        <p>In this section, let&#39;s learn more about the options that are available for the items in the SERP. Go ahead and run a new search and enter the following into the Search Box:<br></p>
+      <google-codelab-step label="検索結果のオプション" duration="5">
+        <p>このセクションでは、SERP内の項目で利用可能なオプションについて詳しく学びましょう。新しい検索を実行し、検索ボックスに以下を入力してください：</p>
 <aside class="special"><p><strong>How do I create an Answer?</strong></p>
 </aside>
-<p>An Answer Card response is the first Search Result as shown:</p>
+<p>回答カードへの応答は、以下に示すように最初の検索結果となります：</p>
 <p class="image-container"><img style="width: 550.73px" src="img/521ebd218bd389a7.png"></p>
-<p><br>Click on the 3 dots on the top right of the card.</p>
+<p>カードの右上にある3つの点（...）をクリックしてください。</p>
 <p class="image-container"><img style="width: 487.00px" src="img/ee63d388cb6f2930.png"></p>
-<p><br>This menu is available for all the results in the SERP. Let&#39;s run through each of the different options below.</p>
-<p><strong>Copy Link</strong> - Just as the name implies, this action allows you to copy the link to the item to the clipboard.</p>
-<p><strong>Pin to top</strong> - A new window will pop up that will allow you to pin this result to the top based on a specific search query.</p>
+<p><br>このメニューはSERPの全検索結果で利用可能です。以下に各オプションを説明します。</p>
+<p><strong>リンクをコピー -</strong> 名前の通り、対象項目のリンクをクリップボードにコピーします。</p>
+<p><strong>トップに固定 -</strong> 新しいウィンドウが表示され、特定の検索クエリに基づいてこの結果を最上位に固定できます。</p>
 <p class="image-container"><img style="width: 409.50px" src="img/3b823a01bf95b991.png"></p>
-<p><strong>Add to Collection</strong> - Collections are an easy way to organize related documents across all your tools by a single topic. You can think of them as a way to curate a set of documents for other teammates to find and use easily.</p>
+<p><strong>コレクションに追加 - </strong>コレクションは、単一のトピックで関連するドキュメントをすべてのツールにわたって整理する簡単な方法です。他のチームメンバーが簡単に見つけて使用できるように、一連のドキュメントをまとめる方法と考えてください。</p>
 <p class="image-container"><img style="width: 477.50px" src="img/bd0f34a23874239.png"></p>
-<p><strong>Create Go Link</strong> - Go Links are a way to create short memorable links for important URLs at your company in the form of go/link. Go Links act like a mental bookmark: once you see it or hear it, you immediately know how to access it, both now and in the future.</p>
+<p><strong>Goリンクを作成 - </strong>Goリンクは、社内の重要なURLを「go/link」形式の覚えやすい短いリンクに変換する方法です。Goリンクは頭の中のブックマークのような役割を果たします。一度見たり聞いたりすれば、その場でアクセスする方法がすぐにわかます</p>
 <p class="image-container"><img style="width: 422.32px" src="img/9b67b80f40ed9f3e.png"></p>
-<p><strong>Create Answer - </strong>Answers are bite-sized chunks of information you create in Glean to answer common questions your teammates - and future teammates - might have. This will show up for content that isn&#39;t already an Answer.</p>
+<p><strong>Create Answer - </strong>アンサーとは、Gleanで作成する一口サイズの情報の断片であり、チームメンバーや将来のチームメンバーが抱える可能性のある一般的な質問に答えるためのものです。これは、既にアンサーとして存在しないコンテンツに対して表示されます。</p>
 <p class="image-container"><img style="width: 439.19px" src="img/d0eeeb4165acbfa2.png"></p>
-<p><strong>Request Verification</strong> - When you&#39;re using Glean to search for documents across different tools in your company, Glean&#39;s Verification feature makes it easy to know if a document is verified. If the document is a duplicate, incorrect, incomplete, outdated, or other; you can ask for someone to verify it.</p>
+<p><strong>Request Verification</strong> - Gleanを使用して社内の異なるツールにまたがる文書を検索する際、Gleanの検証機能により、文書が検証済みかどうかを簡単に確認できます。文書が重複、誤り、不完全、古い、その他該当する場合、誰かに検証を依頼できます。</p>
 <p class="image-container"><img style="width: 423.50px" src="img/ec25c4d752d75349.png"></p>
-<p><strong>Verify or deprecate - </strong>If you are the owner of an item in the search results, you can verify a document to let other users know that it is up to date. Verified documents will show up with a green shield in the search results.</p>
+<p><strong>Verify or deprecate - </strong>検索結果に表示されているアイテムの所有者である場合、そのドキュメントが最新であることを他のユーザーに知らせるために検証できます。検証済みのドキュメントは、検索結果に緑色の盾マークが表示されます。</p>
 <p class="image-container"><img style="width: 423.82px" src="img/15f4a90f20135aac.png"></p>
-<p>As users search for content and interact with the different options available, this provides signals back to Glean that help improve the search results as well as Glean Knowledge Graph.</p>
-<p>The Glean Knowledge Graph is a powerful tool that forms the backbone of Glean&#39;s enterprise search platform, designed to provide users with the most personalized and relevant results for their queries.</p>
-<p>The Glean Knowledge Graph serves as the foundation of Glean&#39;s enterprise search platform, operating on a real-time model of your enterprise&#39;s indexed information. This sophisticated system enables highly personalized and contextually relevant search results by understanding the relationships between content, people, and activities within your organization.<br><br>The Knowledge Graph is built on three fundamental pillars that work together to create a comprehensive understanding of your enterprise data: content, people, and activity.</p>
+<p>ユーザーがコンテンツを検索し、利用可能な様々なオプションとやり取りする過程で、Gleanにはフィードバック信号が返され、検索結果とGleanナレッジグラフの改善に役立てられます。</p>
+<p>Gleanナレッジグラフは、Gleanのエンタープライズ検索プラットフォームの中核を成す強力なツールであり、ユーザーのクエリに対して最もパーソナライズされ関連性の高い結果を提供するように設計されています。</p>
+<p>Gleanナレッジグラフは、貴社のインデックス化された情報をリアルタイムモデルで処理する、Gleanエンタープライズ検索プラットフォームの基盤として機能します。この高度なシステムは、組織内のコンテンツ、人物、活動間の関係性を理解することで、高度にパーソナライズされ文脈に沿った検索結果を実現します。</p>
+<p>ナレッジグラフは、貴社の企業データを包括的に理解するために連携する3つの基本要素、すなわちコンテンツ、人物、活動に基づいて構築されています。</p>
 <p class="image-container"><img style="width: 539.50px" src="img/dc6c2e3b6a847220.png"></p>
-<p>We&#39;ll go into more detail about the Knowledge Graph as you work through the Workshop modules.</p>
+<p>ワークショップのモジュールを進めていく中で、ナレッジグラフについてさらに詳しく説明していきます。</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Find an Expert within your Company" duration="3">
-        <p>Oftentimes you would like to find out who is considered an expert in a certain area or topic within your organization.  This type of activity typically involves either asking somebody else who hopefully knows the answer, or by attempting to figure it out by reading a bunch of content on the topic.<br><br>Since Glean IS reading your entire company content and is staying up to date with changes, it knows who the experts are in your company. In the Search Box enter the following:</p>
+      <google-codelab-step label="社内の専門家を探す" duration="3">
+        <p>組織内で特定の分野やトピックの専門家が誰かを知りたい場面はよくあります。通常、この種の活動では、答えを知っている可能性のある他の人に尋ねるか、そのトピックに関する大量のコンテンツを読んで自ら解明しようとするかのいずれかになります。</p>
+<p>Gleanは社内の全コンテンツを読み込み、変更を常に把握しているため、社内の専門家が誰かを把握しています。検索ボックスに以下を入力してください：</p>
 <aside class="special"><p><strong>Who&#39;s the expert on the Confluence Connector?</strong></p>
 </aside>
-<p>You should see results similar to the following:</p>
+<p>以下のような結果が表示されるはずです：</p>
 <p class="image-container"><img style="width: 624.00px" src="img/f05fb1926fd8c41f.png"></p>
-<p><br>As you can see the user &#34;Team Glean&#34; is the expert on the Confluence Connector?  If this were a production instance, it would be a real user within your organization.  But, how did the platform figure out that Team Glean is the expert?<br><br>As mentioned above, Glean is reading your entire company knowledge and learning who is creating/modifying content and correlating that information with the context of the content itself.  Glean also knows where the user(s) are within the company&#39;s hierarchy. </p>
-<p>If you ever want to understand a bit of &#34;why&#34; Glean has responded in a certain way, or in this case, expert identification. Go ahead and ask Glean in the &#34;<strong>Ask a follow-up question</strong>&#34; box:</p>
+<p><br>ご覧の通り、ユーザー「Team Glean」がConfluenceコネクタのエキスパートとなっています。本番環境であれば、これは組織内の実際のユーザーに相当します。では、プラットフォームはどのようにTeam Gleanをエキスパートと判断したのでしょうか？</p>
+<p>前述の通り、Gleanは企業全体のナレッジを読み取り、コンテンツの作成者・編集者を学習し、その情報をコンテンツ自体の文脈と関連付けています。 Gleanはユーザーが組織内の階層構造のどこに位置するかも把握しています。</p>
+<p>Gleanが特定の方法で応答した理由（この場合は専門家識別）を理解したい場合は、「追加質問をする」ボックスでGleanに直接尋ねてみてください：</p>
 <aside class="special"><p>How did you come up with this?</p>
 </aside>
 <p class="image-container"><img style="width: 624.00px" src="img/d8b7de3fd3b2d2a7.png"></p>
@@ -199,11 +211,11 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Conclusion" duration="2">
-        <p>This lab provided a comprehensive overview of Glean&#39;s core functionality as a leading enterprise search engine, covering multiple key areas that demonstrate its value in the workplace. Through hands-on exploration, you learned to navigate the Glean Search Page, execute searches, and interact with results while experiencing advanced features like autocomplete, secure access, and customizable themes.</p>
-<p>The integration of Glean Assistant significantly enhances the search experience by enabling users to quickly summarize documents and ask follow-up questions, which improves both the efficiency and accuracy of information retrieval. The lab demonstrated how the Glean browser extension brings company knowledge directly into users&#39; workflows, boosting productivity by delivering relevant information precisely when and where it&#39;s needed.</p>
-<p>Additionally, you explored expert search capabilities that help identify subject matter experts within your organization based on their content creation and modification activities. While not covered in this workshop, Glean also offers automated answer and glossary term creation, adapting to an organization&#39;s unique terminology and requirements to provide precise information without requiring significant manual effort.</p>
-<p>Together, these features showcase how Glean transforms enterprise search from a basic query tool into an intelligent knowledge platform that seamlessly integrates with daily work processes.<br></p>
+      <google-codelab-step label="この章のまとめ" duration="2">
+        <p>このラボでは、主要なエンタープライズ検索エンジンとしてのGleanの中核機能を包括的に概説し、職場におけるその価値を示す複数の重要領域をカバーしました。実践的な操作を通じて、Glean検索ページの操作方法、検索の実行方法、結果との対話方法を学びながら、オートコンプリート、セキュアアクセス、カスタマイズ可能なテーマといった高度な機能を体験しました。</p>
+<p>Glean Assistantの統合により、文書要約や追跡質問が即座に可能となり、検索体験が大幅に向上。これにより情報取得の効率性と精度が同時に向上します。本ラボでは、Gleanブラウザ拡張機能が企業知識をユーザーのワークフローに直接組み込み、必要な情報が必要な時に必要な場所で提供することで生産性を高める仕組みを実演しました。</p>
+<p>さらに、コンテンツ作成・編集活動に基づき組織内の専門知識保持者を特定するエキスパート検索機能も紹介されました。本ワークショップでは扱いませんが、Gleanは自動回答生成や用語集作成機能も提供。組織固有の用語体系や要件に適応し、手作業を大幅に削減しながら正確な情報を提供します。</p>
+<p>これらの機能群は、Gleanが企業検索を単なるクエリツールから、日常業務プロセスとシームレスに連携するインテリジェントなナレッジプラットフォームへと変革する実例を示しています。</p>
 <h2 is-upgraded><strong>Additional Resources</strong></h2>
 <ul>
 <li><a href="https://docs.glean.com/user-guide/basics/how-to-search-in-glean" target="_blank">How to search in Glean</a></li>
@@ -221,17 +233,6 @@
   <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
   <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
   <script src="//support.google.com/inapp/api.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.getElementById("arrow-back").href="#"; 
-      document.getElementById("done").href="#"; 
-      document.getElementById("arrow-back").addEventListener( 'click', function() { 
-        window.history.back();
-      }); 
-      document.getElementById("done").addEventListener( 'click', function() { 
-        window.history.back();
-      }); 
-    }, false);
-  </script>
+
 </body>
 </html>

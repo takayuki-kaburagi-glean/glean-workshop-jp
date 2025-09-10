@@ -3,13 +3,13 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2025-07-20T01:18:02Z",
+  "updated": "2025-09-10T02:19:14Z",
   "id": "1-glean-search",
   "duration": 31,
-  "title": "Glean Enterprise Search",
+  "title": "Glean Search",
   "authors": "Dejim Juang",
-  "summary": "In this hands-on lab, you will explore Glean's Enterprise Search platform and discover why it has become the world's leading enterprise search engine. You'll gain practical experience with Glean's core search capabilities that serve as the foundation for advanced AI-powered features.",
-  "source": "1t5soprQEu37pG8H1RuX5w2j8S66-tsUbBlyKu7wPqes",
+  "summary": "このハンズオンラボでは、Glean Enterprise Search を体験し、なぜそれが世界をリードするエンタープライズ検索エンジンとなったのかを理解します。\nまた、Glean の高度な AI 搭載機能の基盤となる、コア検索機能について実践的に学ぶことができます。",
+  "source": "16x-OdU8ooq3FszzRhmj-8hLzJejvYKGIVADoPWnlvos",
   "theme": "web",
   "status": [
     "published"
