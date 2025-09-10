@@ -292,6 +292,67 @@
   <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
   <script src="//support.google.com/inapp/api.js"></script>
   <script>
+    (function(){
+      function computeSiteRoot() {
+        try {
+          var p = location.pathname;
+          if (/\/[^\/]+\/index\.html$/.test(p)) {
+            return p.replace(/\/[^\/]+\/index\.html$/, '/index.html');
+          }
+          return '/';
+        } catch(e) { return '/'; }
+      }
+
+      document.addEventListener('click', function(event) {
+        var path = event.composedPath ? event.composedPath() : [];
+        var isBack = path.some(function(el) {
+          try {
+            if (!el || !el.getAttribute) return false;
+            var id = el.id || '';
+            var aria = (el.getAttribute('aria-label') || '').toLowerCase();
+            var text = (el.textContent || '').trim();
+            return id === 'arrow-back' || aria === 'back' || text === 'Back';
+          } catch (e) { return false; }
+        });
+        var isDoneOrExit = path.some(function(el) {
+          try {
+            if (!el) return false;
+            var getAttr = el.getAttribute ? el.getAttribute.bind(el) : function(){return ''};
+            var id = el.id || '';
+            var aria = (getAttr('aria-label') || '').toLowerCase();
+            var title = (getAttr('title') || '').toLowerCase();
+            var icon = (getAttr('icon') || '').toLowerCase();
+            var text = (el.textContent || '').trim();
+            return id === 'done' || id === 'exit' || id === 'close'
+              || aria === 'done' || aria === 'close' || aria === 'exit'
+              || title === 'done' || title === 'close' || title === 'exit'
+              || text === 'Done' || text === 'Close' || text === '×'
+              || icon.indexOf('close') !== -1 || icon.indexOf('clear') !== -1;
+          } catch (e) { return false; }
+        });
+        if (isBack) {
+          event.preventDefault();
+          event.stopPropagation();
+          window.history.back();
+          return;
+        }
+        if (isDoneOrExit) {
+          event.preventDefault();
+          event.stopPropagation();
+          var root = computeSiteRoot();
+          window.location.href = root;
+        }
+      }, true);
+
+      window.addEventListener('hashchange', function(){
+        if (/finish|done|exit/i.test(location.hash)) {
+          var root = computeSiteRoot();
+          window.location.replace(root);
+        }
+      }, false);
+    })();
+  </script>
+  <script>
     document.addEventListener('click', function(event) {
       var path = event.composedPath ? event.composedPath() : [];
       var isBack = path.some(function(el) {
