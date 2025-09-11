@@ -20,17 +20,6 @@
     }
   </style>
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LR18FBLQHK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LR18FBLQHK');
-</script>
-
 <body>
   <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
   <google-codelab codelab-gaid="G-LR18FBLQHK"
@@ -42,244 +31,285 @@
     
       <google-codelab-step label="Overview" duration="2">
         <p class="image-container"><img style="width: 624.00px" src="img/e6ee64080f9fc35.png"></p>
-<p>Glean Agents are a comprehensive platform feature designed for building, orchestrating, and managing AI agents within enterprises, aimed at scaling AI adoption across various business operations. They enable users to create personalized agents using natural language and offer a library of pre-built agents that can be tailored for specific tasks. Glean Agents operate using an agentic reasoning engine that supports complex workflows driven by company data and external information. This platform not only facilitates the construction of agents but also incorporates governance measures to ensure data security and compliance, making it a strategic tool for enhancing productivity and automating processes across departments.</p>
+<p>Glean Agentsは、企業内でAIエージェントを構築・調整・管理するための包括的なプラットフォーム機能であり、様々な業務オペレーションにおけるAI導入の拡大を目的としています。ユーザーは自然言語を用いてパーソナライズされたエージェントを作成でき、特定のタスクに合わせてカスタマイズ可能な事前構築済みエージェントのライブラリも提供されます。Glean Agentsは、企業データと外部情報に基づく複雑なワークフローを処理するエージェント型推論エンジンで動作します。</p>
+<p>本プラットフォームはエージェント構築を支援するだけでなく、データセキュリティとコンプライアンスを確保するガバナンス措置を組み込んでおり、部門横断的な生産性向上とプロセス自動化を実現する戦略的ツールです。</p>
 <p>In this lab we will:</p>
 <ol type="1" start="1">
-<li>Explore an existing agent including learning how to extend it.</li>
-<li>Create a Q&amp;A Chatbot Agent</li>
-<li>Build an Agent from Scratch</li>
+<li>既存のエージェントを探索し、その拡張方法を学びます。</li>
+<li>Q&amp;Aチャットボットエージェントを作成する</li>
+<li>ゼロからエージェントを構築する</li>
+<li>既存エージェントの学習と拡張方法</li>
 </ol>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Login to Glean" duration="2">
-        <p>If you&#39;re already logged in, feel free to go directly to the next step otherwise follow the steps below to login first. <br></p>
-<p>Navigate in your browser to <a href="https://app.glean.com/chat/agents" target="_blank">https://app.glean.com/chat/agents</a> which will re-direct you to the Glean login page.</p>
+      <google-codelab-step label="Gleanへのログイン" duration="2">
+        <p>すでにログイン済みの方は、次のステップへ直接お進みください。そうでない場合は、以下の手順に従ってまずログインしてください。</p>
+<p>ブラウザで <a href="https://app.glean.com/chat/agents" target="_blank">https://app.glean.com/chat/agents</a> にアクセスすると、Gleanのログインページにリダイレクトされます。</p>
 <p class="image-container"><img style="width: 624.00px" src="img/a3714ffdb1c1bbc6.png"></p>
-<p>Enter the email address provided for you by the Workshop Moderator.  First enter the email address in the <strong>Work email</strong> field and click the <strong>Log in</strong> button.<br><br>You will be presented with a screen similar to the following.  Enter the password provided by your Workshop Moderator and click the <strong>Sign in</strong> button.</p>
+<p>ワークショップモデレーターから提供されたメールアドレスを入力してください。</p>
+<p>まず「仕事用メールアドレス」欄にメールアドレスを入力し、「ログイン」ボタンをクリックしてください。</p>
+<p>以下のような画面が表示されます。</p>
+<p>ワークショップモデレーターから提供されたパスワードを入力し、「サインイン」ボタンをクリックしてください。</p>
 <p class="image-container"><img style="width: 331.50px" src="img/40f8de2eda2b840f.png"></p>
-<p>Once completed, you will be redirected to the <strong>Glean Agents</strong> page. <br></p>
+<p>完了後、Glean Agentsページにリダイレクトされます。<br></p>
 <p class="image-container"><img style="width: 624.00px" src="img/4a4f5b11905d97e5.png"></p>
-<p><br>If you don&#39;t see the Glean Agents page, click on the <strong>Chat</strong> icon in the left of the screen and then select <strong>Agents</strong></p>
+<p><br>Gleanエージェントページが表示されない場合は、画面左側のチャットアイコンをクリックし、次に「エージェント」を選択してください。</p>
 <p class="image-container"><img style="width: 309.50px" src="img/6ac796267f7aee6b.png"></p>
-<p>Congrats! You have successfully completed this step of the guide. The single sign-on authentication process through Okta, demonstrating Glean&#39;s seamless integration with your organization&#39;s identity management system. This streamlined login experience eliminates the need for additional credentials while ensuring secure access to enterprise resources. </p>
-<p>Move on to the next step by clicking on <strong>Next </strong>below.</p>
+<p>おめでとうございます！ガイドのこのステップを無事に完了しました。Oktaを介したシングルサインオン認証プロセスにより、Gleanが組織のID管理システムとシームレスに連携していることが実証されました。この合理化されたログイン体験により、追加の認証情報を入力する必要がなくなり、企業リソースへの安全なアクセスが確保されます。</p>
+<p>下の「次へ」をクリックして次のステップに進んでください。</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="What are Agents?" duration="2">
-        <p>A Glean Agent is an AI-powered tool that automates tasks for you, from simple to complex workflows, by handling actions like gathering information, summarizing data, and making decisions based on previous steps.</p>
-<p>You can set up an Agent to start working when something specific happens, and it will carry out a series of actions that adapt to changing inputs, streamlining your work and saving you time on repetitive or detailed processes.</p>
-<h2 is-upgraded>Who are agents for?</h2>
-<p>Agents are intended for various types of users within an enterprise, including:</p>
+      <google-codelab-step label="Agentとは何ですか？" duration="2">
+        <p>Glean Agentは、AIを搭載したツールであり、情報収集、データ要約、過去のステップに基づく意思決定といったアクションを処理することで、単純な作業から複雑なワークフローまで、タスクを自動化します。</p>
+<p>特定の事象が発生した際にエージェントが動作を開始するよう設定でき、変化する入力に適応しながら一連のアクションを実行します。これにより、作業が効率化され、反復的または詳細なプロセスにかかる時間を節約できます。</p>
+<h2 is-upgraded>Agentは誰のためのものですか？</h2>
+<p>エージェントは、企業内の様々なタイプのユーザーを対象としており、以下を含みます：</p>
 <ul>
-<li><strong>Builders</strong>: Individuals who create custom AI experiences. They often fall into subgroups such as function ops, IT personnel, power users, and drive-by users who need solutions for one-off problems.</li>
-<li><strong>Consumers</strong>: Users who utilize agents created by others but are unlikely to develop their own agents. These include employees across titles and functions who benefit from the predefined tasks and automation provided by agents.</li>
-<li><strong>Administrators</strong>: Responsible for managing and overseeing the adoption and governance of agents within the organization.</li>
+<li><strong>ビルダー：</strong>カスタムAI体験を創出する個人。機能運用担当者、IT担当者、パワーユーザー、単発課題の解決策を必要とする一時的なユーザーなど、サブグループに分類されることが多い。</li>
+<li><strong>利用者：</strong>他者が作成したエージェントを利用するユーザー。自らエージェントを開発する可能性は低い。役職や職務を問わず、エージェントが提供する事前定義されたタスクや自動化の恩恵を受ける従業員が含まれる。</li>
+<li><strong>管理者：</strong>組織内におけるエージェントの導入とガバナンスの管理・監督を担当する。</li>
 </ul>
-<h2 is-upgraded>Examples of agents you might create</h2>
-<p>When it comes to creating agents, the possibilities are almost limitless. You&#39;re free to create agents to help you solve any task however you want. Here are some examples of agents you might create:</p>
+<h2 is-upgraded>作成可能なエージェントの例</h2>
+<p>エージェントの作成においては、可能性はほぼ無限大です。どんなタスクでも、自由に好きな方法で解決するエージェントを作成できます。作成できるエージェントの例をいくつか挙げます：</p>
 <ol type="1" start="1">
-<li><a href="https://www.glean.com/agent-library/prospect-outreach-email" target="_blank">Sales prospect outreach</a>: Automates researching sales prospects and generating outreach messages.</li>
-<li><a href="https://www.glean.com/agent-library/support-ticket-next-steps" target="_blank">Support ticket next steps</a>: Summarizes ongoing support ticket activities and provides suggested next steps for resolution.</li>
-<li><a href="https://www.glean.com/agent-library/engineering-self-evaluation" target="_blank">Engineering self-evaluation</a>: Analyzes all of a user&#39;s past activity over a given time period to generate a self-evaluation document for performance reviews.</li>
-<li><a href="https://www.glean.com/agent-library/pull-request-review" target="_blank">Pull request reviewer</a>: Automates the review and description generation for software pull requests.</li>
-<li><a href="https://www.glean.com/agent-library/meeting-recap" target="_blank">Meeting recap</a>: Compiles a comprehensive review of a past meeting with action items, relevant documents, and experts to consult for additional feedback.</li>
-<li><a href="https://www.glean.com/agent-library/customer-sentiment-score" target="_blank">Customer sentiment score</a>: Mines internal company knowledge, conversations, support tickets, and more to generate a comprehensive satisfaction score.</li>
-<li>Daily Digest Agent: Provides a daily summary of relevant meeting notes, updates, and tasks that need attention.</li>
+<li><strong>営業見込み客へのアプローチ：</strong></li>
 </ol>
-<p>By deploying these agents, you can automate complex tasks to save time, avoid repetitive chores, and improve outcomes for your coworkers and customers.</p>
+<ol type="1" start="1">
+<li>営業見込み客の調査とアプローチメッセージの生成を自動化します。</li>
+<li><strong>サポートチケットの次工程：</strong></li>
+</ol>
+<ol type="1" start="1">
+<li>進行中のサポートチケット活動を要約し、解決に向けた推奨次工程を提供します。</li>
+</ol>
+<ol type="1" start="3">
+<li><strong>エンジニアリング自己評価：</strong></li>
+</ol>
+<ol type="1" start="1">
+<li>指定期間内のユーザーの全活動を分析し、業績評価用の自己評価文書を生成します。</li>
+</ol>
+<ol type="1" start="4">
+<li><strong>プルリクエストレビュアー：</strong></li>
+</ol>
+<ol type="1" start="1">
+<li>ソフトウェアプルリクエストのレビューと説明文生成を自動化します。</li>
+</ol>
+<ol type="1" start="5">
+<li><strong>会議要約：</strong></li>
+</ol>
+<ol type="1" start="1">
+<li>過去の会議を包括的にレビューし、アクションアイテム、関連文書、追加フィードバックのための相談専門家をまとめます。</li>
+</ol>
+<ol type="1" start="6">
+<li><strong>顧客満足度スコア：</strong></li>
+</ol>
+<ol type="1" start="1">
+<li>社内ナレッジ、会話、サポートチケットなどを分析し、包括的な満足度スコアを生成します。</li>
+</ol>
+<ol type="1" start="7">
+<li><strong>デイリーダイジェストエージェント：</strong>関連する会議メモ、更新情報、対応が必要なタスクの毎日の要約を提供します。</li>
+</ol>
+<p class="image-container"><img style="width: 725.95px" src="img/c3498418171e7cc.png"></p>
+<p>これらのエージェントを導入することで、複雑なタスクを自動化し、時間を節約し、反復的な作業を回避し、同僚や顧客の成果を向上させることができます。</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Explore an Agent" duration="8">
-        <p>Before we dive into building an agent, let&#39;s examine one and test it out. This private sandbox instance of Glean has various pre-populated agents. For the purposes of this workshop we will explore the <strong>Plan My Day Agent. <br><br></strong>Click the <strong>Plan My Day Agent</strong> card under the <strong>Favorites</strong> section.</p>
-<aside class="warning"><p><strong>Note:</strong> You may have to search for it in the <strong>Search agents</strong> search bar if the <strong>Plan My Day Agent </strong>isn&#39;t showing up.</p>
-</aside>
-<p class="image-container"><img style="width: 578.50px" src="img/9cfcd8ab8590a4a7.png"><br></p>
-<p>In the Popup Window select the <strong>View agent setup</strong> link to see the design of this agent.</p>
-<p class="image-container"><img style="width: 556.50px" src="img/3f747865db79670d.png"></p>
-<p>You&#39;re now in the Glean Agent Builder in viewer mode. As the note states, you can edit and make changes to the Agent but you can&#39;t save them.</p>
+      <google-codelab-step label="Agentを探索する" duration="8">
+        <p>エージェントの作成に取り掛かる前に、まず既存のエージェントを検証しテストしてみましょう。このGleanのプライベートサンドボックス環境には、あらかじめ様々なエージェントが用意されています。本ワークショップでは「<strong>Plan My Day Agent</strong>」を題材に探求していきます。</p>
+<p>Glean Searchで <strong>Plan My Day Agent </strong>を検索して検索結果から &#34;View agent&#34;をクリックします。<img style="width: 737.50px" src="img/9bfdbc3c7e8d3bea.png"><br></p>
+<p>ポップアップウィンドウで「エージェント設定を表示(View agent setup)」リンクを選択すると、このエージェントのデザインを確認できます。<br><br><img style="width: 556.50px" src="img/3f747865db79670d.png"></p>
+<p>現在、Glean Agent Builderのビューアーモードです。注記に記載されている通り、エージェントの編集や変更は可能ですが、保存はできません。</p>
 <p class="image-container"><img style="width: 624.00px" src="img/f87f1a976b28f5eb.png"></p>
-<p>Use your mouse to navigate the <strong>Plan My Day Agent</strong> canvas. Clicking and holding down the mouse button will allow you to reposition the view. You can click on the <strong>Recenter</strong> button on the bottom right of the screen to reset the view.</p>
-<p>Let&#39;s go ahead and walk through the different steps that make up this Agent. </p>
-<h2 is-upgraded>Step 0 - Trigger - Input Form Trigger</h2>
-<p>This defines how to trigger the Agent. For this one, it&#39;s an <strong>Input form trigger</strong> but this Agent doesn&#39;t have any fields configured. </p>
-<p class="image-container"><img style="width: 500.50px" src="img/5924d6e9ba2f3560.png"></p>
-<h2 is-upgraded>Step 1 - Company Search - Slack</h2>
-<p>Search Slack for all messages that mention the user running the Agent.</p>
+<p>マウスを使って「Plan My Day Agent」キャンバスを操作してください。マウスボタンをクリックしたままにすると、ビューの位置を変更できます。画面右下の<img style="width: 37.06px" src="img/1bb3c112a3c673f5.png">ボタンをクリックすると、ビューをリセットできます。</p>
+<p>それでは、このエージェントを構成する各ステップを順を追って見ていきましょう。</p>
+<h2 is-upgraded>ステップ 0 - Trigger - Schedule trigger</h2>
+<p>これはエージェントの起動方法を定義します。このエージェントはSchedule triggerです。</p>
+<p class="image-container"><img style="width: 575.50px" src="img/e28248eb6ee42ce8.png"></p>
+<p>Set schedule -&gt; Set scheduleで進みどのような設定ができるか確認してみましょう。</p>
+<p>モーダルを閉じてAgent detailsからビルダーに戻ります。</p>
+<p class="image-container"><img style="width: 583.61px" src="img/4037466d96fecb72.png"></p>
+<h2 is-upgraded>ステップ 1 - Company Search - Slack</h2>
+<p>Slackで、エージェントを実行しているユーザーが言及されているすべてのメッセージを検索する。</p>
 <p class="image-container"><img style="width: 530.50px" src="img/7f24ba0e2bd8a762.png"></p>
-<h2 is-upgraded>Step 2 - Company Search - Email</h2>
-<p>Perform an email search for all emails from yesterday and today. This searches across Outlook or Google Mail, depending on which one you have Glean configured to crawl and index.</p>
+<h2 is-upgraded>ステップ 2 - Company Search - Email</h2>
+<p>昨日と今日の日付のメールをすべて検索します。この検索は、Gleanがクロールおよびインデックス化するように設定されているOutlookまたはGoogleメールを対象に行われます。</p>
 <p class="image-container"><img style="width: 492.50px" src="img/b7504a07d4c5a272.png"></p>
-<h2 is-upgraded>Step 3 - Calendar Search</h2>
-<p>Execute a Calendar search to find all meetings scheduled for today for the user running the Agent.</p>
+<h2 is-upgraded>ステップ 3 - Calendar Search</h2>
+<p>エージェントを実行しているユーザーに対して、本日予定されているすべての会議を検索するためにカレンダー検索を実行します。</p>
 <p class="image-container"><img style="width: 512.50px" src="img/8371429c9ecdd951.png"></p>
-<h2 is-upgraded>Step 4 - Read Document</h2>
-<p>Search for meeting notes from previous meetings that have a similar title</p>
+<h2 is-upgraded>ステップ 4 - Read Document</h2>
+<p>これ以前のステップで見つけたドキュメントを読む。</p>
 <p class="image-container"><img style="width: 528.50px" src="img/db23b467bc680713.png"></p>
-<h2 is-upgraded>Step 5 - Respond</h2>
-<p>Respond to the user with all of the information desired in order to plan the user&#39;s day.</p>
+<h2 is-upgraded>ステップ 5 - Respond</h2>
+<p>ユーザーの1日の計画を立てるために必要なすべての情報をユーザーに提供してください。</p>
 <p class="image-container"><img style="width: 527.50px" src="img/e9be2ab460e77df0.png"></p>
-<p>Here are the AI response instructions below.</p>
-<aside class="warning"><p>Summarize the slack thread from  .</p>
-<p>Additionally, I need you to determine whether or not I have an action item in this thread.   For example, are others waiting on my response?</p>
-<p>The response should follow this structure:</p>
-<p># Slack Messages</p>
-<p>## &lt;Thread Title&gt;</p>
-<p>- &lt;bullet point summarizing thread&gt;</p>
-<p>- &lt;bullet point summarizing thread&gt;</p>
-<p>- &lt;bullet point summarizing thread&gt;</p>
-<p>Link to thread: &lt;insert slack thread link&gt;</p>
-<p>## Action Items:</p>
-<p>- &lt;recommended action item&gt;</p>
-<p>## Suggested Response: &lt;insert suggested response&gt;</p>
+<p>以下にAI応答の手順を示します。(日本語版)</p>
+<aside class="warning"><p>Slackのスレッドを要約してください。</p>
+<p>さらに、このスレッドに私のアクションアイテムがあるかどうかを判断してください。</p>
+<p>例えば、他のメンバーが私の返信を待っている状況ですか？</p>
+<p>回答は以下の形式に従ってください：</p>
+<p># Slackメッセージ</p>
+<p>## &lt;スレッドタイトル&gt;</p>
+<p>- &lt;スレッドを要約する箇条書き&gt;</p>
+<p>- &lt;スレッドを要約する箇条書き&gt;</p>
+<p>- &lt;スレッドを要約する箇条書き&gt;</p>
+<p>スレッドへのリンク: &lt;Slackスレッドリンクを挿入&gt;</p>
+<p>## アクションアイテム:</p>
+<p>- &lt;推奨アクションアイテム&gt;</p>
+<p>## 提案される返信: &lt;提案される返信を挿入&gt;</p>
 <p>---------</p>
-<p>For each email referenced in  please provide a three-bullet point summary. </p>
-<p>The structure of the response for emails sent from humans should look like this:</p>
-<p># Email Messages</p>
-<p>## Email Topic: &lt;insert topic&gt;</p>
-<p>- &lt;insert first summary bullet point&gt;</p>
-<p>- &lt;insert second summary bullet point&gt;</p>
-<p>- &lt;insert third summary bullet point&gt;</p>
+<p>各メールについて、以下の3つの箇条書きで要約してください。</p>
+<p>人間から送信されたメールへの返信構造は以下のようにしてください：</p>
+<p># メールメッセージ</p>
+<p>## メール件名: &lt;件名を挿入&gt;</p>
+<p>- &lt;最初の要約箇条書きを挿入&gt;</p>
+<p>- &lt;2番目の要約箇条書きを挿入&gt;</p>
+<p>- &lt;3番目の要約箇条書きを挿入&gt;</p>
 <p>---------</p>
-<p>The response should be highly detailed and actionable.  Your task is to summarize what happened in the previous meeting for the Previous Meeting Notes Section.  </p>
-<p>Also, think about what happened last meeting and used what you found in the meeting notes to build a relevant agenda for the upcoming meeting.  Lastly, I&#39;d like for you to capture the sentiment of the previous meeting.</p>
-<p>Your response should be as follows:</p>
-<p># Today&#39;s Meetings</p>
-<p>## Meeting Details</p>
-<p>- *Title*: &lt; meeting title&gt;</p>
-<p>- *Attendees*: &lt; meeting attendees&gt;</p>
-<p>- *Date/Time* &lt;  meeting start and end date/time&gt;</p>
-<p>## Previous Meeting Notes</p>
-<p>- &lt;insert note&gt;</p>
-<p>- &lt;insert note&gt;</p>
-<p>- &lt;insert note&gt;</p>
-<p>- &lt;insert note&gt;</p>
-<p>### Sentiment</p>
-<p>- &lt;insert sentiment&gt;</p>
-<p>### Action Items From Last Meeting</p>
-<p>- &lt;insert note&gt;</p>
-<p>- &lt;insert note&gt;</p>
-<p>- &lt;insert note&gt;</p>
-<p>### Proposed Agenda for Upcoming Meeting</p>
-<p>- &lt;insert Agenda item 1&gt;</p>
-<p>- &lt;insert Agenda item 2&gt;</p>
-<p>- &lt;insert Agenda item 3&gt;</p>
-<p>- &lt;insert Agenda item 4&gt;</p>
+<p>回答は詳細かつ実行可能な内容であるべきです。</p>
+<p>前回の会議で何が起こったかを要約し、「前回の会議メモ」セクションにまとめます。</p>
+<p>また、前回の会議で起こったことを振り返り、会議メモから得た情報をもとに、次回の会議に関連する議題を作成してください。</p>
+<p>最後に、前回の会議の雰囲気を捉えてください。</p>
+<p>回答は以下の形式で作成してください：</p>
+<p># 本日の会議</p>
+<p>## 会議詳細</p>
+<p>- *タイトル*: &lt;会議タイトル&gt;</p>
+<p>- *出席者*: &lt;会議出席者&gt;</p>
+<p>- *日時*: &lt;会議開始・終了日時&gt;</p>
+<p>## 前回会議の議事録</p>
+<p>- &lt;議事録挿入&gt;</p>
+<p>- &lt;議事録挿入&gt;</p>
+<p>- &lt;議事録挿入&gt;</p>
+<p>- &lt;議事録挿入&gt;</p>
+<p>### 意見・感想</p>
+<p>- &lt;意見・感想挿入&gt;</p>
+<p>### 前回会議のアクションアイテム</p>
+<p>- &lt;メモを挿入&gt;</p>
+<p>- &lt;メモを挿入&gt;</p>
+<p>- &lt;メモを挿入&gt;</p>
+<p>### 次回会議の提案議題</p>
+<p>- &lt;議題項目1を挿入&gt;</p>
+<p>- &lt;議題項目2を挿入&gt;</p>
+<p>- &lt;議題項目3を挿入&gt;</p>
+<p>- &lt;議題項目4を挿入&gt;</p>
 <p>---------</p>
-<p># Summary of my Day</p>
-<p>Lastly, your task is to summarize everything that I need to know for my day in a concise manner.  Consolidate and Summarize everything from the outputs of:</p>
-<p>1) Slack Threads</p>
-<p>2) Emails</p>
-<p>3) Calendars</p>
-<p>Please summarize this in the form of a table.</p>
-<p># Morning Plan</p>
-<p>Additionally, Plan my morning for me by listing out the steps I need to take to address each of these items.</p>
+<p># 本日の要約</p>
+<p>最後に、私がその日に知る必要のある全てを簡潔に要約してください。以下の出力から全てを統合・要約してください：</p>
+<p>1) Slackスレッド</p>
+<p>2) メール</p>
+<p>3) カレンダー</p>
+<p>これを表形式で要約してください。</p>
+<p># 午前中の計画</p>
+<p>さらに、これらの項目それぞれに対処するために必要な手順をリストアップし、私の午前中の計画を立てておいてください。</p>
 </aside>
-<p>As you can see, the author has control over the formatting of the response including adding additional instructions for the Reasoning engine to assist in the output.  Note the Markdown syntax for the response formatting.  While this is not required, it can be helpful since LLMs deeply understand the Markdown syntax.</p>
-<p>Let&#39;s now execute this agent directly from the Design Canvas.  Click the <strong>Preview </strong>button in the upper right corner to expand the test window on the left side of the screen as shown:<br><br><img style="width: 624.00px" src="img/c34b24fa60f03712.png"><br></p>
-<p>Click the <strong>Run agent</strong> button to execute the Agent.</p>
+<p>ご覧の通り、著者は応答の書式設定を制御でき、推論エンジンが応答生成を支援するための追加指示を追加することも可能です。応答書式設定におけるMarkdown構文に注意してください。必須ではありませんが、LLMがMarkdown構文を深く理解しているため有用です。</p>
+<p>それではデザインキャンバスから直接このエージェントを実行してみましょう。画面右上のプレビューボタンをクリックすると、図のように画面左側にテストウィンドウが展開されます：<br><img style="width: 624.00px" src="img/c34b24fa60f03712.png"><br></p>
+<p>エージェントを実行するには、[エージェントを実行] ボタンをクリックしてください。</p>
 <p class="image-container"><img style="width: 376.50px" src="img/3e0d5f4db0ae1b13.png"></p>
-<p><br>The <strong>Plan My Day Agent</strong> will start running through the defined steps. When it gets to the <strong>Respond</strong> step, you&#39;ll see the output in the preview window like the example below. This will vary from user-to-user and workshop-to-workshop.</p>
+<p><strong>Plan My Day Agent</strong>は定義された手順を実行し始めます。応答ステップに到達すると、プレビューウィンドウに下記例のような出力が表示されます。これはユーザーごと、ワークショップごとに異なります。</p>
 <p class="image-container"><img style="width: 443.50px" src="img/1f151115f0785e88.png"></p>
-<p><br>The above example could be beneficial as an Agent that runs automatically on a scheduled basis in the morning before you start your day.  The message could be fed automatically to Email, or your company&#39;s messaging program (Teams, Slack, etc...)<br><br>Think about how you extend this Agent to drive additional value (e.g. Look for only unread Slack/Email messages..).</p>
+<p><br>上記の例は、一日の業務開始前の朝にスケジュールに基づいて自動的に実行されるエージェントとして有益です。メッセージは自動的にメールや、会社のメッセージングプログラム（Teams、Slackなど）に配信できます。</p>
+<p>このエージェントを拡張してさらなる価値を生み出す方法を考えてみてください（例：未読のSlack/メールメッセージのみを検索するなど）。</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Create an Agent" duration="10">
-        <p>Now that you&#39;ve seen an Agent in action, let&#39;s walk you through the process of building your own. Click on the arrow on the top left to return back to the Agent directory.</p>
+      <google-codelab-step label="エージェントを作成する" duration="10">
+        <p>エージェントの実動をご覧いただきましたので、次はご自身でエージェントを作成する手順をご説明します。左上の矢印をクリックしてエージェントディレクトリに戻ってください。</p>
 <p class="image-container"><img style="width: 496.50px" src="img/4000d6f177eb27c3.png"></p>
-<p>You can also navigate directly by going to <a href="https://app.glean.com/chat/agents" target="_blank">https://app.glean.com/chat/agents</a>, or by navigating the Glean Menu via this path:  <strong>Chat &gt; Agents</strong>.<br></p>
-<p>Click on <strong>+ Create agent</strong> in the upper right corner of the screen. </p>
+<p><a href="https://app.glean.com/chat/agents" target="_blank">https://app.glean.com/chat/agents</a> に直接アクセスするか、Glean メニューの次のパスから移動することもできます: チャット &gt; エージェント。<br></p>
+<p>画面右上の「+ エージェントを作成」をクリックしてください。</p>
 <p class="image-container"><img style="width: 343.50px" src="img/ec46dd104fc6eb5.png"></p>
-<p>This will open up the <strong>Create agent</strong> popup window as shown:</p>
+<p>これにより、以下の図のように「エージェント作成」ポップアップウィンドウが開きます：</p>
 <p class="image-container"><img style="width: 543.50px" src="img/2b9de6d2fe4f7469.png"></p>
-<h2 is-upgraded><br>Select Template</h2>
-<p>Feel free to look around at all of the <strong>Templates</strong> provided by Glean to jumpstart the build.  There is also the ability to create an agent by describing the agent intent in Natural Language (<strong>Use AI to generate a draft</strong>).<br><br>For the purposes of this Agent, we will use the template called <strong>Q&amp;A Chatbot</strong>. Click that Template Card.</p>
-<p class="image-container"><img style="width: 489.00px" src="img/b2a4548e960b67c7.png"></p>
-<p>This will generate a new Agent with a Canvas that looks similar to the following:</p>
+<h2 is-upgraded>テンプレートを選択</h2>
+<p>Gleanが提供するすべてのテンプレートを自由に閲覧し、構築を迅速に開始してください。</p>
+<p>また、エージェントの意図を自然言語で記述してエージェントを作成する機能もあります（AIを使用して下書きを生成）。</p>
+<p>このエージェントでは、「Q&amp;Aチャットボット」というテンプレートを使用します。そのテンプレートカードをクリックしてください。<br><img style="width: 489.00px" src="img/b2a4548e960b67c7.png"></p>
+<p>これにより、以下のようなキャンバスを持つ新しいエージェントが生成されます：</p>
 <p class="image-container"><img style="width: 624.00px" src="img/b8d47e7805dbc924.png"></p>
-<p><br>Modify the name of this Agent. Click the pencil icon in the upper left corner next to the default name to modify it as shown:</p>
+<p><br>このエージェントの名前を変更します。デフォルト名の左上にある鉛筆アイコンをクリックし、図のように変更します：</p>
 <p class="image-container"><img style="width: 381.00px" src="img/228281c2e45147ed.png"></p>
-<p>In the popup window fill out the Agent name. Replace [Your Name] with your actual name. This will allow us to differentiate all of the users in this workshop. Feel free to modify the <strong>Description</strong> if desired as well.</p>
+<p>ポップアップウィンドウでエージェント名を入力してください。[Your Name]を実際のお名前(や識別可能な文字列)に置き換えてください。これにより、このワークショップの全ユーザーを区別できます。必要に応じて説明文も自由に変更してください。</p>
 <p class="image-container"><img style="width: 391.50px" src="img/f3a394230a5b45f3.png"><br></p>
-<h2 is-upgraded>Step 0 - Trigger</h2>
-<p>Click the <strong>0. Trigger</strong> Card to configure this step. We are going to add a couple of conversation starters to provide the user some sample questions to use to kickoff the conversation.<br><br>Click the <strong>+ Add</strong> button under the Conversation starters.</p>
+<h2 is-upgraded>ステップ 0 - Trigger</h2>
+<p><strong>0. trigger </strong>をクリックしてこのステップを設定します。会話のきっかけとなる質問をいくつか追加し、ユーザーが会話を始める際に使用できるサンプル質問を提供します。</p>
+<p>会話のきっかけの下にある「+ 追加」ボタンをクリックします。</p>
 <p class="image-container"><img style="width: 446.50px" src="img/ecca05565e628a2c.png"></p>
-<p><br>For the Conversation starter label type in: <strong>Request PTO Balance </strong>and in the <strong>Write prompt</strong> box enter the following: <strong>How much paid time off do I have left?<br><br></strong>Your <strong>Conversation starters</strong> prompt should look similar to the following:</p>
+<p><br>会話の開始ラベルには「有給休暇残高照会」と入力し、入力プロンプトボックスには以下を入力してください：「残りの有給休暇はどれくらいありますか？」<br><br>会話のきっかけとなるプロンプトは、以下のような形式になるはずです：</p>
 <p class="image-container"><img style="width: 478.50px" src="img/48010571cb494f5f.png"></p>
-<p><br>Add one more conversation starter with the label: <strong>Leave Policy</strong> and the prompt of: <strong>What are our leave policy options?</strong>.</p>
-<p class="image-container"><img style="width: 414.50px" src="img/f9f74166dac6b7bc.png"></p>
-<h2 is-upgraded>Step 1 - Branch</h2>
-<p>Select the <strong>1. Plan and execute steps</strong> Action card to open the configuration.  We are going to switch this Step to a <strong>Branch Action</strong>. Click the <strong>Switch action</strong> button on the top right.</p>
+<p><br>ラベル「休暇制度」を追加し、以下のプロンプトを設定してください：「休暇制度の選択肢にはどのようなものがありますか？」<br><img style="width: 414.50px" src="img/f9f74166dac6b7bc.png"></p>
+<h2 is-upgraded>ステップ 1 - Branch</h2>
+<p><strong>1. Plan &amp; execute steps</strong> のアクションカードを選択して設定を開きます。このステップを分岐アクションに切り替えます。右上の「アクションを切り替える」ボタンをクリックしてください。</p>
 <p class="image-container"><img style="width: 456.50px" src="img/ffb306295cc1ef94.png"></p>
-<p>In the <strong>Select Step</strong> search bar enter <strong>Branch</strong> and select the <strong>Branch</strong> Action as shown:</p>
-<p class="image-container"><img style="width: 460.50px" src="img/6bbfd40ea7040a1f.png"><br></p>
-<p>Your new view should look like the following:</p>
+<p>ステップ選択の検索バーに「branch」と入力し、図のようにブランチアクションを選択します：<br><img style="width: 460.50px" src="img/6bbfd40ea7040a1f.png"><br></p>
+<p>新しいビューは次のようになります：</p>
 <p class="image-container"><img style="width: 624.00px" src="img/47bdb60e03ff9b2f.png"></p>
-<p>In the <strong>Branch conditions</strong> section of the configuration enter the following text in the <strong>Choose this branch if...</strong> prompt window:<br></p>
-<aside class="special"><p><strong>the user requests their PTO, paid time off, or vacation balance.  They also may request how much PTO, paid time off, or vacation they have left.  Do not select this if the user inquires about other types of leave.</strong></p>
+<p>設定の「ブランチ条件」セクションで、「次の場合にこのブランチを選択する」プロンプトウィンドウに以下のテキストを入力してください：</p>
+<aside class="special"><p><strong>ユーザーは有給休暇（PTO）または休暇残高を照会します。また、残りの有給休暇（PTO）または休暇日数を問い合わせる場合もあります。他の種類の休暇について問い合わせる場合には、この項目を選択しないでください。</strong></p>
 </aside>
-<p>The configuration window should look similar to the following:</p>
+<p>設定ウィンドウは以下のような表示になるはずです：</p>
 <p class="image-container"><img style="width: 403.18px" src="img/821f55e1a25098b4.png"><br></p>
-<p>Click the Plus icon under the Fallback branch as shown:</p>
+<p>図のように、Fallbackブランチの下にあるプラスアイコンをクリックしてください：</p>
 <p class="image-container"><img style="width: 329.50px" src="img/2058ce3ff98c7204.png"></p>
-<p>Enter <strong>Plan</strong> in the Select step search box as shown and select the <strong>Plan and execute steps </strong>Action.<br></p>
+<p>図のように「選択」ステップの検索ボックスに「plan」と入力し、プランを選択して「ステップを実行」アクションを選択します。</p>
 <p class="image-container"><img style="width: 546.50px" src="img/ac0c1ef9f66340d2.png"></p>
-<p><br>In this next step, we are going to create the Instructions and select the Knowledge Sources desired to serve HR related requests.  <br><br>In the Plan and execute steps <strong>Actions</strong>, enter the following instructions in the <strong>Instructions</strong> text box.<br></p>
-<aside class="special"><p><strong>You are a helpful assistant. Please be factual and use a kind tone in your answers.  If the content does not contain the information requested from the user, tell the user to reach out to </strong><a href="mailto:hr@dummyco.com" target="_blank"><strong>hr@dummyco.com</strong></a><strong>.</strong></p>
+<p><br>次のステップでは、指示書を作成し、人事関連の問い合わせに対応するために必要な知識ソースを選択します。<br><br>計画と実行ステップのアクションで、以下の指示を指示テキストボックスに入力してください。</p>
+<aside class="special"><p><strong>あなたは親切なアシスタントです。回答は事実に基づき、丁寧な口調でお願いします。内容にユーザーから求められた情報が含まれていない場合は、hr@dummyco.com まで連絡するようユーザーにお伝えください。</strong></p>
 </aside>
 <p class="image-container"><img style="width: 538.50px" src="img/b5bf388f4564867d.png"></p>
-<p>Click the text box in the <strong>Company search</strong> section to instantiate a search for indexed content that will be used to answer the user&#39;s questions.<br><br>Type in <strong>gco</strong> and click the <strong>See all results for &#34;gco&#34;</strong> link at the bottom of the search.</p>
+<p>会社検索セクションのテキストボックスをクリックすると、ユーザーの質問に回答するために使用されるインデックス付きコンテンツの検索が開始されます。<br><br><strong>「gco」</strong>と入力し、検索結果の下部にある「See all results for &#34;gco&#34;」リンクをクリックしてください。</p>
 <p class="image-container"><img style="width: 456.00px" src="img/8ee528895abc3179.png"></p>
-<p>In the <strong>Add a knowledge source</strong> popup window, hover over the <strong>(Demo) GCo. HR Policies</strong> folder and click the <strong>Add Item</strong> button as shown:</p>
+<p>「Add a knowledge source」ポップアップウィンドウで、(Demo) GCo. HR Policiesフォルダーにカーソルを合わせ、図のように「Add Item」ボタンをクリックします：</p>
 <p class="image-container"><img style="width: 481.50px" src="img/fddaa1bd822749fc.png"></p>
-<p>Click the <strong>X</strong> button in the upper right hand corner of the popup to close the search window.<br></p>
+<p>検索ウィンドウを閉じるには、ポップアップの右上隅にあるXボタンをクリックしてください。</p>
 <p class="image-container"><img style="width: 292.50px" src="img/3ac4795aa37e434d.png"></p>
-<p><br>Your <strong>Plan and execute steps</strong> Action should look similar to the following:</p>
-<p class="image-container"><img style="width: 505.50px" src="img/ebe9fb6882440645.png"><br></p>
-<p>Now let&#39;s configure the Steps under the Branch if the user inquires about PTO.  In the Design Canvas click the <strong>Plus icon</strong> under the first Branch here:</p>
+<p>計画と実行の手順は、以下のようなものになるはずです：<br><br><img style="width: 505.50px" src="img/ebe9fb6882440645.png"><br></p>
+<p>次に、ユーザーが有給休暇について問い合わせた場合の分岐の下にあるステップを設定します。デザインキャンバスで、最初の分岐の下にあるプラスアイコンをクリックしてください：</p>
 <p class="image-container"><img style="width: 498.00px" src="img/e6298f884e9da90e.png"></p>
-<p>In the Select Step search box, enter <strong>workday</strong> and select the <strong>Workday: Get PTO Availability</strong> Action as shown.</p>
+<p>ステップ選択の検索ボックスに「workday」と入力し、図のように「Workday: Get Paid Time Off Availabilit」を選択します。</p>
 <p class="image-container"><img style="width: 417.50px" src="img/a6e0eb7e27f74b25.png"></p>
-<p><br>This is a Custom Action registered in this Glean instance.  As you can see this Action makes a real-time callout via an API to retrieve the users PTO Balance.<br><br>Enter <strong>How much paid time off do I have left?</strong> In the Instructions window of the Workday: Get PTO Availability Action configuration screen.<br></p>
+<p><br>これは本Gleanインスタンスに登録されたカスタムアクションです。ご覧の通り、このアクションはAPI経由でリアルタイムに呼び出しを行い、ユーザーの有給休暇残高を取得します。</p>
+<p>「Workday: Get Paid Time Off Availability」アクション設定画面の「Instruction」ウィンドウに「残りの有給休暇日数は？」と入力してください。</p>
 <p class="image-container"><img style="width: 427.50px" src="img/ba97197d7b49257c.png"></p>
-<p>Now that we have received the Paid Time Off Balance for the user, we will need to respond to the user with the information.<br><br>Underneath the Workday: Get PTO Availability action, click the Plus icon to add a step.</p>
+<p>ユーザーの有給休暇残高を取得しましたので、その情報をユーザーに返信する必要があります。</p>
+<p>「Workday: Get Paid Time Off Availabilit」アクションの下で、プラスアイコンをクリックしてステップを追加します。</p>
 <p class="image-container"><img style="width: 274.50px" src="img/2f39dcd5d0831872.png"></p>
 <p><br>Search for and select the <strong>Respond</strong> Action.</p>
 <p class="image-container"><img style="width: 444.50px" src="img/3e6c8533ae34d1f0.png"></p>
-<p>In the <strong>AI response instructions</strong> text box, enter:</p>
-<aside class="special"><p><strong>Tell the user their Paid Time Off Balance.<br><br>Respond with all balance options in a bulleted list.</strong></p>
+<p>AI応答指示テキストボックスに、以下を入力してください：</p>
+<aside class="special"><p><strong>ユーザーに有給休暇の残高を通知してください。</strong></p>
+<p><strong>すべての残高オプションを箇条書きで返信してください。</strong></p>
 </aside>
-<p>Your Respond Action should look similar to the following:</p>
+<p>あなたの対応アクションは、以下のようなものになるはずです：</p>
 <p class="image-container"><img style="width: 462.50px" src="img/278ca899e287215f.png"></p>
-<p>Your new HR Q&amp;A Chatbot is now complete!  Click the <strong>Save</strong> button in the upper right hand corner.<br></p>
+<p>新しい人事Q&amp;Aチャットボットが完成しました！右上の「保存」ボタンをクリックしてください。</p>
 <p class="image-container"><img style="width: 358.04px" src="img/df0edb1b27f735ab.png"></p>
-<p>Now it&#39;s time to test it out!  Click the <strong>Preview </strong>button in the upper right hand corner to open the test harness window.</p>
+<p>さあ、試してみましょう！右上隅のプレビューボタンをクリックしてテストハーネスウィンドウを開きます。</p>
 <p class="image-container"><img style="width: 362.14px" src="img/20846b56b4f1dd5c.png"></p>
-<p>You can see that <strong>Conversations starters</strong> can be used to pre-populate the Chat window with the text specified in the configuration.</p>
+<p>設定で指定したテキストをチャットウィンドウに事前入力するために、会話の開始ツールが使用できることがわかります。</p>
 <p class="image-container"><img style="width: 454.50px" src="img/6ae18ca8c5e450cb.png"></p>
-<p>Feel free to try both conversation starters and/or ask any question of the new Agent.<br><br>If you ask about Paid Time Off or use that conversation starter, the Chatbot should call the Workday: Get PTO Availability Action.  Otherwise the questions should be answered directly from the content within the <strong>(Demo) GCo. HR Policies</strong> folder.<br></p>
-<aside class="warning"><p><strong>Note</strong>: At any time during testing, you can reset the test harness by clicking the <img style="width: 24.98px" src="img/2e6b58bedd932d17.png">icon in the upper right corner of the harness.</p>
+<p>新しいエージェントに対して、&#34;Conversation startes&#34; を試すか、または質問を自由に投げかけてください。</p>
+<p>有給休暇について質問する場合、またはその話題をきっかけにすると、チャットボットは「Workday: 有給休暇の取得可能日を確認するアクション」を呼び出す必要があります。それ以外の質問については、(デモ) GCo. HRポリシーフォルダ内のコンテンツから直接回答してください。</p>
+<aside class="warning"><p><strong>注：テスト実行中はいつでも、</strong><img style="width: 25.54px" src="img/b6c13e2a08e56488.png"><strong> をクリックすることでテストハーネスをリセットできます。</strong></p>
 </aside>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Conclusion" duration="2">
-        <p>This lab has demonstrated that AI agents are no longer just conceptual tools—they are concrete, accessible, and transformative components within modern enterprises. Through hands-on exploration, you have learned how to leverage Glean&#39;s agentic platform to automate critical workflows, integrate diverse data sources, and maintain rigorous governance and security standards. By dissecting pre-built solutions like the Plan My Day Agent and building custom tools such as a HR Q&amp;A Chatbot, you have gained practical experience with branching logic, external integrations (e.g., Workday), and the flexible orchestration of complex tasks.</p>
-<p>This experience highlighted three core takeaways:</p>
+      <google-codelab-step label="この章のまとめ" duration="2">
+        <p>このラボでは、AIエージェントがもはや概念的なツールではなく、現代企業において具体的でアクセス可能かつ変革をもたらす構成要素であることを実証しました。実践的な探求を通じて、Gleanのエージェントプラットフォームを活用して重要なワークフローを自動化し、多様なデータソースを統合し、厳格なガバナンスとセキュリティ基準を維持する方法を学びました。「Plan My Day Agent」のような既成ソリューションの分析や、人事Q&amp;Aチャットボットなどのカスタムツール構築を通じて、分岐ロジック、外部システム連携（例：Workday）、複雑なタスクの柔軟なオーケストレーションに関する実践的知見を得られました。</p>
+<p>この経験から得られた3つの核心的知見は以下の通りです：</p>
 <ul>
-<li>Glean Agents make it possible for users—regardless of coding expertise—to build powerful, personalized automations for virtually any business function.</li>
-<li>The platform&#39;s agentic reasoning engine excels at handling multi-step, context-aware processes, surfacing actionable insights and saving time across departments.</li>
-<li>Security, compliance, and data integrity are built-in, making these automations reliable for enterprise adoption.</li>
+<li>Gleanエージェントは、コーディングの専門知識の有無にかかわらず、ユーザーがほぼあらゆる業務機能向けに強力でパーソナライズされた自動化を構築することを可能にします。</li>
+<li>プラットフォームのエージェント型推論エンジンは、多段階かつ文脈認識型のプロセス処理に優れ、実行可能な洞察を可視化し、部門横断的な時間削減を実現します。</li>
+<li>セキュリティ、コンプライアンス、データ整合性が組み込まれているため、これらの自動化は企業導入に信頼性があります。</li>
 </ul>
-<p>As organizations continue to seek efficiency, scalability, and innovation, Glean Agents lay a robust foundation for ongoing automation and strategic transformation.</p>
+<p>組織が効率性、拡張性、革新性を追求し続ける中、Glean Agentsは継続的な自動化と戦略的変革のための強固な基盤を築きます。</p>
 
 
       </google-codelab-step>
@@ -330,6 +360,7 @@
       function isDoneOrCloseClick(path) {
         var closeIconNames = ['close', 'clear', 'cancel'];
         var textLabels = ['done', 'finish', 'close', 'exit', '完了', '閉じる', '終了'];
+        var hashTriggers = ['#finish', '#done', '#exit', '#close'];
         for (var i = 0; i < path.length; i++) {
           var el = path[i];
           try {
@@ -341,12 +372,18 @@
             var icon = (getAttr('icon') || '').toLowerCase();
             var tag = (el.tagName || '').toLowerCase();
             var text = (el.textContent || '').trim();
+            var href = (getAttr('href') || '').toLowerCase();
             if (id === 'done' || id === 'close' || id === 'exit') return true;
             if (textLabels.indexOf(aria) !== -1 || textLabels.indexOf(title) !== -1) return true;
             if (tag === 'a' && textLabels.indexOf(text.toLowerCase()) !== -1) return true;
             if (text === '×') return true;
             if (tag === 'i' && closeIconNames.indexOf(text) !== -1) return true;
             if (closeIconNames.indexOf(icon) !== -1) return true;
+            if (tag === 'a' && href) {
+              for (var h = 0; h < hashTriggers.length; h++) {
+                if (href.indexOf(hashTriggers[h]) !== -1) return true;
+              }
+            }
           } catch(e) { /* ignore */ }
         }
         return false;
@@ -373,34 +410,13 @@
         }
       }, true);
 
+      window.addEventListener('hashchange', function(){
+        if (/finish|done|exit|close/i.test(location.hash)) {
+          window.location.replace(computeSiteRoot());
+        }
+      }, false);
+
     })();
-  </script>
-  <script>
-    document.addEventListener('click', function(event) {
-      var path = event.composedPath ? event.composedPath() : [];
-      var isBack = path.some(function(el) {
-        try {
-          if (!el || !el.getAttribute) return false;
-          var id = el.id || '';
-          var aria = (el.getAttribute('aria-label') || '').toLowerCase();
-          var text = (el.textContent || '').trim();
-          return id === 'arrow-back' || aria === 'back' || text === 'Back';
-        } catch (e) { return false; }
-      });
-      var isDone = path.some(function(el) {
-        try {
-          if (!el || !el.getAttribute) return false;
-          var id = el.id || '';
-          var aria = (el.getAttribute('aria-label') || '').toLowerCase();
-          var text = (el.textContent || '').trim();
-          return id === 'done' || aria === 'done' || text === 'Done';
-        } catch (e) { return false; }
-      });
-      if (isBack || isDone) {
-        event.preventDefault();
-        window.history.back();
-      }
-    }, false);
   </script>
 
 </body>
