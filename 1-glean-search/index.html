@@ -238,12 +238,13 @@
     (function(){
       function computeSiteRoot() {
         try {
-          var p = location.pathname;
-          // /repo/module/index.html or /repo/module/ -> /repo/index.html
-          if (/\/[A-Za-z0-9_-]+\/(index\.html)?$/.test(p)) {
-            return p.replace(/\/[A-Za-z0-9_-]+\/(index\.html)?$/, '/index.html');
-          }
-          return '/index.html';
+          var path = location.pathname.replace(/\/+/, '/');
+          var parts = path.split('/').filter(Boolean);
+          var modules = { '1-glean-search': true, '2-glean-assistant': true, '3-glean-agents': true };
+          if (parts.length === 0) return '/index.html';
+          if (parts.length === 1 && parts[0] === 'index.html') return '/index.html';
+          if (modules[parts[0]]) return '/index.html';
+          return '/' + parts[0] + '/index.html';
         } catch(e) { return '/index.html'; }
       }
 

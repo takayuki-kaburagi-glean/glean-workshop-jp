@@ -241,12 +241,13 @@
     (function(){
       function computeSiteRoot() {
         try {
-          var p = location.pathname;
-          // /repo/module/index.html -> /repo/index.html
-          if (/\/[A-Za-z0-9_-]+\/(index\.html)?$/.test(p)) {
-            return p.replace(/\/[A-Za-z0-9_-]+\/(index\.html)?$/, '/index.html');
-          }
-          return '/index.html';
+          var path = location.pathname.replace(/\/+/, '/');
+          var parts = path.split('/').filter(Boolean); // e.g. ['repo','2-glean-assistant','index.html'] or ['2-glean-assistant','index.html'] or ['index.html']
+          var modules = { '1-glean-search': true, '2-glean-assistant': true, '3-glean-agents': true };
+          if (parts.length === 0) return '/index.html';
+          if (parts.length === 1 && parts[0] === 'index.html') return '/index.html';
+          if (modules[parts[0]]) return '/index.html'; // custom domain（モジュール直下）
+          return '/' + parts[0] + '/index.html'; // GitHub Pages の /<repo>/index.html
         } catch(e) { return '/index.html'; }
       }
 
