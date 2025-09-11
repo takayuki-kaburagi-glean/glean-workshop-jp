@@ -274,6 +274,7 @@
 
       function isDoneOrCloseClick(path) {
         var closeIconNames = ['close', 'clear', 'cancel'];
+        var hashTriggers = ['#finish', '#done', '#exit', '#close'];
         for (var i = 0; i < path.length; i++) {
           var el = path[i];
           try {
@@ -285,10 +286,16 @@
             var icon = (getAttr('icon') || '').toLowerCase();
             var tag = (el.tagName || '').toLowerCase();
             var text = (el.textContent || '').trim();
+            var href = (getAttr('href') || '').toLowerCase();
             if (id === 'done' || aria === 'done' || title === 'done' || (tag === 'a' && text === 'Done')) return true;
             if (id === 'close' || aria === 'close' || title === 'close') return true;
             if (tag === 'i' && closeIconNames.indexOf(text) !== -1) return true; // material-icons glyph text
             if (closeIconNames.indexOf(icon) !== -1) return true;
+            if (tag === 'a' && href) {
+              for (var h = 0; h < hashTriggers.length; h++) {
+                if (href.indexOf(hashTriggers[h]) !== -1) return true;
+              }
+            }
           } catch(e) { /* ignore */ }
         }
         return false;
@@ -314,6 +321,12 @@
           window.location.href = computeSiteRoot();
         }
       }, true);
+
+      window.addEventListener('hashchange', function(){
+        if (/finish|done|exit|close/i.test(location.hash)) {
+          window.location.replace(computeSiteRoot());
+        }
+      }, false);
     })();
   </script>
 
