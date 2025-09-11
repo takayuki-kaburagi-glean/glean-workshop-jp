@@ -20,17 +20,6 @@
     }
   </style>
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LR18FBLQHK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LR18FBLQHK');
-</script>
- 
 <body>
   <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
   <google-codelab codelab-gaid="G-LR18FBLQHK"
@@ -42,190 +31,201 @@
     
       <google-codelab-step label="Overview" duration="2">
         <p class="image-container"><img style="width: 624.00px" src="img/c888aa965161bab9.png"></p>
-<p><br>The Glean Assistant is a part of Glean&#39;s generative AI products. It&#39;s designed to function similarly to a knowledgeable colleague within the company, providing personalized responses based on the company&#39;s knowledge and work graph. <br><br>The primary entry point for interacting with the Assistant is through Glean Chat, which enables users to ask questions and receive answers as if they were consulting a fellow employee. This feature is aimed at harnessing the collective knowledge of the organization to assist users in various tasks, such as summarizing projects, identifying subject matter experts, and providing updates on topics of interest.</p>
+<p><br>Glean Assistantは、Gleanの生成AI製品群の一部です。社内の知識豊富な同僚と同様に機能するよう設計されており、企業の知識と業務グラフに基づいてパーソナライズされた回答を提供します。</p>
+<p>アシスタントとの主な接点はGlean Chatであり、ユーザーは同僚に相談するように質問し回答を得られます。この機能は組織の集合知を活用し、プロジェクトの要約、専門家の特定、関心事項の最新情報提供など、様々なタスクを支援することを目的としています。</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Login to Glean" duration="2">
-        <p>Go to <a href="https://app.glean.com/chat" target="_blank">https://app.glean.com/chat</a>.<br><br>Because Glean is a logged in experience and this is the first time you&#39;ve accessed the platform, you will be redirected to the Glean login page. If you&#39;re already logged in, you can proceed to the next step.<br></p>
+      <google-codelab-step label="Gleanにログイン" duration="2">
+        <p>Go to <a href="https://app.glean.com/chat" target="_blank">https://app.glean.com/chat</a>.<br><br>Gleanはログインが必要なサービスであり、今回が初めてのアクセスとなりますため、Gleanのログインページへリダイレクトされます。既にログイン済みの場合は、次のステップへお進みください。</p>
 <p class="image-container"><img style="width: 624.00px" src="img/a3714ffdb1c1bbc6.png"></p>
-<p>Enter the credentials provided for you by the Workshop Moderator.  First enter the email address into the <strong>Work email</strong> field and click the <strong>Log in</strong> button.</p>
+<p>ワークショップモデレーターから提供された認証情報を入力してください。まず、メールアドレスを「仕事用メールアドレス」欄に入力し、「ログイン」ボタンをクリックしてください。</p>
 <p class="image-container"><img style="width: 331.50px" src="img/40f8de2eda2b840f.png"></p>
-<p><br>You will be presented with a screen similar to the following.  Enter the password provided by your Workshop Moderator and click the <strong>Sign in</strong> button. You will then be redirected back to the Glean Assistant.  </p>
+<p>以下のような画面が表示されます。ワークショップモデレーターから提供されたパスワードを入力し、「サインイン」ボタンをクリックしてください。その後、Glean Assistantに戻ります。</p>
 <p class="image-container"><img style="width: 624.00px" src="img/ce792156aaa8b3b9.png"></p>
-<aside class="warning"><p><strong>Note: </strong>You may need to select Chat on the left side if you don&#39;t see the screen above.</p>
+<aside class="warning"><p><strong>注：上記の画面が表示されない場合は、左側の「チャット」を選択する必要があるかもしれません。</strong></p>
 </aside>
-<p>From here we can interact with your company data via a conversation interface similar to how ChatGPT works.<br><br>This is a private sandbox instance of Glean that was set up for this workshop and has various data sources connected and indexed. Some of this include but are not limited to:</p>
+<p>ここから、ChatGPTと同様の会話インターフェースを通じて、御社のデータとやり取りできます。</p>
+<p>これは本ワークショップ用に設定されたGleanのプライベートサンドボックスインスタンスであり、様々なデータソースが接続・インデックス化されています。これには以下が含まれますが、これらに限定されません：</p>
 <ul>
-<li>Glean Website Data (glean.com, help.glean.com, and <a href="http://developers.glean.com" target="_blank">developers.glean.com</a>)</li>
-<li>Publicly available Glean Technical information in the form of Google Docs</li>
-<li>Etc....</li>
+<li>Glean ウェブサイトデータ（<a href="http://glean.com" target="_blank">glean.com</a>、help.glean.com、developers.glean.com）</li>
+<li>Google ドキュメント形式で公開されている Glean 技術情報</li>
+<li>その他...</li>
 </ul>
-<p>You&#39;ll see from the interface that you can start a conversation from scratch with the Glean Assistant. </p>
-<p class="image-container"><img style="width: 624.00px" src="img/c9e003e8a96d5fa1.png"><br></p>
-<p>In the next section we&#39;ll start our first conversation with Glean Assistant. Go ahead and click on <strong>Next </strong>below.</p>
+<p>インターフェースから、Glean アシスタントとの会話を一から開始できることがわかります。<br><br><img style="width: 624.00px" src="img/c9e003e8a96d5fa1.png"><br></p>
+<p>次のセクションでは、Glean Assistantとの最初の会話を始めます。下の「次へ」をクリックしてください。</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Start a Conversation with Glean Assistant" duration="5">
-        <p><br>Let&#39;s see if Glean Assistant can help us understand how crawling/indexing works within the Glean Platform.<br>Enter the following in the conversation window and hit <strong>Enter</strong> or click the <img style="width: 32.00px" src="img/173ba9967715e767.png"> button:<br></p>
-<aside class="special"><p><strong>Does Glean support crawling content from Confluence and Sharepoint? Please include specific connector setup steps for each connector.</strong></p>
+      <google-codelab-step label="Glean Assistantと会話を始めましょう" duration="5">
+        <p><br>Glean Assistantが、Gleanプラットフォーム内でのクロール/インデックスの仕組みを理解するのに役立つかどうか見てみましょう。</p>
+<p>会話ウィンドウに以下を入力し、Enterキーを押す <img style="width: 32.00px" src="img/173ba9967715e767.png"> をクリックしてください。<br></p>
+<aside class="special"><p><strong>GleanはConfluenceおよびSharePointからのコンテンツのクロールをサポートしていますか？各コネクタの具体的な設定手順を含めてください。</strong></p>
 </aside>
 <p class="image-container"><img style="width: 624.00px" src="img/c67de213d58d6bd4.png"></p>
-<p>The Glean Assistant will now perform a few things for you under the covers:</p>
+<p>Gleanアシスタントは、バックグラウンドで以下の処理を実行します：</p>
 <ol type="1" start="1">
-<li>Ascertain the context of the natural language query and convert it to one or more enterprise searches against the indexed company corpus.</li>
-<li>Execute the enterprise search(es).</li>
-<li>Read the top results (As you recall the Workshop Moderator explained how Relevancy works within Glean to provide Accurate/Contextual results).</li>
-<li>Match the read documents with the context of the original query.</li>
-<li>Send the relevant snippets from the document to the Large Language Model (LLM) for content generation.</li>
-<li>Present the results with citations.</li>
+<li>自然言語クエリの文脈を把握し、インデックス化された企業コーパスに対する1つ以上のエンタープライズ検索に変換します。</li>
+<li>エンタープライズ検索を実行します。</li>
+<li>上位の結果を読み取ります（ワークショップモデレーターが説明したように、Glean内の関連性アルゴリズムが正確かつ文脈に沿った結果を提供する仕組みを思い出してください）。</li>
+<li>読み取った文書を元のクエリの文脈と照合します。</li>
+<li>文書から関連するスニペットを抽出し、大規模言語モデル（LLM）に送信してコンテンツを生成します。</li>
+<li>引用元を明記した結果を表示します。</li>
+<li>企業検索を実行する。上位結果を読み取る（ワークショップモデレーターが説明したように、Glean内の関連性アルゴリズムが正確かつ文脈に沿った結果を提供する仕組みを思い出してください）。読み取った文書を元のクエリの文脈と照合する。文書から関連するスニペットを抽出し、コンテンツ生成のために大規模言語モデル（LLM）に送信する。</li>
 </ol>
-<p>Once the generation is complete, let&#39;s go back and navigate through the interface to see the flow provided above in Step 2.<br><br>Right underneath your question, you should see something similar to the following showing the search(es) that were executed, and the documents that were read. You may need to click the carrot next to <strong>Show thinking</strong> to expand and see the steps that Glean performed based on your query.<br></p>
+<p>生成が完了したら、インターフェースに戻ってナビゲートし、上記ステップ2で示したフローを確認しましょう。</p>
+<p>質問のすぐ下に、実行された検索クエリと読み込まれたドキュメントが表示されます。以下のような内容が表示されるはずです。クエリに基づいてGleanが実行したステップを確認するには、「思考を表示」の横にある矢印をクリックして展開する必要がある場合があります。</p>
 <p class="image-container"><img style="width: 624.00px" src="img/a68f7d0e3c28edf9.png"></p>
-<p>You should also see a natural language summary explaining how Glean supports crawling content from both Confluence and Sharepoint.  It may also respond telling you that Glean supports crawling over 100 source applications or may tell you how the source application connectivity works.<br><br>Glean limits and/or completely removes the concerns around LLM hallucinations by searching only content within your company&#39;s corpus as well as citing all content within the answer provided.  Hover over any of the citations similar to what is shown below to learn the detail of the citation.  All citations are clickable to send you directly to the source.</p>
+<p>また、GleanがConfluenceとSharePointの両方からコンテンツをクロールする方法を説明する自然言語の要約も表示されるはずです。Gleanが100以上のソースアプリケーションのクロールをサポートしていることを伝える場合や、ソースアプリケーションの接続方法について説明する可能性もあります。</p>
+<p>Gleanは、企業内のコーパス内のみを検索対象とし、回答内で引用元を全て明示することで、LLMのハルシネーションのリスクを低減します。下記のように表示される引用元の詳細を確認するには、任意の引用元の上にカーソルを合わせてください。全ての引用元はクリック可能で、直接ソースへ移動できます。</p>
 <p class="image-container"><img style="width: 624.00px" src="img/994b7f1b2d28437f.png"><br></p>
-<p>If the citation was from a document authored by a user within your organization you would also see the Author and be able to click the Author link to be able to learn more about the author themselves.  Since this is a public citation from a crawled website (help.glean.com and developers.glean.com) we do not see the authorship in this instance.  </p>
-<p>However, since its public documentation one can assume Authoritative Authorship.</p>
-<p>You&#39;ll also notice suggested prompts for continued follow-up / learning.  An example of what might popup is shown below:</p>
+<p>もし引用元が組織内のユーザーが作成した文書であれば、著者が表示され、著者リンクをクリックして詳細を確認できます。  今回は公開サイト（help.glean.com および developers.glean.com）からクロールされた引用であるため、著者は表示されません。  </p>
+<p>ただし公開文書であることから、信頼できる著作者であると推測できます。</p>
+<p>継続的なフォローアップや学習のための推奨プロンプトも表示されます。表示される可能性のある例を以下に示します：</p>
 <p class="image-container"><img style="width: 624.00px" src="img/cb4d23ede7a9f2f1.png"></p>
-<p>For the purposes of this workshop, ignore the suggested prompts and type this follow-up question in the conversation window:<br></p>
-<aside class="special"><p><strong>How does Glean handle indexing content from the above Connectors?</strong></p>
+<p>このワークショップでは、提案されたプロンプトは無視し、会話ウィンドウに次のフォローアップ質問を入力してください：</p>
+<aside class="special"><p>Gleanは上記のコネクタからのコンテンツのインデックス作成をどのように処理しますか？</p>
 </aside>
 <p class="image-container"><img style="width: 624.00px" src="img/1f7a938165434b86.png"></p>
-<p>You&#39;ll see the conversation continue.  The context of the new response will take into account the previous question/answer to narrow down your knowledge query. Right below your follow-up question, you&#39;ll see that the search remembered the context (Confluence &amp; Sharepoint) and used that context for the enterprise search to drive your new results:<br></p>
-<p>To show the power of LLM Generation with highly relevant data, let&#39;s ask Glean Assistant to write an email with the above information but formatted as a table.<br><br>Enter the following in the conversation window:</p>
-<aside class="special"><p><strong>Please help me write an email to [replace with your first name] with the above details formatted as a table with a column each for Sharepoint and Confluence.</strong></p>
+<p>会話が継続します。新しい応答の文脈は、前の質問/回答を考慮して知識クエリを絞り込みます。フォローアップ質問の直下に、検索が文脈（Confluence &amp; Sharepoint）を記憶し、その文脈をエンタープライズ検索に活用して新しい結果を生成したことが確認できます：</p>
+<p>高度に関連性の高いデータを用いたLLM生成の威力を示すため、上記の情報を表形式でメール作成するようGlean Assistantに依頼してみましょう。</p>
+<p>会話ウィンドウに以下を入力してください：</p>
+<aside class="special"><p><strong>上記の詳細を、SharePointとConfluenceの列をそれぞれ設けた表形式で、[あなたの名前に置き換えてください]宛のメールを作成するお手伝いをお願いします。</strong></p>
 </aside>
-<p>(Replace put your first name here with your actual first name - remove the brackets as well).  Your screen should look similar to the following:</p>
+<p>(実際の名前を入力し、括弧も削除してください）。画面は以下のように表示されるはずです：</p>
 <p class="image-container"><img style="width: 624.00px" src="img/65c15139ff943f14.png"></p>
-<p>The response should be a table formatted response that you could choose to copy/paste into your favorite email program.  In this instance of Glean there is a configuration which integrates directly with Gmail.  This could also integrate with Outlook for customers using Microsoft Solutions. </p>
-<aside class="warning"><p><strong>NOTE:</strong> There is no need to actually send an email for the purposes of this workshop.  This is here to show the capability in a real production scenario.</p>
+<p>返答は、お好みのメールプログラムにコピー＆ペーストできる表形式の返信となります。このGleanのインスタンスでは、Gmailと直接連携する設定が可能です。Microsoftソリューションをご利用のお客様には、Outlookとの連携も可能です。</p>
+<aside class="warning"><p><strong>注：このワークショップの目的上、実際にメールを送信する必要はありません。これは実際の運用環境における機能を示すためのものです。</strong></p>
 </aside>
-<p><br>The data may look similar to the following (depends on if updated content exists from the time of creating this workshop lab):</p>
+<p><br>データは以下のような形式になる場合があります（このワークショップラボ作成時点からの更新内容の有無によります）：</p>
 <p class="image-container"><img style="width: 540.62px" src="img/a8872941d4437f52.png"></p>
-<p>You can see how the power of the world&#39;s leading Enterprise Class Out-of-the-box (OOTB) Retrieval Augmented Generation (RAG) architecture from Glean coupled with the capabilities of the LLM can provide extreme value for users.<br>If this was a real scenario, you could then click the <img style="width: 31.00px" src="img/17d2a12e5e1996a6.png">icon in the lower right corner of the Assistant response which will copy the table to the clipboard.  From there you could paste it into an email program final edit before sending. (Unnecessary if you&#39;re Glean instance has been set up to integrate with your email program directly)</p>
+<p>Gleanが提供する世界トップクラスのエンタープライズ向けアウトオブザボックス（OOTB）検索拡張生成（RAG）アーキテクチャとLLMの機能を組み合わせることで、ユーザーに極めて高い価値を提供できることがお分かりいただけるでしょう。</p>
+<p>実際のシナリオであれば、アシスタント応答の右下隅にある<img style="width: 31.00px" src="img/17d2a12e5e1996a6.png">アイコンをクリックすると、表がクリップボードにコピーされます。そこからメールプログラムに貼り付けて最終編集を行い、送信できます。（Gleanインスタンスがメールプログラムと直接連携するように設定されている場合は不要です）</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Start a New Conversation" duration="5">
-        <p>Let&#39;s switch gears and execute some queries surrounding HR related issues.  A few mocked up documents for a fictitious company were indexed surrounding company policies including HR related policies.  Let&#39;s ask questions related to those documents.</p>
-<p>Click the <strong>New chat </strong>button in the top left of the screen to remove all previous context and start a new conversation.</p>
+      <google-codelab-step label="新しい会話を始める" duration="5">
+        <p>話題を変えて、人事関連の問題に関するクエリを実行してみましょう。架空の企業向けに作成した数種類の模擬文書が、人事関連方針を含む社内規定を中心にインデックス化されています。これらの文書に関連する質問をしてみましょう。</p>
+<p>画面左上の「新規チャット」ボタンをクリックすると、これまでの会話履歴がすべて消去され、新しい会話を開始できます。</p>
 <p class="image-container"><img style="width: 512.50px" src="img/fc43ce8160c453db.png"></p>
-<p>Enter the following text into the conversation window similar to what is shown below:<br></p>
-<aside class="special"><p><strong>What is our PTO policy?</strong></p>
+<p>以下のテキストを、以下に示す例のように会話ウィンドウに入力してください：</p>
+<aside class="special"><p>弊社の有給休暇ポリシーについて教えてください。</p>
 </aside>
 <p class="image-container"><img style="width: 624.00px" src="img/889d0d4fc208b034.png"><br></p>
-<p>Let&#39;s ask a follow-up question:<br></p>
-<aside class="special"><p><strong>Are there any restrictions on when PTO can be taken, such as blackout dates or busy periods?</strong></p>
+<p>では、次の質問をしてみましょう：</p>
+<aside class="special"><p><strong>有給休暇を取得できる時期に、ブラックアウト期間や繁忙期などの制限はありますか？</strong></p>
 </aside>
-<aside class="warning"><p><strong>Hint</strong>: This MAY be one of the suggested follow-up questions.  If it is there (or a similar question is there), feel free to click it.</p>
-</aside>
-<p>Notice the result....</p>
+<p>結果に注目してください...</p>
+<p><strong>「現時点の社内ドキュメント（福利厚生ガイド、PTO・有給休暇ポリシー、FAQ、および従業員ハンドブック）には、「ブラックアウト期間」や「繁忙期」の取得制限についての明確な記載は見つかりませんでした。」</strong></p>
 <p class="image-container"><img style="width: 624.00px" src="img/3f1ace0476a67fc7.png"></p>
-<p><br>While it seems that the platform didn&#39;t do a good job answering the question, it&#39;s actually quite accurate and what our customers have enjoyed from the platform. The Glean Platform did not &#34;hallucinate&#34; by guessing at an answer when there were no documents explicitly discussing blackout dates and/or busy periods. The Glean platform instead clearly stated that there are no documents available discussing this topic and provides a suggested next step for them.<br><br>In this case, the HR department would take the question and recognize that no documents exist to answer questions such as this which can be easily rectified by a new version of the HR policy document.</p>
-<aside class="warning"><p><strong>NOTE:</strong> This could also be rectified by creating an Answer in the Glean platform that could be used as a reference for these kinds of queries.  The next section will discuss the value of how the Answers feature can assist queries such as this.</p>
+<p><br>プラットフォームが質問に適切に回答できなかったように見えますが、実際には非常に正確であり、お客様がプラットフォームで享受してきた点でもあります。Gleanプラットフォームは、ブラックアウト期間や繁忙期について明示的に言及した文書が存在しない場合に、推測で回答を「幻視」したわけではありません。代わりに、このトピックについて言及した文書が存在しないことを明確に述べ、お客様に提案される次のステップを提供しました。</p>
+<p>このケースでは、人事部門がこの質問を受け取り、このような質問に答える文書が存在しないことを認識します。これは人事ポリシー文書の改訂版を作成することで容易に修正可能です。</p>
+<aside class="warning"><p><strong>注：この問題は、Gleanプラットフォームで回答を作成し、この種の問い合わせの参照資料として活用することで解決することも可能です。次のセクションでは、このような問い合わせに対して「回答」機能がどのように役立つかについて説明します。</strong></p>
 </aside>
-<p>Scroll up to the first question in this conversation.  You&#39;ll notice that the Assistant read various documents to answer the PTO policy question.  In the &#34;Reading&#34; section, find the document called &#34;(Demo) CGo. Leave Policy Overview.docx&#34; and click on it to open the document in another tab.  Refer to the below image for assistance (You may have to expand the &#34;Search&#34; portion under the original query to see the searches and documents being read).</p>
-<p class="image-container"><img style="width: 624.00px" src="img/5a625bdcf01e5a44.png"></p>
-<p>Inspect the document, specifically refer to the &#34;Sabbatical Leave&#34; section of the document.  Notice how the paragraph discusses the terms of a Sabbatical Leave, but does not provide context/options for what an employee might do during a Sabbatical...<br><br>Now that we know the authoritative document on Sabbatical Leaves does not discuss this, let&#39;s ask the question anyway and see the results.</p>
-<p><a href="https://help.glean.com/en/articles/3643252-installing-the-browser-extension" target="_blank">If you have installed the Glean extension</a>, quickly try pressing Cmd+J (Mac) or Alt+J (Windows) to popup a sidebar. </p>
-<p>Switch back to the <strong>Chat | Glean</strong> browser tab and enter the following into the conversation window as shown:</p>
-<aside class="special"><p><strong>What do employees typically do on a Sabbatical? Display the results as a bulleted list.</strong></p>
+<p>この会話の最初の質問までスクロールしてください。アシスタントがPTOポリシーの質問に答えるために様々な文書を読んだことがわかります。「Reading」セクションで「(Demo) CGo. 休暇ポリシー概要.docx」という文書を探し、クリックして別のタブで開いてください。  以下の画像を参照してください（元のクエリの下にある「検索」部分を拡大して、検索内容と参照された文書を確認する必要がある場合があります）。<br><br><img style="width: 624.00px" src="img/5a625bdcf01e5a44.png"></p>
+<p>文書を精査し、特に「サバティカル休暇」の項目を参照してください。この段落がサバティカル休暇の条件について論じている一方で、従業員が休暇中に何を行うかについての文脈や選択肢を提供していない点に注目してください...</p>
+<p>サバティカル休暇に関する正式な文書がこの点を扱っていないことがわかった以上、あえて質問を投げかけ、結果を見てみましょう。</p>
+<p>Glean拡張機能をインストール済みの方は、Cmd+J（Mac）またはAlt+J（Windows）を押してサイドバーを表示させてみてください。</p>
+<p>Chat | Gleanブラウザタブに戻り、以下の内容を図のように会話ウィンドウに入力してください：</p>
+<aside class="special"><p>従業員はサバティカル休暇中に通常どのようなことを行いますか？結果を箇条書きで表示してください。</p>
 </aside>
 <p class="image-container"><img style="width: 624.00px" src="img/6f119affc7114fe8.png"></p>
-<p><br>Notice how one of the documents that was read in order to generate the results has an icon with a dialog box and checkmark.</p>
+<p>結果を生成するために読み込まれた文書の一つに、ダイアログボックスとチェックマークのアイコンが付いていることに注目してください。</p>
 <p class="image-container"><img style="width: 422.00px" src="img/7f4381022a12e1f1.png"></p>
-<p><br><br>That icon means the document is an Answer that was created for this specific question because none of the documents in the company corpus contain information on how employees have used their Sabbatical Leave (And clearly someone else asked HR directly and therefore an Answer was created).<br><br>Answers can be manually created by users with the appropriate Role, however, Answers are also automatically generated by the platform during content indexing.  Consider the following conversation in Glean&#39;s Internal Production Instance of the Glean Platform (Yes Glean eats their own dog food).</p>
-<aside class="warning"><p><strong>NOTE:</strong> Don&#39;t ask this question, the following is showing you how Glean&#39;s Internal Production Instance can be used to ask real product questions and provide valuable results.</p>
+<p><br>そのアイコンは、この特定の質問に対して作成された回答文書であることを示しています。なぜなら、社内コーパス内のどの文書にも、従業員がサバティカル休暇をどのように利用したかに関する情報が含まれていないためです（明らかに他の誰かが人事部に直接問い合わせたため、回答が作成されました）。</p>
+<p>適切なロールを持つユーザーは手動で回答を作成できますが、プラットフォームはコンテンツのインデックス作成時に自動的に回答を生成することもあります。以下はGleanプラットフォームの社内本番環境における実際の会話例です（そう、Gleanは自社製品を自ら活用しています）。</p>
+<aside class="warning"><p><strong>注：この質問はしないでください。以下は、Gleanの内部生産インスタンスを使用して実際の製品に関する質問を行い、有益な結果を提供する方法の例です。</strong></p>
 </aside>
 <p class="image-container"><img style="width: 551.11px" src="img/f68bb6e0663fc3b0.png"></p>
-<p><br>As you can see the Glean platform uses AI models during indexing to automatically create Answers to support common FAQs that already exist within your company corpus.</p>
-<p>In the Sabbatical conversation earlier, click the Answer Citation similar to what is shown below:<br><br><img style="width: 419.00px" src="img/9172ed9c23972e3a.png"><br><br>This will redirect you to the created Answer itself for more details. <br><br>Hover over <strong>Workshop Glean</strong> user to create a Card Popup with information surrounding the Author of this Answer as shown below.</p>
-<p class="image-container"><img style="width: 565.12px" src="img/abea0f8c03e0fa19.png"></p>
-<p>Click the <strong>Workshop Glean</strong> name in the Card Popup to navigate to the user details.</p>
+<p><br>ご覧の通り、Gleanプラットフォームはインデックス作成時にAIモデルを活用し、社内のコーパス内に既に存在する一般的なFAQをサポートする回答を自動生成します。</p>
+<p>先ほどのサバティカルに関する会話で、以下のように「回答引用」をクリックしてください：<br><br><img style="width: 419.00px" src="img/9172ed9c23972e3a.png"><br><br>詳細については、作成された回答自体にリダイレクトされます。</p>
+<p>&#34;Glean Workshop&#34;のユーザー名にカーソルを合わせると、下記のようにこの回答の投稿者に関する情報が表示されるカードポップアップを作成できます。<br><br><img style="width: 565.12px" src="img/abea0f8c03e0fa19.png"></p>
+<p>カードポップアップ内の &#34;Glean Workshop&#34; をクリックすると、ユーザー詳細ページに移動します。</p>
 <p class="image-container"><img style="width: 585.50px" src="img/3ab64b94a0b747da.png"></p>
-<p><br>What you see is a page dedicated to this specific user (which in a production deployment would represent an employee or contractor at your company).  You can see contact information, the users reporting line, and any recent activity surrounding your company knowledge this user has been involved in.</p>
-<p>After exploring the user on this page, click the <strong>View in org chart </strong>link.  </p>
+<p><br>ご覧になっているのは、この特定のユーザー専用のページです（本番環境では、御社の従業員または契約社員を表します）。連絡先情報、ユーザーの直属の上司、およびこのユーザーが関与した御社のナレッジに関する最近の活動を確認できます。</p>
+<p>このページでユーザーを確認した後、「組織図で表示」リンクをクリックしてください。  </p>
 <p class="image-container"><img style="width: 624.00px" src="img/43731ee551ee4dd8.png"></p>
-<p>You will be redirected to the Org Chart feature of the Glean Platform.</p>
-<p class="image-container"><img style="width: 624.00px" src="img/6aaa8cd0931b3605.png"></p>
-<p><br>In this Org Chart, you will first see the current user in context which will highlight the Workshop Glean user and the user&#39;s reporting line.  Since this is a Sandbox Instance, there are only a few users available.  However, in a production deployment, your entire company hierarchy would be available.<br><br>Feel free to navigate around this page to ascertain its features.</p>
-<aside class="special"><p><strong>HINT</strong>: some of the users are managers with direct reports, click on one of them to expand their direct reports</p>
+<p>Glean Platformの組織図機能にリダイレクトされます。<br><br><img style="width: 624.00px" src="img/6aaa8cd0931b3605.png"></p>
+<p><br>この組織図では、まず現在のユーザーがコンテキスト内で表示され、&#34;Glean Workshop&#34;のユーザーとその報告ラインが強調表示されます。これはサンドボックスインスタンスであるため、利用可能なユーザーはごくわずかです。ただし本番環境では、会社全体の階層構造が表示されます。<br><br>このページの機能を確かめるために、自由に閲覧してください。</p>
+<aside class="special"><p><strong>ヒント：一部のユーザーは直属の部下を持つ管理者です。そのうちの1人をクリックすると、直属の部下が表示されます。</strong></p>
 </aside>
-<p>You can directly access this feature from the Glean Platform Menu on the left side of the browser window.  Hover over the People (Directory) icon as shown to see this navigation location:</p>
+<p>この機能には、ブラウザウィンドウ左側のGleanプラットフォームメニューから直接アクセスできます。図のように「People（ディレクトリ）」アイコンにカーソルを合わせると、このナビゲーション位置が表示されます：</p>
 <p class="image-container"><img style="width: 303.50px" src="img/9eb7c180819310f5.png"></p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Other Assistant Options" duration="8">
-        <p>Now that you&#39;ve had a chance to chat with Glean Assistant, let&#39;s see some of the other features that are available. Click on <strong>New chat </strong>on the top left to start a new session.</p>
+      <google-codelab-step label="その他のアシスタントオプション" duration="8">
+        <p>Glean Assistantとのチャットを体験いただいたところで、その他の機能もご紹介しましょう。左上の「新規チャット」をクリックすると、新しいセッションを開始できます。</p>
 <p class="image-container"><img style="width: 403.50px" src="img/4000dbef5a3e4268.png"></p>
-<p>Click on the plus ‘+&#39; sign in the chat box to see some options.</p>
-<h2 is-upgraded>Tag People or Documents</h2>
+<p>チャットボックスのプラス記号「+」をクリックすると、いくつかのオプションが表示されます.</p>
+<h2 is-upgraded>人物または文書をタグ付けする</h2>
 <p class="image-container"><img style="width: 490.50px" src="img/f148e2f195a432ce.png"></p>
-<p>Select <strong>Tag people or docs. </strong>This will insert an @ symbol into the chat box and allow you to include people or a document that has been crawled or indexed into the conversation with Glean Assistant.</p>
-<p>Go ahead and type in the following after the @ symbol and select the first result</p>
-<aside class="special"><p>what objects are supported?</p>
+<p>「人またはドキュメントをタグ付け」を選択してください。これによりチャットボックスに@記号が挿入され、Glean Assistantとの会話に、クロールまたはインデックス化された人物やドキュメントを含めることができます。</p>
+<p>@記号の後に&#34;See all results for&#34; を選択して下さい。</p>
+<p class="image-container"><img style="width: 474.00px" src="img/d2d21496ffec4355.png"></p>
+<p>&#34;Salesforce Connector&#34;のドキュメントを &#34;+Add&#34; で追加してください。</p>
+<p class="image-container"><img style="width: 1273.00px" src="img/8a8191e92b74e421.png"></p>
+<p>次に、@記号の後に以下を入力し、最初の結果を選択してください</p>
+<aside class="special"><p>どのようなオブジェクトがサポートされていますか？</p>
 </aside>
-<p class="image-container"><img style="width: 540.16px" src="img/e71cc19eddf408cd.png"></p>
-<p>The chat box should look like the following below. Go ahead and click on the <strong>Send</strong> button to see the response.</p>
+<p>チャットボックスは下記のようになります。送信ボタンをクリックして応答を確認してください。</p>
 <p class="image-container"><img style="width: 557.50px" src="img/533d792be866562.png"></p>
-<p>As you can see, Glean allows you to filter the chat context down to a specific resource. </p>
+<p>ご覧の通り、Gleanではチャットの文脈を特定のリソースに絞り込むことが可能です。</p>
 <p class="image-container"><img style="width: 462.50px" src="img/694ca9e792fe3447.png"></p>
-<p>Because your content is already crawled and indexed, it saves you valuable time from having to upload any documents.</p>
-<h2 is-upgraded>Filter Data</h2>
-<p>Click on <strong>New chat </strong>on the top left to start a new session and see what <strong>Filter data </strong>allows you to do with Glean Assistant.</p>
+<p>コンテンツは既にクロールされインデックス化されているため、文書をアップロードする手間が省け、貴重な時間を節約できます。</p>
+<h2 is-upgraded>データをフィルタリング</h2>
+<p>左上の「新規チャット」をクリックして新しいセッションを開始し、Glean Assistantでフィルタデータを活用できる機能を確認してください。</p>
 <p class="image-container"><img style="width: 403.50px" src="img/4000dbef5a3e4268.png"></p>
-<p>Click on the plus ‘+&#39; sign in the chat box and select <strong>Filter data</strong> this time.</p>
+<p>チャットボックスのプラス記号「+」をクリックし、今回は「データをフィルタリング」を選択してください。</p>
 <p class="image-container"><img style="width: 394.50px" src="img/664a8186baad551.png"></p>
-<p>You&#39;ll see a list of available data sources this time. This is similar to the list of indexed sources on the right side of the SERP page. Select <strong>Glean Docs</strong> or a source that your workshop instructor will suggest.</p>
+<p>今回は利用可能なデータソースの一覧が表示されます。これはSERPページの右側に表示されるインデックス登録済みソースの一覧と類似しています。Glean Docs、またはワークショップ講師が推奨するソースを選択してください。</p>
 <p class="image-container"><img style="width: 370.50px" src="img/71628f9bd734fda0.png"></p>
-<p>Instead of chatting with Glean Assistant on a single document, you can select multiple sources and provide a larger context of information for Glean Assistant to synthesize a response. </p>
-<h2 is-upgraded>Attach File</h2>
-<p>Let&#39;s learn about the <strong>Attach file</strong> option. You can either use the current chat session or just start a new one. </p>
-<p>Before starting a conversation with Glean Assistant, let&#39;s get a file to use. For this lab, you can download one by right-clicking on this link <a href="https://raw.githubusercontent.com/dejim-juang-glean/glean-workshop/refs/heads/main/assets/datachart.png" target="_blank">here</a> and select <strong>Save link as...</strong>. Be sure to remember where you save it.</p>
+<p>単一の文書でGlean Assistantと会話する代わりに、複数の情報源を選択し、より広範な文脈情報を提供することで、Glean Assistantが回答を統合することができます。</p>
+<p>時間のある方は&#34;Glean Docs&#34;を選択してGleanの機能に関する質問を入力してみてください。</p>
+<h2 is-upgraded>ファイルを添付</h2>
+<p>ファイル添付オプションについて学びましょう。現在のチャットセッションを使用するか、新しいセッションを開始できます。</p>
+<p>Glean Assistantとの会話を開始する前に、使用するファイルを用意しましょう。この実習では、<a href="https://raw.githubusercontent.com/dejim-juang-glean/glean-workshop/refs/heads/main/assets/datachart.png" target="_blank">こちらのリンク</a>を右クリックし「リンク先をファイルに保存...」を選択してダウンロードできます。保存場所を必ず覚えておいてください。</p>
 <p class="image-container"><img style="width: 305.50px" src="img/c38aa231fc68d4c2.png"></p>
-<p>Next, click on the plus ‘+&#39; sign in the chat box and select the <strong>Attach file </strong>option.</p>
+<p>次に、チャットボックスのプラス記号「+」をクリックし、「ファイルを添付」オプションを選択します。</p>
 <p class="image-container"><img style="width: 357.50px" src="img/1cb27c5ce7a97d48.png"></p>
-<p>Find the file that you just downloaded and select it to be uploaded. Once the file is uploaded, type in the following and click on <strong>Send.</strong></p>
-<aside class="special"><p>Convert the image into a markdown table</p>
+<p>ダウンロードしたファイルを探し、アップロード対象として選択してください。ファイルのアップロードが完了したら、以下を入力し「送信」をクリックしてください。</p>
+<aside class="special"><p>画像をマークダウンの表に変換してください。この環境ではOCRをオフにしているため数値はサンプルの値を適当に出力してください。画像のグラフの傾向は踏襲してください。</p>
+<p>※青の折れ線グラフはGDP Growth Rate、赤と緑の棒グラフはAnnual Changeを意味しています。横軸は2014年から始まる年数です。</p>
 </aside>
 <p class="image-container"><img style="width: 624.00px" src="img/c870a7a176162685.png"></p>
-<p>The response from Glean Assistant should look like the following below.</p>
-<p class="image-container"><img style="width: 624.00px" src="img/1190b9e0997977f6.png"></p>
-<p>By attaching a file, this allows you to have a conversation with Glean Assistant using content that isn&#39;t crawled or indexed yet by Glean. You can upload 5 files with a maximum of 64MBs for each file. A list of supported filetypes can be found <a href="https://docs.glean.com/administration/assistant/features/file-upload#supported-file-formats" target="_blank">here</a>.</p>
+<p>Glean Assistantからの応答は、以下のようになります。</p>
+<p class="image-container"><img style="width: 629.96px" src="img/1f46917c39ae34b7.png"></p>
+<p>ファイルを添付することで、Gleanがまだクロールまたはインデックス化していないコンテンツを使用してGlean Assistantと会話できます。最大64MBのファイルを5つまでアップロード可能です。対応ファイル形式の一覧は<a href="https://docs.glean.com/administration/assistant/features/file-upload#supported-file-formats" target="_blank">こちら</a>でご確認いただけます。</p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="World Knowledge" duration="4">
-        <p>The last feature to check out before we wrap up this workshop is <strong>World knowledge. </strong>Click <strong>New chat</strong> on the top left and then click on <strong>Company </strong>in the chat box.</p>
+        <p>このワークショップを締めくくる前に確認する最後の機能は「World knowledge」です。左上の「新規チャット」をクリックし、チャットボックス内の「Company」をクリックしてください。</p>
 <p class="image-container"><img style="width: 345.00px" src="img/abc2ffb21931ba10.png"></p>
-<p>In the drop down, select <strong>World knowledge</strong> and click on the option <strong>Always search the web</strong>. </p>
+<p>ドロップダウンメニューで「World knowledge」を選択し、「常にウェブを検索する」オプションをクリックしてください。</p>
 <p class="image-container"><img style="width: 400.67px" src="img/9f7c706a26c7f41d.png"></p>
-<p>Type the following into the search box now but replace the city with your location for today&#39;s workshop.</p>
-<aside class="special"><p>What is the weather in [City]?</p>
+<p>今すぐ検索ボックスに以下を入力してください。ただし、都市名は本日のワークショップ開催地に変更してください。</p>
+<aside class="special"><p>What is the weather in Tokyo?</p>
 </aside>
 <p class="image-container"><img style="width: 624.00px" src="img/c0e90378cdc4a6a7.png"></p>
-<p>Click <strong>Send. </strong>You should get something similar to the screenshot below.</p>
+<p>送信をクリックしてください。以下のスクリーンショットのような画面が表示されるはずです。</p>
 <p class="image-container"><img style="width: 624.00px" src="img/92ee4a0767ac938e.png"></p>
-<p>While Glean defaults to search Company knowledge when running searches, you can also have Glean Assistant synthesize a response to a question using a web search. We&#39;ll see the benefit of this later when we build an Agent in Glean. This allows you to combine content from internal and external sources to generate the best response or analysis possible.</p>
+<p>Gleanはデフォルトで社内ナレッジを検索対象としますが、Glean Assistantにウェブ検索を用いて質問への回答を生成させることも可能です。この利点は、後ほどGleanでエージェントを構築する際に明らかになります。これにより、内部と外部の情報源を組み合わせて、可能な限り最適な回答や分析を生成することが可能になります。</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Conclusion" duration="2">
+      <google-codelab-step label="この章のまとめ" duration="2">
         <p class="image-container"><img style="width: 624.00px" src="img/aff097302a732107.png"></p>
-<p>In this lab, you experienced firsthand how Glean Assistant revolutionizes enterprise knowledge access through intelligent AI-powered conversations. You learned to interact with Glean Chat as you would with a knowledgeable colleague, asking natural language questions and receiving precise, well-sourced responses drawn from your organization&#39;s indexed content.</p>
-<p>Throughout your hands-on exploration, you witnessed Glean&#39;s advanced Retrieval Augmented Generation (RAG) architecture in action. You saw how the Assistant seamlessly converted your queries into targeted enterprise searches, maintained conversational context across multiple exchanges, and presented information in various formats—from detailed explanations to structured tables ready for business communication.</p>
-<p>Your investigation of HR policies demonstrated one of Glean&#39;s most valuable characteristics: its commitment to accuracy over speculation. When you asked about blackout dates that weren&#39;t documented in company policies, the Assistant transparently acknowledged the information gap rather than fabricating an answer. This honest approach, combined with the platform&#39;s ability to automatically generate Answers for common questions, shows how Glean continuously improves to meet your organization&#39;s evolving knowledge needs.</p>
-<p>You also explored Glean&#39;s integration with organizational data, discovering how the platform connects you not just to documents, but to the people behind them—authors, subject matter experts, and team structures. Through features like tagging specific documents or people, filtering by data sources, and accessing world knowledge when needed, you learned how Glean provides comprehensive context that goes far beyond traditional search capabilities.</p>
-<p>By grounding every response in your actual organizational data and providing transparent citations, Glean Assistant has shown you how it can serve as a scalable extension of your company&#39;s collective expertise, helping eliminate information silos and ensuring reliable access to authoritative business knowledge across your entire organization.</p>
+<p>このラボでは、Glean Assistant がどのようにインテリジェントな AI 搭載の会話を通じてエンタープライズ知識へのアクセスを革新するかを、実際に体験しました。あなたは、Glean Chat を知識豊富な同僚のように扱い、自然言語で質問し、組織内でインデックス化されたコンテンツから正確かつ十分に根拠付けられた回答を受け取る方法を学びました。</p>
+<p>ハンズオンでの探索を通じて、Glean の高度な Retrieval Augmented Generation（RAG）アーキテクチャの実際の動作をご覧いただきました。アシスタントがあなたのクエリをターゲットを絞ったエンタープライズ検索にシームレスに変換し、複数のやり取りを通じて会話の文脈を維持し、詳細な説明からビジネスコミュニケーション用の構造化された表まで、さまざまな形式で情報を提示する様子を体感できました。</p>
+<p>人事ポリシーに関して調査した際、Glean の最も価値ある特徴のひとつである「憶測よりも正確性を重視する姿勢」が示されました。たとえば、会社のポリシーに記載されていないブラックアウト日について質問した場合、アシスタントは情報ギャップを率直に認め、答えを作り上げることはありませんでした。この誠実なアプローチと、一般的な質問に対する回答を自動生成できるプラットフォームの能力が組み合わさることで、Glean が組織の進化する知識ニーズに継続的に対応していることがわかります。</p>
+<p>また、Glean が組織データとどのように統合されているかも探究し、同プラットフォームが単なるドキュメントへのアクセスにとどまらず、その背後にいる著者や専門家、チーム構成などの人にもつながれることを発見しました。特定のドキュメントや人物へのタグ付け、データソースによるフィルタリング、必要に応じたグローバル知識へのアクセスといった機能を通じて、Glean が従来の検索をはるかに凌駕した包括的なコンテキストを提供する方法を学びました。</p>
 
 
       </google-codelab-step>
@@ -298,5 +298,6 @@
       }, false);
     })();
   </script>
+
 </body>
 </html>

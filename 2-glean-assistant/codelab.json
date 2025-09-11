@@ -3,13 +3,13 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2025-07-20T20:16:17Z",
+  "updated": "2025-09-11T01:32:37Z",
   "id": "2-glean-assistant",
   "duration": 28,
   "title": "Glean Assistant",
   "authors": "Dejim Juang",
-  "summary": "Discover Glean Assistant's capabilities through this lab, where users will learn to leverage Glean Chat for enterprise searches, engage with organizational knowledge bases, and obtain precise, well-sourced responses.",
-  "source": "1gt0-bndhHOrFFh8I294aq7HIxIDlgrKXF1_egM-8Fac",
+  "summary": "このラボを通じてGlean Assistantの機能を探求しましょう。ユーザーはGlean Chatを活用した企業内検索、組織のナレッジベースとの連携、正確で信頼性の高い情報源に基づく回答の取得方法を学びます。",
+  "source": "1AYqOEx4SQ9UgA_0fSpwV0ydjjBLhK1sv1-r8uuje07w",
   "theme": "web",
   "status": [
     "published"
