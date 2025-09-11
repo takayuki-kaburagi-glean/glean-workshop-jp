@@ -248,18 +248,18 @@
 
       document.addEventListener('click', function(event) {
         var path = event.composedPath ? event.composedPath() : [];
-        var hasBack = path.some(function(el){
+        var isBack = path.some(function(el){
           try {
             if (!el) return false;
             var getAttr = el.getAttribute ? el.getAttribute.bind(el) : function(){return ''};
             var id = el.id || '';
             var aria = (getAttr('aria-label') || '').toLowerCase();
+            var title = (getAttr('title') || '').toLowerCase();
             var icon = (getAttr('icon') || '').toLowerCase();
-            var text = (el.textContent || '').trim();
-            return id === 'arrow-back' || aria === 'back' || icon.indexOf('arrow-back') !== -1 || text === 'Back';
+            return id === 'arrow-back' || aria === 'back' || title === 'back' || icon === 'arrow-back';
           } catch(e){ return false; }
         });
-        if (hasBack) return;
+        if (isBack) return;
         var isDoneOrExit = path.some(function(el) {
           try {
             if (!el) return false;
