@@ -296,57 +296,81 @@
       function computeSiteRoot() {
         try {
           var p = location.pathname;
-          if (/\/[^\/]+\/index\.html$/.test(p)) {
-            return p.replace(/\/[^\/]+\/index\.html$/, '/index.html');
+          if (/\/[A-Za-z0-9_-]+\/(index\.html)?$/.test(p)) {
+            return p.replace(/\/[A-Za-z0-9_-]+\/(index\.html)?$/, '/index.html');
           }
-          return '/';
-        } catch(e) { return '/'; }
+          return '/index.html';
+        } catch(e) { return '/index.html'; }
+      }
+
+      function isBackClick(path) {
+        var iconNames = ['arrow_back', 'arrow-back', 'chevron_left'];
+        var textLabels = ['back', '戻る'];
+        for (var i = 0; i < path.length; i++) {
+          var el = path[i];
+          try {
+            if (!el) continue;
+            var getAttr = el.getAttribute ? el.getAttribute.bind(el) : function(){return ''};
+            var id = el.id || '';
+            var aria = (getAttr('aria-label') || '').toLowerCase();
+            var title = (getAttr('title') || '').toLowerCase();
+            var icon = (getAttr('icon') || '').toLowerCase();
+            var tag = (el.tagName || '').toLowerCase();
+            var text = (el.textContent || '').trim();
+            if (id === 'arrow-back' || textLabels.indexOf(aria) !== -1 || textLabels.indexOf(title) !== -1) return true;
+            if (tag === 'i' && iconNames.indexOf(text) !== -1) return true;
+            if (iconNames.indexOf(icon) !== -1) return true;
+          } catch(e) { /* ignore */ }
+        }
+        return false;
+      }
+
+      function isDoneOrCloseClick(path) {
+        var closeIconNames = ['close', 'clear', 'cancel'];
+        var textLabels = ['done', 'finish', 'close', 'exit', '完了', '閉じる', '終了'];
+        for (var i = 0; i < path.length; i++) {
+          var el = path[i];
+          try {
+            if (!el) continue;
+            var getAttr = el.getAttribute ? el.getAttribute.bind(el) : function(){return ''};
+            var id = el.id || '';
+            var aria = (getAttr('aria-label') || '').toLowerCase();
+            var title = (getAttr('title') || '').toLowerCase();
+            var icon = (getAttr('icon') || '').toLowerCase();
+            var tag = (el.tagName || '').toLowerCase();
+            var text = (el.textContent || '').trim();
+            if (id === 'done' || id === 'close' || id === 'exit') return true;
+            if (textLabels.indexOf(aria) !== -1 || textLabels.indexOf(title) !== -1) return true;
+            if (tag === 'a' && textLabels.indexOf(text.toLowerCase()) !== -1) return true;
+            if (text === '×') return true;
+            if (tag === 'i' && closeIconNames.indexOf(text) !== -1) return true;
+            if (closeIconNames.indexOf(icon) !== -1) return true;
+          } catch(e) { /* ignore */ }
+        }
+        return false;
       }
 
       document.addEventListener('click', function(event) {
         var path = event.composedPath ? event.composedPath() : [];
-        var isBack = path.some(function(el){
-          try {
-            if (!el) return false;
-            var getAttr = el.getAttribute ? el.getAttribute.bind(el) : function(){return ''};
-            var id = el.id || '';
-            var aria = (getAttr('aria-label') || '').toLowerCase();
-            var title = (getAttr('title') || '').toLowerCase();
-            var icon = (getAttr('icon') || '').toLowerCase();
-            return id === 'arrow-back' || aria === 'back' || title === 'back' || icon === 'arrow-back';
-          } catch(e){ return false; }
-        });
-        if (isBack) return;
-        var isDoneOrExit = path.some(function(el) {
-          try {
-            if (!el) return false;
-            var getAttr = el.getAttribute ? el.getAttribute.bind(el) : function(){return ''};
-            var id = el.id || '';
-            var aria = (getAttr('aria-label') || '').toLowerCase();
-            var title = (getAttr('title') || '').toLowerCase();
-            var icon = (getAttr('icon') || '').toLowerCase();
-            var text = (el.textContent || '').trim();
-            return id === 'done' || id === 'exit' || id === 'close'
-              || aria === 'done' || aria === 'close' || aria === 'exit'
-              || title === 'done' || title === 'close' || title === 'exit'
-              || text === 'Done' || text === 'Close' || text === '×'
-              || icon.indexOf('close') !== -1 || icon.indexOf('clear') !== -1;
-          } catch (e) { return false; }
-        });
-        if (isDoneOrExit) {
+
+        if (isBackClick(path)) {
           event.preventDefault();
           event.stopPropagation();
-          var root = computeSiteRoot();
-          window.location.href = root;
+          if (window.history.length > 1) {
+            window.history.back();
+          } else {
+            window.location.href = computeSiteRoot();
+          }
+          return;
+        }
+
+        if (isDoneOrCloseClick(path)) {
+          event.preventDefault();
+          event.stopPropagation();
+          window.location.href = computeSiteRoot();
         }
       }, true);
 
-      window.addEventListener('hashchange', function(){
-        if (/finish|done|exit/i.test(location.hash)) {
-          var root = computeSiteRoot();
-          window.location.replace(root);
-        }
-      }, false);
     })();
   </script>
   <script>

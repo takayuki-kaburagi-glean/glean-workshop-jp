@@ -242,34 +242,20 @@
       function computeSiteRoot() {
         try {
           var p = location.pathname;
-          if (/\/[^\/]+\/index\.html$/.test(p)) {
-            return p.replace(/\/[^\/]+\/index\.html$/, '/index.html');
+          // /repo/module/index.html -> /repo/index.html
+          if (/\/[A-Za-z0-9_-]+\/(index\.html)?$/.test(p)) {
+            return p.replace(/\/[A-Za-z0-9_-]+\/(index\.html)?$/, '/index.html');
           }
-          return '/';
-        } catch(e) { return '/'; }
+          return '/index.html';
+        } catch(e) { return '/index.html'; }
       }
 
-      document.addEventListener('click', function(event) {
-        var path = event.composedPath ? event.composedPath() : [];
-
-        // Back は素通し
-        var isBack = path.some(function(el){
+      function isBackClick(path) {
+        var iconNames = ['arrow_back', 'arrow-back', 'chevron_left'];
+        for (var i = 0; i < path.length; i++) {
+          var el = path[i];
           try {
-            if (!el) return false;
-            var getAttr = el.getAttribute ? el.getAttribute.bind(el) : function(){return ''};
-            var id = el.id || '';
-            var aria = (getAttr('aria-label') || '').toLowerCase();
-            var title = (getAttr('title') || '').toLowerCase();
-            var icon = (getAttr('icon') || '').toLowerCase();
-            return id === 'arrow-back' || aria === 'back' || title === 'back' || icon === 'arrow-back';
-          } catch(e){ return false; }
-        });
-        if (isBack) return;
-
-        // Done / Close / Exit のみトップに誘導（厳密一致）
-        var isStrictDoneOrExit = path.some(function(el) {
-          try {
-            if (!el) return false;
+            if (!el) continue;
             var getAttr = el.getAttribute ? el.getAttribute.bind(el) : function(){return ''};
             var id = el.id || '';
             var aria = (getAttr('aria-label') || '').toLowerCase();
@@ -277,18 +263,54 @@
             var icon = (getAttr('icon') || '').toLowerCase();
             var tag = (el.tagName || '').toLowerCase();
             var text = (el.textContent || '').trim();
+            if (id === 'arrow-back' || aria === 'back' || title === 'back') return true;
+            if (tag === 'i' && iconNames.indexOf(text) !== -1) return true; // material-icons
+            if (iconNames.indexOf(icon) !== -1) return true;
+          } catch(e) { /* ignore */ }
+        }
+        return false;
+      }
 
-            var isDone = id === 'done' || aria === 'done' || title === 'done' || (tag === 'a' && text === 'Done');
-            var isClose = id === 'close' || aria === 'close' || title === 'close' || icon === 'close' || icon === 'clear';
-            var isExit = id === 'exit' || aria === 'exit' || title === 'exit';
-            return isDone || isClose || isExit;
-          } catch (e) { return false; }
-        });
-        if (isStrictDoneOrExit) {
+      function isDoneOrCloseClick(path) {
+        var closeIconNames = ['close', 'clear', 'cancel'];
+        for (var i = 0; i < path.length; i++) {
+          var el = path[i];
+          try {
+            if (!el) continue;
+            var getAttr = el.getAttribute ? el.getAttribute.bind(el) : function(){return ''};
+            var id = el.id || '';
+            var aria = (getAttr('aria-label') || '').toLowerCase();
+            var title = (getAttr('title') || '').toLowerCase();
+            var icon = (getAttr('icon') || '').toLowerCase();
+            var tag = (el.tagName || '').toLowerCase();
+            var text = (el.textContent || '').trim();
+            if (id === 'done' || aria === 'done' || title === 'done' || (tag === 'a' && text === 'Done')) return true;
+            if (id === 'close' || aria === 'close' || title === 'close') return true;
+            if (tag === 'i' && closeIconNames.indexOf(text) !== -1) return true; // material-icons glyph text
+            if (closeIconNames.indexOf(icon) !== -1) return true;
+          } catch(e) { /* ignore */ }
+        }
+        return false;
+      }
+
+      document.addEventListener('click', function(event) {
+        var path = event.composedPath ? event.composedPath() : [];
+
+        if (isBackClick(path)) {
           event.preventDefault();
           event.stopPropagation();
-          var root = computeSiteRoot();
-          window.location.href = root;
+          if (window.history.length > 1) {
+            window.history.back();
+          } else {
+            window.location.href = computeSiteRoot();
+          }
+          return;
+        }
+
+        if (isDoneOrCloseClick(path)) {
+          event.preventDefault();
+          event.stopPropagation();
+          window.location.href = computeSiteRoot();
         }
       }, true);
     })();
