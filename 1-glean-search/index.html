@@ -248,15 +248,18 @@
 
       document.addEventListener('click', function(event) {
         var path = event.composedPath ? event.composedPath() : [];
-        var isBack = path.some(function(el) {
+        var hasBack = path.some(function(el){
           try {
-            if (!el || !el.getAttribute) return false;
+            if (!el) return false;
+            var getAttr = el.getAttribute ? el.getAttribute.bind(el) : function(){return ''};
             var id = el.id || '';
-            var aria = (el.getAttribute('aria-label') || '').toLowerCase();
+            var aria = (getAttr('aria-label') || '').toLowerCase();
+            var icon = (getAttr('icon') || '').toLowerCase();
             var text = (el.textContent || '').trim();
-            return id === 'arrow-back' || aria === 'back' || text === 'Back';
-          } catch (e) { return false; }
+            return id === 'arrow-back' || aria === 'back' || icon.indexOf('arrow-back') !== -1 || text === 'Back';
+          } catch(e){ return false; }
         });
+        if (hasBack) return;
         var isDoneOrExit = path.some(function(el) {
           try {
             if (!el) return false;
@@ -273,12 +276,6 @@
               || icon.indexOf('close') !== -1 || icon.indexOf('clear') !== -1;
           } catch (e) { return false; }
         });
-        if (isBack) {
-          event.preventDefault();
-          event.stopPropagation();
-          window.history.back();
-          return;
-        }
         if (isDoneOrExit) {
           event.preventDefault();
           event.stopPropagation();
