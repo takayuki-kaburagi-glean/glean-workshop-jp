@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
-  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <style>
     .success {
       color: #1e8e3e;
@@ -53,10 +52,8 @@
 <p>以下のような画面が表示されます。</p>
 <p>ワークショップモデレーターから提供されたパスワードを入力し、「サインイン」ボタンをクリックしてください。</p>
 <p class="image-container"><img style="width: 331.50px" src="img/40f8de2eda2b840f.png"></p>
-<p>完了後、Glean Agentsページにリダイレクトされます。<br></p>
-<p class="image-container"><img style="width: 624.00px" src="img/4a4f5b11905d97e5.png"></p>
-<p><br>Gleanエージェントページが表示されない場合は、画面左側のチャットアイコンをクリックし、次に「エージェント」を選択してください。</p>
-<p class="image-container"><img style="width: 309.50px" src="img/6ac796267f7aee6b.png"></p>
+<p>完了後、Glean Agentsページにリダイレクトされます。</p>
+<p class="image-container"><img style="width: 674.00px" src="img/e66a0971a0606bf9.png"></p>
 <p>おめでとうございます！ガイドのこのステップを無事に完了しました。Oktaを介したシングルサインオン認証プロセスにより、Gleanが組織のID管理システムとシームレスに連携していることが実証されました。この合理化されたログイン体験により、追加の認証情報を入力する必要がなくなり、企業リソースへの安全なアクセスが確保されます。</p>
 <p>下の「次へ」をクリックして次のステップに進んでください。</p>
 
@@ -66,13 +63,34 @@
       <google-codelab-step label="Agentとは何ですか？" duration="2">
         <p>Glean Agentは、AIを搭載したツールであり、情報収集、データ要約、過去のステップに基づく意思決定といったアクションを処理することで、単純な作業から複雑なワークフローまで、タスクを自動化します。</p>
 <p>特定の事象が発生した際にエージェントが動作を開始するよう設定でき、変化する入力に適応しながら一連のアクションを実行します。これにより、作業が効率化され、反復的または詳細なプロセスにかかる時間を節約できます。</p>
-<h2 is-upgraded>Agentは誰のためのものですか？</h2>
-<p>エージェントは、企業内の様々なタイプのユーザーを対象としており、以下を含みます：</p>
-<ul>
-<li><strong>ビルダー：</strong>カスタムAI体験を創出する個人。機能運用担当者、IT担当者、パワーユーザー、単発課題の解決策を必要とする一時的なユーザーなど、サブグループに分類されることが多い。</li>
-<li><strong>利用者：</strong>他者が作成したエージェントを利用するユーザー。自らエージェントを開発する可能性は低い。役職や職務を問わず、エージェントが提供する事前定義されたタスクや自動化の恩恵を受ける従業員が含まれる。</li>
-<li><strong>管理者：</strong>組織内におけるエージェントの導入とガバナンスの管理・監督を担当する。</li>
-</ul>
+<h2 is-upgraded><img style="width: 1166.00px" src="img/6c361c805aa8d971.png"></h2>
+<p>Glean Actionsを使うとエージェントの実行結果をメッセージや資料としてアップデートしたり、各業務アプリケーションに対して更新を行ったり、データベースからデータを取得することができます。</p>
+<h2 is-upgraded><img style="width: 1169.00px" src="img/66ba0168d34160d2.png"></h2>
+<p>以下のようなActionsを利用することができます。</p>
+<h2 is-upgraded><img title="Screenshot 2025-09-30 at 13.24.24.png" style="width: 951.50px" src="img/be16f3587470704d.png"></h2>
+<p>また、Gleanでは「Glean Model Hub」を介してエージェントごと、タスクごとにLLMを自由に選択することが可能です。</p>
+<h2 is-upgraded><img style="width: 1164.00px" src="img/ee22a85c60671488.png">Agentは誰のためのものですか？</h2>
+<p>以下の表は、エージェントと相互作用できる役割とそのデフォルトの権限を説明しています：</p>
+<table>
+<tr><td colspan="1" rowspan="1"><p>Role</p>
+</td><td colspan="1" rowspan="1"><p>Permission</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Default Member</p>
+</td><td colspan="1" rowspan="1"><p>メンバーがエージェントを作成または共有できるかは、デフォルトのメンバー権限によって管理されます。</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Agent Creator</p>
+</td><td colspan="1" rowspan="1"><p>自身のエージェントの作成、編集、削除が許可されています。他のユーザーのエージェント設定は閲覧可能ですが、編集には適切な権限が必要です。「エージェントの共有と公開を許可」のデフォルト設定がオフの場合、広く共有/公開することはできません。</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Action Creator</p>
+</td><td colspan="1" rowspan="1"><p>自身のアクションを作成、編集、削除する。アクションはエージェントで使用する前に、管理者が有効化し管理する必要があります。</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Agent Moderator</p>
+</td><td colspan="1" rowspan="1"><p>作成者に関係なく、あらゆるエージェントの作成、編集、削除、閲覧、フィーチャー表示、共有、公開が可能です。この役割には、組織全体でのエージェントのコンプライアンス遵守と効果的な利用を確保するための監督権限が含まれます。</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Admin</p>
+</td><td colspan="1" rowspan="1"><p>すべての権限を保持し、任意のユーザーにエージェント作成者またはエージェントモデレーターの役割を割り当てることも可能です。組織全体のエージェント設定と権限を管理できます。</p>
+</td></tr>
+</table>
 <h2 is-upgraded>作成可能なエージェントの例</h2>
 <p>エージェントの作成においては、可能性はほぼ無限大です。どんなタスクでも、自由に好きな方法で解決するエージェントを作成できます。作成できるエージェントの例をいくつか挙げます：</p>
 <ol type="1" start="1">
@@ -118,108 +136,89 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Agentを探索する" duration="8">
-        <p>エージェントの作成に取り掛かる前に、まず既存のエージェントを検証しテストしてみましょう。このGleanのプライベートサンドボックス環境には、あらかじめ様々なエージェントが用意されています。本ワークショップでは「<strong>Plan My Day Agent</strong>」を題材に探求していきます。</p>
-<p>Glean Searchで <strong>Plan My Day Agent </strong>を検索して検索結果から &#34;View agent&#34;をクリックします。<img style="width: 737.50px" src="img/9bfdbc3c7e8d3bea.png"><br></p>
-<p>ポップアップウィンドウで「エージェント設定を表示(View agent setup)」リンクを選択すると、このエージェントのデザインを確認できます。<br><br><img style="width: 556.50px" src="img/3f747865db79670d.png"></p>
-<p>現在、Glean Agent Builderのビューアーモードです。注記に記載されている通り、エージェントの編集や変更は可能ですが、保存はできません。</p>
-<p class="image-container"><img style="width: 624.00px" src="img/f87f1a976b28f5eb.png"></p>
-<p>マウスを使って「Plan My Day Agent」キャンバスを操作してください。マウスボタンをクリックしたままにすると、ビューの位置を変更できます。画面右下の<img style="width: 37.06px" src="img/1bb3c112a3c673f5.png">ボタンをクリックすると、ビューをリセットできます。</p>
-<p>それでは、このエージェントを構成する各ステップを順を追って見ていきましょう。</p>
-<h2 is-upgraded>ステップ 0 - Trigger - Schedule trigger</h2>
-<p>これはエージェントの起動方法を定義します。このエージェントはSchedule triggerです。</p>
-<p class="image-container"><img style="width: 575.50px" src="img/e28248eb6ee42ce8.png"></p>
-<p>Set schedule -&gt; Set scheduleで進みどのような設定ができるか確認してみましょう。</p>
-<p>モーダルを閉じてAgent detailsからビルダーに戻ります。</p>
-<p class="image-container"><img style="width: 583.61px" src="img/4037466d96fecb72.png"></p>
-<h2 is-upgraded>ステップ 1 - Company Search - Slack</h2>
-<p>Slackで、エージェントを実行しているユーザーが言及されているすべてのメッセージを検索する。</p>
-<p class="image-container"><img style="width: 530.50px" src="img/7f24ba0e2bd8a762.png"></p>
-<h2 is-upgraded>ステップ 2 - Company Search - Email</h2>
-<p>昨日と今日の日付のメールをすべて検索します。この検索は、Gleanがクロールおよびインデックス化するように設定されているOutlookまたはGoogleメールを対象に行われます。</p>
-<p class="image-container"><img style="width: 492.50px" src="img/b7504a07d4c5a272.png"></p>
-<h2 is-upgraded>ステップ 3 - Calendar Search</h2>
-<p>エージェントを実行しているユーザーに対して、本日予定されているすべての会議を検索するためにカレンダー検索を実行します。</p>
-<p class="image-container"><img style="width: 512.50px" src="img/8371429c9ecdd951.png"></p>
-<h2 is-upgraded>ステップ 4 - Read Document</h2>
-<p>これ以前のステップで見つけたドキュメントを読む。</p>
-<p class="image-container"><img style="width: 528.50px" src="img/db23b467bc680713.png"></p>
-<h2 is-upgraded>ステップ 5 - Respond</h2>
-<p>ユーザーの1日の計画を立てるために必要なすべての情報をユーザーに提供してください。</p>
-<p class="image-container"><img style="width: 527.50px" src="img/e9be2ab460e77df0.png"></p>
-<p>以下にAI応答の手順を示します。(日本語版)</p>
-<aside class="warning"><p>Slackのスレッドを要約してください。</p>
-<p>さらに、このスレッドに私のアクションアイテムがあるかどうかを判断してください。</p>
-<p>例えば、他のメンバーが私の返信を待っている状況ですか？</p>
-<p>回答は以下の形式に従ってください：</p>
-<p># Slackメッセージ</p>
-<p>## &lt;スレッドタイトル&gt;</p>
-<p>- &lt;スレッドを要約する箇条書き&gt;</p>
-<p>- &lt;スレッドを要約する箇条書き&gt;</p>
-<p>- &lt;スレッドを要約する箇条書き&gt;</p>
-<p>スレッドへのリンク: &lt;Slackスレッドリンクを挿入&gt;</p>
-<p>## アクションアイテム:</p>
-<p>- &lt;推奨アクションアイテム&gt;</p>
-<p>## 提案される返信: &lt;提案される返信を挿入&gt;</p>
-<p>---------</p>
-<p>各メールについて、以下の3つの箇条書きで要約してください。</p>
-<p>人間から送信されたメールへの返信構造は以下のようにしてください：</p>
-<p># メールメッセージ</p>
-<p>## メール件名: &lt;件名を挿入&gt;</p>
-<p>- &lt;最初の要約箇条書きを挿入&gt;</p>
-<p>- &lt;2番目の要約箇条書きを挿入&gt;</p>
-<p>- &lt;3番目の要約箇条書きを挿入&gt;</p>
-<p>---------</p>
-<p>回答は詳細かつ実行可能な内容であるべきです。</p>
-<p>前回の会議で何が起こったかを要約し、「前回の会議メモ」セクションにまとめます。</p>
-<p>また、前回の会議で起こったことを振り返り、会議メモから得た情報をもとに、次回の会議に関連する議題を作成してください。</p>
-<p>最後に、前回の会議の雰囲気を捉えてください。</p>
-<p>回答は以下の形式で作成してください：</p>
-<p># 本日の会議</p>
-<p>## 会議詳細</p>
-<p>- *タイトル*: &lt;会議タイトル&gt;</p>
-<p>- *出席者*: &lt;会議出席者&gt;</p>
-<p>- *日時*: &lt;会議開始・終了日時&gt;</p>
-<p>## 前回会議の議事録</p>
-<p>- &lt;議事録挿入&gt;</p>
-<p>- &lt;議事録挿入&gt;</p>
-<p>- &lt;議事録挿入&gt;</p>
-<p>- &lt;議事録挿入&gt;</p>
-<p>### 意見・感想</p>
-<p>- &lt;意見・感想挿入&gt;</p>
-<p>### 前回会議のアクションアイテム</p>
-<p>- &lt;メモを挿入&gt;</p>
-<p>- &lt;メモを挿入&gt;</p>
-<p>- &lt;メモを挿入&gt;</p>
-<p>### 次回会議の提案議題</p>
-<p>- &lt;議題項目1を挿入&gt;</p>
-<p>- &lt;議題項目2を挿入&gt;</p>
-<p>- &lt;議題項目3を挿入&gt;</p>
-<p>- &lt;議題項目4を挿入&gt;</p>
-<p>---------</p>
-<p># 本日の要約</p>
-<p>最後に、私がその日に知る必要のある全てを簡潔に要約してください。以下の出力から全てを統合・要約してください：</p>
-<p>1) Slackスレッド</p>
-<p>2) メール</p>
-<p>3) カレンダー</p>
-<p>これを表形式で要約してください。</p>
-<p># 午前中の計画</p>
-<p>さらに、これらの項目それぞれに対処するために必要な手順をリストアップし、私の午前中の計画を立てておいてください。</p>
+      <google-codelab-step label="Tasked Based Agentを作成する" duration="10">
+        <p>早速エージェントを作ってみましょう。今回は社内の更新方法を自動で収集しレポートしてくれるエージェントを作成します。</p>
+<p>左のナビゲーションバーからGlean Agentsのアイコンを選択し「エージェントを作成」をクリックしてください。</p>
+<p class="image-container"><img style="width: 779.00px" src="img/dd723d412fec6c37.png"></p>
+<p>「AIを使用して下書きを生成」を選択します。このモードを利用すると自然言語で作りたいエージェントを記述するとワークフローを推定し自動生成してくれます。</p>
+<p class="image-container"><img style="width: 579.50px" src="img/df7e4f45dd97219d.png"></p>
+<p>以下のプロンプトを入力します。（本来はできるだけ具体的に書くことがベストです！）</p>
+<aside class="special"><p><strong>&#34;Slack&#34;、&#34;Sharepoint&#34;、&#34;Outlook&#34;、&#34;Gleanのウェブサイト&#34;から１週間以内の更新情報を検索してまとめて、毎日レポートをスラックで送ってください。</strong></p>
 </aside>
-<p>ご覧の通り、著者は応答の書式設定を制御でき、推論エンジンが応答生成を支援するための追加指示を追加することも可能です。応答書式設定におけるMarkdown構文に注意してください。必須ではありませんが、LLMがMarkdown構文を深く理解しているため有用です。</p>
-<p>それではデザインキャンバスから直接このエージェントを実行してみましょう。画面右上のプレビューボタンをクリックすると、図のように画面左側にテストウィンドウが展開されます：<br><img style="width: 624.00px" src="img/c34b24fa60f03712.png"><br></p>
-<p>エージェントを実行するには、[エージェントを実行] ボタンをクリックしてください。</p>
-<p class="image-container"><img style="width: 376.50px" src="img/3e0d5f4db0ae1b13.png"></p>
-<p><strong>Plan My Day Agent</strong>は定義された手順を実行し始めます。応答ステップに到達すると、プレビューウィンドウに下記例のような出力が表示されます。これはユーザーごと、ワークショップごとに異なります。</p>
-<p class="image-container"><img style="width: 443.50px" src="img/1f151115f0785e88.png"></p>
-<p><br>上記の例は、一日の業務開始前の朝にスケジュールに基づいて自動的に実行されるエージェントとして有益です。メッセージは自動的にメールや、会社のメッセージングプログラム（Teams、Slackなど）に配信できます。</p>
-<p>このエージェントを拡張してさらなる価値を生み出す方法を考えてみてください（例：未読のSlack/メールメッセージのみを検索するなど）。</p>
+<p class="image-container"><img style="width: 674.29px" src="img/c62c5dadf167fd75.png"></p>
+<p>「<strong>強化</strong>」のボタンを押すと入力した内容をAIがブラッシュアップしてくれます。</p>
+<p class="image-container"><img style="width: 642.52px" src="img/5d770c4802a4a684.png"></p>
+<p>「<strong>エージェントを生成</strong>」をクリックすると以下のようなワークフローが作成されるはずです 🪄</p>
+<p>まずはこのエージェントをそのまま試してみましょう。「<strong>プレビュー</strong>」をクリックして「<strong>エージェントを実行</strong>」します。</p>
+<p class="image-container"><img style="width: 763.50px" src="img/1a4529684de8d866.png"></p>
+<p>実行され、有用な情報が取得されているように見えますが、もう少し改善してみます。</p>
+<p class="image-container"><img style="width: 736.43px" src="img/f560425570f851b3.png"></p>
+<p>「トリガー」を選択し、「エージェントのスケジュール実行を許可」をチェックします。これによりエージェントを日次や週次でスケジューリングし、自動実行できます。</p>
+<p>トリガーにはこのほかに「チャットメッセージトリガー」、「コンテンツトリガー」などがありチャットメッセージやコンテンツの更新情報をトリガーにエージェントを稼働させることができます。</p>
+<p class="image-container"><img style="width: 710.00px" src="img/ab539aa693fa4fe9.png"></p>
+<p>次に「1.会社検索」を選択し、検索指示を以下に変更してください。</p>
+<aside class="special"><p><strong>過去１年以内の新しいSlack投稿を検索してください。</strong></p>
+</aside>
+<p class="image-container"><img style="width: 606.32px" src="img/f284b87298620090.png"></p>
+<p>次に「2.会社検索」を選択し、検索指示を以下に変更してください。</p>
+<aside class="special"><p><strong>過去3ヶ月以内の新しいSharepoint投稿、ファイル、通知、記事を検索してください。</strong></p>
+</aside>
+<p class="image-container"><img style="width: 610.09px" src="img/90b51ba74ebf0680.png"></p>
+<p>次に「3..会社検索」を選択し、「手動」に切り替え、以下の検索クエリを「追加」してください。</p>
+<aside class="special"><p><strong>* app:outlook</strong></p>
+</aside>
+<p>自然言語だけでなくクエリを明確に指定し検索を実行することも可能です。</p>
+<p class="image-container"><img style="width: 610.82px" src="img/91c504deb730b7c0.png"></p>
+<p>次に以下の例のように矢印にマウスオーバーしステップを追加ボタンをクリックしてください。</p>
+<p class="image-container"><img style="width: 360.00px" src="img/d067cca5fbdce96d.png"></p>
+<p>会社検索を選択してください。(そのほかにもどのようなステップが追加できるか、自由に探してみてください。)</p>
+<p class="image-container"><img style="width: 517.00px" src="img/97b0c8da41365340.png"></p>
+<p>「手動」を選択し、以下の二つのクエリーを追加します。</p>
+<aside class="special"><p><strong>* app:github updated:past_year</strong></p>
+<p><strong>* app:drive updated:past_year</strong></p>
+</aside>
+<p>最後に検索結果の件数を「10件の結果」に変更します。</p>
+<p class="image-container"><img style="width: 656.89px" src="img/80046834df999092.png"></p>
+<p>次に「応答」をクリックし、応答指示を以下に変更してください。</p>
+<aside class="special"><p><strong>#スラックの更新情報</strong></p>
+<p><strong>各スレッドの内容を要約してリスト形式で表示</strong></p>
+<p><strong># Sharepointの更新情報</strong></p>
+<p><strong>各ドキュメントの内容を要約してリスト形式で表示。</strong></p>
+<p><strong>ドキュメントのURLも掲載する</strong></p>
+<p><strong># Outlookの更新情報</strong></p>
+<p><strong>メールのタイトルと内容をようやくして表示。</strong></p>
+<p><strong>送信者のメールアドレスも掲載する。</strong></p>
+<p><strong># Google Driveの更新情報</strong></p>
+<p><strong>各ドキュメントの内容を要約してリスト形式で表示。</strong></p>
+<p><strong>ドキュメントのURLも掲載する</strong></p>
+<p><strong># GitHubの更新情報</strong></p>
+<p><strong>各ドキュメントの内容を要約してリスト形式で表示。</strong></p>
+<p><strong>ドキュメントのURLも掲載する</strong></p>
+<p><strong># Glean Webサイトの更新情報</strong></p>
+<p><strong>更新サイトのURLをタイトルともにリスト形式で表示</strong></p>
+</aside>
+<p>以下のようになります。</p>
+<p class="image-container"><img style="width: 655.58px" src="img/ff50583e2d7036db.png"></p>
+<p>再度矢印をマウスオーバーし、ステップを追加します。</p>
+<p>ステップの検索BOXから「slack」を検索して選択してください。</p>
+<p class="image-container"><img style="width: 666.62px" src="img/1d612f04ec00d8eb.png"></p>
+<p>以下のプロンプトを入力します。</p>
+<aside class="special"><p><strong>スラックのマークダウンに変換して、同様の内容を送信してください。</strong></p>
+</aside>
+<p class="image-container"><img style="width: 505.00px" src="img/78092788e73f734b.png"></p>
+<p>このタスクは非常に軽い処理になるのでLLMの選択メニューからGPT-4.1 miniを選択してLLMを変更してください。(どのようなLLMが選択可能か、自由に検索してみてください。)</p>
+<p class="image-container"><img style="width: 503.00px" src="img/9cf39ce0fe1fb9e4.png"></p>
+<p>以上でエージェントの作成は完了です👏</p>
+<p>「<strong>プレビュー</strong>」から「<strong>エージェントを実行</strong>」してどのような結果になるか試してみましょう。</p>
+<p>最初の実行よりもより有益な情報になっているはずです！(Slackと連携していないため、の送信のステップはエラーになるはずです。)</p>
+<p class="image-container"><img style="width: 886.01px" src="img/77620428ea75861e.png"></p>
+<p>このようにGleanでは</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="エージェントを作成する" duration="10">
-        <p>エージェントの実動をご覧いただきましたので、次はご自身でエージェントを作成する手順をご説明します。左上の矢印をクリックしてエージェントディレクトリに戻ってください。</p>
+      <google-codelab-step label="(Optional) Conversational Agentを作成する" duration="10">
+        <p>次はConversational Agentを作成する手順をご説明します。左上の矢印をクリックしてエージェントディレクトリに戻ってください。</p>
 <p class="image-container"><img style="width: 496.50px" src="img/4000d6f177eb27c3.png"></p>
 <p><a href="https://app.glean.com/chat/agents" target="_blank">https://app.glean.com/chat/agents</a> に直接アクセスするか、Glean メニューの次のパスから移動することもできます: チャット &gt; エージェント。<br></p>
 <p>画面右上の「+ エージェントを作成」をクリックしてください。</p>
@@ -229,7 +228,8 @@
 <h2 is-upgraded>テンプレートを選択</h2>
 <p>Gleanが提供するすべてのテンプレートを自由に閲覧し、構築を迅速に開始してください。</p>
 <p>また、エージェントの意図を自然言語で記述してエージェントを作成する機能もあります（AIを使用して下書きを生成）。</p>
-<p>このエージェントでは、「Q&amp;Aチャットボット」というテンプレートを使用します。そのテンプレートカードをクリックしてください。<br><img style="width: 489.00px" src="img/b2a4548e960b67c7.png"></p>
+<p>このエージェントでは、「Q&amp;Aチャットボット」というテンプレートを使用します。そのテンプレートカードをクリックしてください。</p>
+<p class="image-container"><img style="width: 489.00px" src="img/b2a4548e960b67c7.png"></p>
 <p>これにより、以下のようなキャンバスを持つ新しいエージェントが生成されます：</p>
 <p class="image-container"><img style="width: 624.00px" src="img/b8d47e7805dbc924.png"></p>
 <p><br>このエージェントの名前を変更します。デフォルト名の左上にある鉛筆アイコンをクリックし、図のように変更します：</p>
@@ -240,13 +240,20 @@
 <p><strong>0. trigger </strong>をクリックしてこのステップを設定します。会話のきっかけとなる質問をいくつか追加し、ユーザーが会話を始める際に使用できるサンプル質問を提供します。</p>
 <p>会話のきっかけの下にある「+ 追加」ボタンをクリックします。</p>
 <p class="image-container"><img style="width: 446.50px" src="img/ecca05565e628a2c.png"></p>
-<p><br>会話の開始ラベルには「有給休暇残高照会」と入力し、入力プロンプトボックスには以下を入力してください：「残りの有給休暇はどれくらいありますか？」<br><br>会話のきっかけとなるプロンプトは、以下のような形式になるはずです：</p>
+<p><br>会話の開始ラベルには「<strong>有給休暇残高照会</strong>」と入力し、入力プロンプトボックスには以下を入力してください：</p>
+<aside class="special"><p><strong>残りの有給休暇はどれくらいありますか？</strong></p>
+</aside>
+<p>会話のきっかけとなるプロンプトは、以下のような形式になるはずです：</p>
 <p class="image-container"><img style="width: 478.50px" src="img/48010571cb494f5f.png"></p>
-<p><br>ラベル「休暇制度」を追加し、以下のプロンプトを設定してください：「休暇制度の選択肢にはどのようなものがありますか？」<br><img style="width: 414.50px" src="img/f9f74166dac6b7bc.png"></p>
+<p><br>ラベル「<strong>休暇制度</strong>」を追加し、以下のプロンプトを設定してください：</p>
+<aside class="special"><p><strong>「休暇制度の選択肢にはどのようなものがありますか？」</strong></p>
+</aside>
+<p class="image-container"><img style="width: 414.50px" src="img/f9f74166dac6b7bc.png"></p>
 <h2 is-upgraded>ステップ 1 - Branch</h2>
 <p><strong>1. Plan &amp; execute steps</strong> のアクションカードを選択して設定を開きます。このステップを分岐アクションに切り替えます。右上の「アクションを切り替える」ボタンをクリックしてください。</p>
 <p class="image-container"><img style="width: 456.50px" src="img/ffb306295cc1ef94.png"></p>
-<p>ステップ選択の検索バーに「branch」と入力し、図のようにブランチアクションを選択します：<br><img style="width: 460.50px" src="img/6bbfd40ea7040a1f.png"><br></p>
+<p>ステップ選択の検索バーに「branch」と入力し、図のようにブランチアクションを選択します：<br></p>
+<p class="image-container"><img style="width: 460.50px" src="img/6bbfd40ea7040a1f.png"><br></p>
 <p>新しいビューは次のようになります：</p>
 <p class="image-container"><img style="width: 624.00px" src="img/47bdb60e03ff9b2f.png"></p>
 <p>設定の「ブランチ条件」セクションで、「次の場合にこのブランチを選択する」プロンプトウィンドウに以下のテキストを入力してください：</p>
@@ -274,7 +281,7 @@
 <p>ステップ選択の検索ボックスに「workday」と入力し、図のように「Workday: Get Paid Time Off Availabilit」を選択します。</p>
 <p class="image-container"><img style="width: 417.50px" src="img/a6e0eb7e27f74b25.png"></p>
 <p><br>これは本Gleanインスタンスに登録されたカスタムアクションです。ご覧の通り、このアクションはAPI経由でリアルタイムに呼び出しを行い、ユーザーの有給休暇残高を取得します。</p>
-<p>「Workday: Get Paid Time Off Availability」アクション設定画面の「Instruction」ウィンドウに「残りの有給休暇日数は？」と入力してください。</p>
+<p>「Workday: Get Paid Time Off Availability」アクション設定画面の「Instruction」ウィンドウに「<strong>残りの有給休暇日数は？</strong>」と入力してください。</p>
 <p class="image-container"><img style="width: 427.50px" src="img/ba97197d7b49257c.png"></p>
 <p>ユーザーの有給休暇残高を取得しましたので、その情報をユーザーに返信する必要があります。</p>
 <p>「Workday: Get Paid Time Off Availabilit」アクションの下で、プラスアイコンをクリックしてステップを追加します。</p>
@@ -321,103 +328,6 @@
   <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
   <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
   <script src="//support.google.com/inapp/api.js"></script>
-  <script>
-    (function(){
-      function computeSiteRoot() {
-        try {
-          var path = location.pathname.replace(/\/+/, '/');
-          var parts = path.split('/').filter(Boolean);
-          var modules = { '1-glean-search': true, '2-glean-assistant': true, '3-glean-agents': true };
-          if (parts.length === 0) return '/index.html';
-          if (parts.length === 1 && parts[0] === 'index.html') return '/index.html';
-          if (modules[parts[0]]) return '/index.html';
-          return '/' + parts[0] + '/index.html';
-        } catch(e) { return '/index.html'; }
-      }
-
-      function isBackClick(path) {
-        var iconNames = ['arrow_back', 'arrow-back', 'chevron_left'];
-        var textLabels = ['back', '戻る'];
-        for (var i = 0; i < path.length; i++) {
-          var el = path[i];
-          try {
-            if (!el) continue;
-            var getAttr = el.getAttribute ? el.getAttribute.bind(el) : function(){return ''};
-            var id = el.id || '';
-            var aria = (getAttr('aria-label') || '').toLowerCase();
-            var title = (getAttr('title') || '').toLowerCase();
-            var icon = (getAttr('icon') || '').toLowerCase();
-            var tag = (el.tagName || '').toLowerCase();
-            var text = (el.textContent || '').trim();
-            if (id === 'arrow-back' || textLabels.indexOf(aria) !== -1 || textLabels.indexOf(title) !== -1) return true;
-            if (tag === 'i' && iconNames.indexOf(text) !== -1) return true;
-            if (iconNames.indexOf(icon) !== -1) return true;
-          } catch(e) { /* ignore */ }
-        }
-        return false;
-      }
-
-      function isDoneOrCloseClick(path) {
-        var closeIconNames = ['close', 'clear', 'cancel'];
-        var textLabels = ['done', 'finish', 'close', 'exit', '完了', '閉じる', '終了'];
-        var hashTriggers = ['#finish', '#done', '#exit', '#close'];
-        for (var i = 0; i < path.length; i++) {
-          var el = path[i];
-          try {
-            if (!el) continue;
-            var getAttr = el.getAttribute ? el.getAttribute.bind(el) : function(){return ''};
-            var id = el.id || '';
-            var aria = (getAttr('aria-label') || '').toLowerCase();
-            var title = (getAttr('title') || '').toLowerCase();
-            var icon = (getAttr('icon') || '').toLowerCase();
-            var tag = (el.tagName || '').toLowerCase();
-            var text = (el.textContent || '').trim();
-            var href = (getAttr('href') || '').toLowerCase();
-            if (id === 'done' || id === 'close' || id === 'exit') return true;
-            if (textLabels.indexOf(aria) !== -1 || textLabels.indexOf(title) !== -1) return true;
-            if (tag === 'a' && textLabels.indexOf(text.toLowerCase()) !== -1) return true;
-            if (text === '×') return true;
-            if (tag === 'i' && closeIconNames.indexOf(text) !== -1) return true;
-            if (closeIconNames.indexOf(icon) !== -1) return true;
-            if (tag === 'a' && href) {
-              for (var h = 0; h < hashTriggers.length; h++) {
-                if (href.indexOf(hashTriggers[h]) !== -1) return true;
-              }
-            }
-          } catch(e) { /* ignore */ }
-        }
-        return false;
-      }
-
-      document.addEventListener('click', function(event) {
-        var path = event.composedPath ? event.composedPath() : [];
-
-        if (isBackClick(path)) {
-          event.preventDefault();
-          event.stopPropagation();
-          if (window.history.length > 1) {
-            window.history.back();
-          } else {
-            window.location.href = computeSiteRoot();
-          }
-          return;
-        }
-
-        if (isDoneOrCloseClick(path)) {
-          event.preventDefault();
-          event.stopPropagation();
-          window.location.href = computeSiteRoot();
-        }
-      }, true);
-
-      window.addEventListener('hashchange', function(){
-        if (/finish|done|exit|close/i.test(location.hash)) {
-          window.location.replace(computeSiteRoot());
-        }
-      }, false);
-
-    })();
-  </script>
 
 </body>
 </html>

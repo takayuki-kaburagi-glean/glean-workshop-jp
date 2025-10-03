@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
-  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <style>
     .success {
       color: #1e8e3e;
@@ -61,6 +60,7 @@
     
       <google-codelab-step label="Glean Assistantと会話を始めましょう" duration="5">
         <p><br>Glean Assistantが、Gleanプラットフォーム内でのクロール/インデックスの仕組みを理解するのに役立つかどうか見てみましょう。</p>
+<p>左側のナビゲーションバーから&#34;Chat&#34;をクリックしてください。</p>
 <p>会話ウィンドウに以下を入力し、Enterキーを押す <img style="width: 32.00px" src="img/173ba9967715e767.png"> をクリックしてください。<br></p>
 <aside class="special"><p><strong>GleanはConfluenceおよびSharePointからのコンテンツのクロールをサポートしていますか？各コネクタの具体的な設定手順を含めてください。</strong></p>
 </aside>
@@ -86,7 +86,7 @@
 <p>継続的なフォローアップや学習のための推奨プロンプトも表示されます。表示される可能性のある例を以下に示します：</p>
 <p class="image-container"><img style="width: 624.00px" src="img/cb4d23ede7a9f2f1.png"></p>
 <p>このワークショップでは、提案されたプロンプトは無視し、会話ウィンドウに次のフォローアップ質問を入力してください：</p>
-<aside class="special"><p>Gleanは上記のコネクタからのコンテンツのインデックス作成をどのように処理しますか？</p>
+<aside class="special"><p><strong>Gleanは上記のコネクタからのコンテンツのインデックス作成をどのように処理しますか？</strong></p>
 </aside>
 <p class="image-container"><img style="width: 624.00px" src="img/1f7a938165434b86.png"></p>
 <p>会話が継続します。新しい応答の文脈は、前の質問/回答を考慮して知識クエリを絞り込みます。フォローアップ質問の直下に、検索が文脈（Confluence &amp; Sharepoint）を記憶し、その文脈をエンタープライズ検索に活用して新しい結果を生成したことが確認できます：</p>
@@ -107,12 +107,12 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="新しい会話を始める" duration="5">
+      <google-codelab-step label="(Optional) 新しい会話を始める" duration="5">
         <p>話題を変えて、人事関連の問題に関するクエリを実行してみましょう。架空の企業向けに作成した数種類の模擬文書が、人事関連方針を含む社内規定を中心にインデックス化されています。これらの文書に関連する質問をしてみましょう。</p>
 <p>画面左上の「新規チャット」ボタンをクリックすると、これまでの会話履歴がすべて消去され、新しい会話を開始できます。</p>
 <p class="image-container"><img style="width: 512.50px" src="img/fc43ce8160c453db.png"></p>
 <p>以下のテキストを、以下に示す例のように会話ウィンドウに入力してください：</p>
-<aside class="special"><p>弊社の有給休暇ポリシーについて教えてください。</p>
+<aside class="special"><p><strong>弊社の有給休暇ポリシーについて教えてください。</strong></p>
 </aside>
 <p class="image-container"><img style="width: 624.00px" src="img/889d0d4fc208b034.png"><br></p>
 <p>では、次の質問をしてみましょう：</p>
@@ -125,12 +125,12 @@
 <p>このケースでは、人事部門がこの質問を受け取り、このような質問に答える文書が存在しないことを認識します。これは人事ポリシー文書の改訂版を作成することで容易に修正可能です。</p>
 <aside class="warning"><p><strong>注：この問題は、Gleanプラットフォームで回答を作成し、この種の問い合わせの参照資料として活用することで解決することも可能です。次のセクションでは、このような問い合わせに対して「回答」機能がどのように役立つかについて説明します。</strong></p>
 </aside>
-<p>この会話の最初の質問までスクロールしてください。アシスタントがPTOポリシーの質問に答えるために様々な文書を読んだことがわかります。「Reading」セクションで「(Demo) CGo. 休暇ポリシー概要.docx」という文書を探し、クリックして別のタブで開いてください。  以下の画像を参照してください（元のクエリの下にある「検索」部分を拡大して、検索内容と参照された文書を確認する必要がある場合があります）。<br><br><img style="width: 624.00px" src="img/5a625bdcf01e5a44.png"></p>
+<p>この会話の最初の質問までスクロールしてください。アシスタントがPTOポリシーの質問に答えるために様々な文書を読んだことがわかります。「Reading」セクションで「(Demo) CGo. 休暇ポリシー概要.docx」という文書を探し、クリックして別のタブで開いてください。  以下の画像を参照してください（元のクエリの下にある「検索」部分を拡大して、検索内容と参照された文書を確認する必要がある場合があります）。<br></p>
+<p class="image-container"><img style="width: 624.00px" src="img/5a625bdcf01e5a44.png"></p>
 <p>文書を精査し、特に「サバティカル休暇」の項目を参照してください。この段落がサバティカル休暇の条件について論じている一方で、従業員が休暇中に何を行うかについての文脈や選択肢を提供していない点に注目してください...</p>
 <p>サバティカル休暇に関する正式な文書がこの点を扱っていないことがわかった以上、あえて質問を投げかけ、結果を見てみましょう。</p>
-<p>Glean拡張機能をインストール済みの方は、Cmd+J（Mac）またはAlt+J（Windows）を押してサイドバーを表示させてみてください。</p>
-<p>Chat | Gleanブラウザタブに戻り、以下の内容を図のように会話ウィンドウに入力してください：</p>
-<aside class="special"><p>従業員はサバティカル休暇中に通常どのようなことを行いますか？結果を箇条書きで表示してください。</p>
+<p>会話ウィンドウに入力してください：</p>
+<aside class="special"><p><strong>従業員はサバティカル休暇中に通常どのようなことを行いますか？結果を箇条書きで表示してください。回答の根拠となったドキュメントやAnswerも示してください。検索は日本語で行ってください。</strong></p>
 </aside>
 <p class="image-container"><img style="width: 624.00px" src="img/6f119affc7114fe8.png"></p>
 <p>結果を生成するために読み込まれた文書の一つに、ダイアログボックスとチェックマークのアイコンが付いていることに注目してください。</p>
@@ -139,26 +139,17 @@
 <p>適切なロールを持つユーザーは手動で回答を作成できますが、プラットフォームはコンテンツのインデックス作成時に自動的に回答を生成することもあります。以下はGleanプラットフォームの社内本番環境における実際の会話例です（そう、Gleanは自社製品を自ら活用しています）。</p>
 <aside class="warning"><p><strong>注：この質問はしないでください。以下は、Gleanの内部生産インスタンスを使用して実際の製品に関する質問を行い、有益な結果を提供する方法の例です。</strong></p>
 </aside>
-<p class="image-container"><img style="width: 551.11px" src="img/f68bb6e0663fc3b0.png"></p>
+<p class="image-container"><img style="width: 561.00px" src="img/76d2dac7916d46cc.png"></p>
 <p><br>ご覧の通り、Gleanプラットフォームはインデックス作成時にAIモデルを活用し、社内のコーパス内に既に存在する一般的なFAQをサポートする回答を自動生成します。</p>
-<p>先ほどのサバティカルに関する会話で、以下のように「回答引用」をクリックしてください：<br><br><img style="width: 419.00px" src="img/9172ed9c23972e3a.png"><br><br>詳細については、作成された回答自体にリダイレクトされます。</p>
-<p>&#34;Glean Workshop&#34;のユーザー名にカーソルを合わせると、下記のようにこの回答の投稿者に関する情報が表示されるカードポップアップを作成できます。<br><br><img style="width: 565.12px" src="img/abea0f8c03e0fa19.png"></p>
-<p>カードポップアップ内の &#34;Glean Workshop&#34; をクリックすると、ユーザー詳細ページに移動します。</p>
-<p class="image-container"><img style="width: 585.50px" src="img/3ab64b94a0b747da.png"></p>
-<p><br>ご覧になっているのは、この特定のユーザー専用のページです（本番環境では、御社の従業員または契約社員を表します）。連絡先情報、ユーザーの直属の上司、およびこのユーザーが関与した御社のナレッジに関する最近の活動を確認できます。</p>
-<p>このページでユーザーを確認した後、「組織図で表示」リンクをクリックしてください。  </p>
-<p class="image-container"><img style="width: 624.00px" src="img/43731ee551ee4dd8.png"></p>
-<p>Glean Platformの組織図機能にリダイレクトされます。<br><br><img style="width: 624.00px" src="img/6aaa8cd0931b3605.png"></p>
-<p><br>この組織図では、まず現在のユーザーがコンテキスト内で表示され、&#34;Glean Workshop&#34;のユーザーとその報告ラインが強調表示されます。これはサンドボックスインスタンスであるため、利用可能なユーザーはごくわずかです。ただし本番環境では、会社全体の階層構造が表示されます。<br><br>このページの機能を確かめるために、自由に閲覧してください。</p>
-<aside class="special"><p><strong>ヒント：一部のユーザーは直属の部下を持つ管理者です。そのうちの1人をクリックすると、直属の部下が表示されます。</strong></p>
-</aside>
-<p>この機能には、ブラウザウィンドウ左側のGleanプラットフォームメニューから直接アクセスできます。図のように「People（ディレクトリ）」アイコンにカーソルを合わせると、このナビゲーション位置が表示されます：</p>
-<p class="image-container"><img style="width: 303.50px" src="img/9eb7c180819310f5.png"></p>
+<p>先ほどのサバティカルに関する会話で、以下のように「回答引用」をクリックしてください：</p>
+<p class="image-container"><img style="width: 435.00px" src="img/a3f1bd253420a170.png"></p>
+<p>詳細については、作成された回答自体にリダイレクトされます。</p>
+<p class="image-container"><img style="width: 668.00px" src="img/cc7aaba0d149eea0.png"></p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="その他のアシスタントオプション" duration="8">
+      <google-codelab-step label="(Optional) その他のアシスタントオプション" duration="8">
         <p>Glean Assistantとのチャットを体験いただいたところで、その他の機能もご紹介しましょう。左上の「新規チャット」をクリックすると、新しいセッションを開始できます。</p>
 <p class="image-container"><img style="width: 403.50px" src="img/4000dbef5a3e4268.png"></p>
 <p>チャットボックスのプラス記号「+」をクリックすると、いくつかのオプションが表示されます.</p>
@@ -166,11 +157,11 @@
 <p class="image-container"><img style="width: 490.50px" src="img/f148e2f195a432ce.png"></p>
 <p>「人またはドキュメントをタグ付け」を選択してください。これによりチャットボックスに@記号が挿入され、Glean Assistantとの会話に、クロールまたはインデックス化された人物やドキュメントを含めることができます。</p>
 <p>@記号の後に&#34;See all results for&#34; を選択して下さい。</p>
-<p class="image-container"><img style="width: 474.00px" src="img/d2d21496ffec4355.png"></p>
+<p class="image-container"><img style="width: 491.00px" src="img/c75819ab07752e5b.png"></p>
 <p>&#34;Salesforce Connector&#34;のドキュメントを &#34;+Add&#34; で追加してください。</p>
-<p class="image-container"><img style="width: 1273.00px" src="img/8a8191e92b74e421.png"></p>
+<p class="image-container"><img style="width: 889.00px" src="img/8a8191e92b74e421.png"></p>
 <p>次に、@記号の後に以下を入力し、最初の結果を選択してください</p>
-<aside class="special"><p>どのようなオブジェクトがサポートされていますか？</p>
+<aside class="special"><p><strong>どのようなオブジェクトがサポートされていますか？</strong></p>
 </aside>
 <p>チャットボックスは下記のようになります。送信ボタンをクリックして応答を確認してください。</p>
 <p class="image-container"><img style="width: 557.50px" src="img/533d792be866562.png"></p>
@@ -193,29 +184,13 @@
 <p>次に、チャットボックスのプラス記号「+」をクリックし、「ファイルを添付」オプションを選択します。</p>
 <p class="image-container"><img style="width: 357.50px" src="img/1cb27c5ce7a97d48.png"></p>
 <p>ダウンロードしたファイルを探し、アップロード対象として選択してください。ファイルのアップロードが完了したら、以下を入力し「送信」をクリックしてください。</p>
-<aside class="special"><p>画像をマークダウンの表に変換してください。この環境ではOCRをオフにしているため数値はサンプルの値を適当に出力してください。画像のグラフの傾向は踏襲してください。</p>
-<p>※青の折れ線グラフはGDP Growth Rate、赤と緑の棒グラフはAnnual Changeを意味しています。横軸は2014年から始まる年数です。</p>
+<aside class="special"><p><strong>画像をマークダウンの表に変換してください。この環境ではOCRをオフにしているため数値はサンプルの値を適当に出力してください。画像のグラフの傾向は踏襲してください。</strong></p>
+<p><strong>※青の折れ線グラフはGDP Growth Rate、赤と緑の棒グラフはAnnual Changeを意味しています。横軸は2014年から始まる年数です。</strong></p>
 </aside>
 <p class="image-container"><img style="width: 624.00px" src="img/c870a7a176162685.png"></p>
 <p>Glean Assistantからの応答は、以下のようになります。</p>
-<p class="image-container"><img style="width: 629.96px" src="img/1f46917c39ae34b7.png"></p>
+<p class="image-container"><img style="width: 634.00px" src="img/cd7b7a805d845796.png"></p>
 <p>ファイルを添付することで、Gleanがまだクロールまたはインデックス化していないコンテンツを使用してGlean Assistantと会話できます。最大64MBのファイルを5つまでアップロード可能です。対応ファイル形式の一覧は<a href="https://docs.glean.com/administration/assistant/features/file-upload#supported-file-formats" target="_blank">こちら</a>でご確認いただけます。</p>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="World Knowledge" duration="4">
-        <p>このワークショップを締めくくる前に確認する最後の機能は「World knowledge」です。左上の「新規チャット」をクリックし、チャットボックス内の「Company」をクリックしてください。</p>
-<p class="image-container"><img style="width: 345.00px" src="img/abc2ffb21931ba10.png"></p>
-<p>ドロップダウンメニューで「World knowledge」を選択し、「常にウェブを検索する」オプションをクリックしてください。</p>
-<p class="image-container"><img style="width: 400.67px" src="img/9f7c706a26c7f41d.png"></p>
-<p>今すぐ検索ボックスに以下を入力してください。ただし、都市名は本日のワークショップ開催地に変更してください。</p>
-<aside class="special"><p>What is the weather in Tokyo?</p>
-</aside>
-<p class="image-container"><img style="width: 624.00px" src="img/c0e90378cdc4a6a7.png"></p>
-<p>送信をクリックしてください。以下のスクリーンショットのような画面が表示されるはずです。</p>
-<p class="image-container"><img style="width: 624.00px" src="img/92ee4a0767ac938e.png"></p>
-<p>Gleanはデフォルトで社内ナレッジを検索対象としますが、Glean Assistantにウェブ検索を用いて質問への回答を生成させることも可能です。この利点は、後ほどGleanでエージェントを構築する際に明らかになります。これにより、内部と外部の情報源を組み合わせて、可能な限り最適な回答や分析を生成することが可能になります。</p>
 
 
       </google-codelab-step>
@@ -237,98 +212,6 @@
   <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
   <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
   <script src="//support.google.com/inapp/api.js"></script>
-  <script>
-    (function(){
-      function computeSiteRoot() {
-        try {
-          var path = location.pathname.replace(/\/+/, '/');
-          var parts = path.split('/').filter(Boolean); // e.g. ['repo','2-glean-assistant','index.html'] or ['2-glean-assistant','index.html'] or ['index.html']
-          var modules = { '1-glean-search': true, '2-glean-assistant': true, '3-glean-agents': true };
-          if (parts.length === 0) return '/index.html';
-          if (parts.length === 1 && parts[0] === 'index.html') return '/index.html';
-          if (modules[parts[0]]) return '/index.html'; // custom domain（モジュール直下）
-          return '/' + parts[0] + '/index.html'; // GitHub Pages の /<repo>/index.html
-        } catch(e) { return '/index.html'; }
-      }
-
-      function isBackClick(path) {
-        var iconNames = ['arrow_back', 'arrow-back', 'chevron_left'];
-        for (var i = 0; i < path.length; i++) {
-          var el = path[i];
-          try {
-            if (!el) continue;
-            var getAttr = el.getAttribute ? el.getAttribute.bind(el) : function(){return ''};
-            var id = el.id || '';
-            var aria = (getAttr('aria-label') || '').toLowerCase();
-            var title = (getAttr('title') || '').toLowerCase();
-            var icon = (getAttr('icon') || '').toLowerCase();
-            var tag = (el.tagName || '').toLowerCase();
-            var text = (el.textContent || '').trim();
-            if (id === 'arrow-back' || aria === 'back' || title === 'back') return true;
-            if (tag === 'i' && iconNames.indexOf(text) !== -1) return true; // material-icons
-            if (iconNames.indexOf(icon) !== -1) return true;
-          } catch(e) { /* ignore */ }
-        }
-        return false;
-      }
-
-      function isDoneOrCloseClick(path) {
-        var closeIconNames = ['close', 'clear', 'cancel'];
-        var hashTriggers = ['#finish', '#done', '#exit', '#close'];
-        for (var i = 0; i < path.length; i++) {
-          var el = path[i];
-          try {
-            if (!el) continue;
-            var getAttr = el.getAttribute ? el.getAttribute.bind(el) : function(){return ''};
-            var id = el.id || '';
-            var aria = (getAttr('aria-label') || '').toLowerCase();
-            var title = (getAttr('title') || '').toLowerCase();
-            var icon = (getAttr('icon') || '').toLowerCase();
-            var tag = (el.tagName || '').toLowerCase();
-            var text = (el.textContent || '').trim();
-            var href = (getAttr('href') || '').toLowerCase();
-            if (id === 'done' || aria === 'done' || title === 'done' || (tag === 'a' && text === 'Done')) return true;
-            if (id === 'close' || aria === 'close' || title === 'close') return true;
-            if (tag === 'i' && closeIconNames.indexOf(text) !== -1) return true; // material-icons glyph text
-            if (closeIconNames.indexOf(icon) !== -1) return true;
-            if (tag === 'a' && href) {
-              for (var h = 0; h < hashTriggers.length; h++) {
-                if (href.indexOf(hashTriggers[h]) !== -1) return true;
-              }
-            }
-          } catch(e) { /* ignore */ }
-        }
-        return false;
-      }
-
-      document.addEventListener('click', function(event) {
-        var path = event.composedPath ? event.composedPath() : [];
-
-        if (isBackClick(path)) {
-          event.preventDefault();
-          event.stopPropagation();
-          if (window.history.length > 1) {
-            window.history.back();
-          } else {
-            window.location.href = computeSiteRoot();
-          }
-          return;
-        }
-
-        if (isDoneOrCloseClick(path)) {
-          event.preventDefault();
-          event.stopPropagation();
-          window.location.href = computeSiteRoot();
-        }
-      }, true);
-
-      window.addEventListener('hashchange', function(){
-        if (/finish|done|exit|close/i.test(location.hash)) {
-          window.location.replace(computeSiteRoot());
-        }
-      }, false);
-    })();
-  </script>
 
 </body>
 </html>
