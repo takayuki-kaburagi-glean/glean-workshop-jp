@@ -32,6 +32,7 @@ async function runClaatExportWithRetry(doc) {
 
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     console.log(`\n[claat] exporting ${doc.name} (attempt ${attempt}/${MAX_RETRIES}) -> ./${doc.outDir}`);
+    console.log(`[cmd] claat export ${doc.id}`);
     const res = spawnSync('claat', ['export', '-o', doc.outDir, doc.id], {
       cwd: ROOT,
       shell: true,
@@ -66,13 +67,23 @@ async function runClaatExportWithRetry(doc) {
 
 function parseSelection(input) {
   const tokens = String(input)
-    .split(/[^0-9]+/)
+    .split(/[\s,]+/)
     .map(t => t.trim())
     .filter(Boolean);
-  const nums = Array.from(new Set(tokens.map(t => parseInt(t, 10)).filter(n => [1,2,3].includes(n))));
-  return nums
-    .map(n => DOCS.find(d => d.num === n))
-    .filter(Boolean);
+  const selected = [];
+  for (const tok of tokens) {
+    const asNum = parseInt(tok, 10);
+    if (!Number.isNaN(asNum) && [1, 2, 3].includes(asNum)) {
+      const found = DOCS.find(d => d.num === asNum);
+      if (found) selected.push(found);
+      continue;
+    }
+    const byId = DOCS.find(d => d.id === tok);
+    if (byId) selected.push(byId);
+  }
+  // de-dup by id
+  const seen = new Set();
+  return selected.filter(d => (seen.has(d.id) ? false : (seen.add(d.id), true)));
 }
 
 function printMenu() {
@@ -80,7 +91,7 @@ function printMenu() {
   console.log('1. glean-search: 16x-OdU8ooq3FszzRhmj-8hLzJejvYKGIVADoPWnlvos');
   console.log('2. glean-chat: 1AYqOEx4SQ9UgA_0fSpwV0ydjjBLhK1sv1-r8uuje07w');
   console.log('3. glean-agent: 1tw7IPtWMpOumljfOmLRrQ3O_P8Fxt7U5rT8BpFCnA6w');
-  console.log('\n番号をカンマ区切りで入力してください (例: 1,3)');
+  console.log('\n番号またはIDをカンマ区切りで入力してください (例: 1,3 または 1tw7IPtW...,1AYqOE...)');
 }
 
 async function main() {
