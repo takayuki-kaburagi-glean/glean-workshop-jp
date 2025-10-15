@@ -34,7 +34,8 @@ async function runClaatExportWithRetry(doc) {
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     console.log(`\n[claat] exporting ${doc.name} (attempt ${attempt}/${MAX_RETRIES}) -> ./${doc.outDir}`);
     console.log(`[cmd] claat export ${doc.id}`);
-    const res = spawnSync('claat', ['export', '-o', doc.outDir, doc.id], {
+    // Align behavior with manual runs: export into repo root using slug as directory
+    const res = spawnSync('claat', ['export', '-o', '.', doc.id], {
       cwd: ROOT,
       shell: true,
       encoding: 'utf8',
@@ -112,6 +113,16 @@ function printMenu() {
 }
 
 async function main() {
+  // Ensure running from repo root to avoid path surprises
+  const cwd = path.resolve(process.cwd());
+  if (cwd !== ROOT) {
+    console.error('[guard] リポジトリ直下で実行してください。');
+    console.error(`[guard] 現在のディレクトリ: ${cwd}`);
+    console.error(`[guard] 想定されるルート:   ${ROOT}`);
+    console.error('[guard] 例: cd glean-workshop-jp && node scripts/claat-build.js 1,3');
+    process.exit(1);
+  }
+
   // Non-interactive CLI usage: node scripts/claat-build.js 1,3
   const argSel = process.argv[2];
   let selected = [];
