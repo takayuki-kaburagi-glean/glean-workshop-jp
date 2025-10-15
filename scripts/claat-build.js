@@ -4,6 +4,7 @@
 // Optional non-interactive: node scripts/claat-build.js 1,3
 
 const { spawnSync } = require('child_process');
+const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
 
@@ -65,6 +66,22 @@ async function runClaatExportWithRetry(doc) {
   process.exit(1);
 }
 
+function validateOutDir(doc) {
+  const dirPath = path.join(ROOT, doc.outDir);
+  const indexPath = path.join(dirPath, 'index.html');
+  if (!fs.existsSync(dirPath)) {
+    console.error(`[validate] 出力ディレクトリが見つかりません: ${doc.outDir}`);
+    console.error('claat の出力先が想定外です。-o で明示的な出力先を指定してください。');
+    process.exit(1);
+  }
+  if (!fs.existsSync(indexPath)) {
+    console.error(`[validate] ${doc.outDir}/index.html が見つかりません。ディレクトリ構成が想定と異なります。`);
+    console.error('claat の出力がサブディレクトリに入っていないかをご確認ください。');
+    process.exit(1);
+  }
+  console.log(`[validate] OK: ${doc.outDir}/index.html`);
+}
+
 function parseSelection(input) {
   const tokens = String(input)
     .split(/[\s,]+/)
@@ -116,6 +133,7 @@ async function main() {
   // Run claat export for each selection with retry/backoff
   for (const doc of selected) {
     await runClaatExportWithRetry(doc);
+    validateOutDir(doc);
     // small gap between docs to be gentle on rate limits
     await sleep(1500);
   }

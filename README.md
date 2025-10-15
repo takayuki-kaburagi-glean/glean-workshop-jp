@@ -44,15 +44,18 @@ node scripts/claat-build.js
 番号をカンマ区切りで入力してください (例: 1,3)
 ```
 
-選択した番号に対応するIDを使って `claat export -o <outDir> <ID>` を順に実行し、最後に `scripts/postbuild-favicon.js` を実行します。
+選択した番号に対応するIDを使って `claat export <ID>` を順に実行（実際の実行は出力先固定のため `-o <outDir>` を付与）し、最後に `scripts/postbuild-favicon.js` を実行します。ログには `claat export <ID>` の形式で表示されます。
 
-### 実行方法（非対話式）
+### 実行方法（非対話式・番号/ID混在可）
 
 ```bash
 node scripts/claat-build.js 1,3
 ```
 
-カンマ区切りで番号を指定します。
+またはIDで指定:
+```bash
+node scripts/claat-build.js 1tw7IPtWMpOumljfOmLRrQ3O_P8Fxt7U5rT8BpFCnA6w
+```
 
 ### 実行方法（シェル版）
 
