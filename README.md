@@ -27,7 +27,7 @@ CI等で自動化する場合は、claatビルドの直後に上記コマンド�
 
 対話式でビルド対象を選び、`claat export <ID>` を選択数分だけ実行し、その後favicon挿入を行うスクリプトを用意しています。
 
-### 実行方法（対話式）
+### 実行方法（対話式・Node版）
 
 ```bash
 node scripts/claat-build.js
@@ -53,4 +53,18 @@ node scripts/claat-build.js 1,3
 ```
 
 カンマ区切りで番号を指定します。
+
+### 実行方法（シェル版）
+
+Node不要のシェル版ラッパーも用意しています。
+
+対話式:
+```bash
+bash scripts/claat-build.sh
+```
+
+非対話式:
+```bash
+bash scripts/claat-build.sh 1,3
+```
 

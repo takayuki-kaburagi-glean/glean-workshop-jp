@@ -114,11 +114,12 @@
       <google-codelab-step label="Tasked Based Agentを作成する" duration="10">
         <p>早速エージェントを作ってみましょう。今回は社内の更新方法を自動で収集しレポートしてくれるエージェントを作成します。</p>
 <p>左のナビゲーションバーからGlean Agentsのアイコンを選択し「エージェントを作成」をクリックしてください。</p>
+<p class="image-container"><img style="width: 1546.00px" src="img/2ba492364b382475.png"></p>
 <p class="image-container"><img style="width: 779.00px" src="img/dd723d412fec6c37.png"></p>
 <p>「AIを使用して下書きを生成」を選択します。このモードを利用すると自然言語で作りたいエージェントを記述するとワークフローを推定し自動生成してくれます。</p>
 <p class="image-container"><img style="width: 579.50px" src="img/df7e4f45dd97219d.png"></p>
 <p>以下のプロンプトを入力します。（本来はできるだけ具体的に書くことがベストです！）</p>
-<aside class="special"><p><strong>&#34;Slack&#34;、&#34;Sharepoint&#34;、&#34;Outlook&#34;、&#34;Gleanのウェブサイト&#34;から１週間以内の更新情報を検索してまとめてレポートしてください。</strong></p>
+<aside class="special"><p><strong>&#34;Microsoft Teams&#34;、&#34;Sharepoint&#34;、&#34;Outlook&#34;、&#34;Gleanのウェブサイト&#34;から１週間以内の更新情報を検索してまとめてレポートしてください。</strong></p>
 </aside>
 <p class="image-container"><img style="width: 674.29px" src="img/c62c5dadf167fd75.png"></p>
 <p>「<strong>強化</strong>」のボタンを押すと入力した内容をAIがブラッシュアップしてくれます。</p>
@@ -132,7 +133,7 @@
 <p>トリガーにはこのほかに「チャットメッセージトリガー」、「コンテンツトリガー」などがありチャットメッセージやコンテンツの更新情報をトリガーにエージェントを稼働させることができます。</p>
 <p class="image-container"><img style="width: 710.00px" src="img/ab539aa693fa4fe9.png"></p>
 <p>次に「1.会社検索」を選択し、検索指示を以下に変更してください。</p>
-<aside class="special"><p><strong>過去１年以内の新しいSlack投稿を検索してください。</strong></p>
+<aside class="special"><p><strong>過去１年以内の新しいMicrosoft Teamsのメッセージを検索してください。</strong></p>
 </aside>
 <p class="image-container"><img style="width: 606.32px" src="img/f284b87298620090.png"></p>
 <p>次に「2.会社検索」を選択し、検索指示を以下に変更してください。</p>
@@ -146,16 +147,18 @@
 <p class="image-container"><img style="width: 610.82px" src="img/91c504deb730b7c0.png"></p>
 <p>次に以下の例のように矢印にマウスオーバーしステップを追加ボタンをクリックしてください。</p>
 <p class="image-container"><img style="width: 360.00px" src="img/d067cca5fbdce96d.png"></p>
-<p>会社検索を選択してください。(そのほかにもどのようなステップが追加できるか、自由に探してみてください。)</p>
+<p>「会社検索」を選択してください。(そのほかにもどのようなステップが追加できるか、自由に探してみてください。)</p>
 <p class="image-container"><img style="width: 517.00px" src="img/97b0c8da41365340.png"></p>
-<p>「手動」を選択し、以下の二つのクエリーを追加します。</p>
-<aside class="special"><p><strong>* app:github updated:past_year</strong></p>
+<p>「手動」を選択し、以下の3つのクエリーを追加します。</p>
+<aside class="special"><p><strong>* app:github updated:past_2_years</strong></p>
 <p><strong>* app:drive updated:past_year</strong></p>
+<p><strong>* app:jira</strong></p>
 </aside>
-<p>最後に検索結果の件数を「10件の結果」に変更します。</p>
-<p class="image-container"><img style="width: 656.89px" src="img/80046834df999092.png"></p>
+<p>最後に検索結果の件数を「10件の結果」に変更します。<img style="width: 661.00px" src="img/f44ce7c50b642e6a.png"></p>
 <p>次に「応答」をクリックし、応答指示を以下に変更してください。</p>
-<aside class="special"><p><strong>#スラックの更新情報</strong></p>
+<aside class="special"><p><strong>あなたは私のためにパーソナライズされたレポートを毎日送ってくれるアシスタントです。以下の情報をフォーマット通りにレポートしてください。</strong></p>
+<p><strong>また、回答は全て日本語で、英語の資料の情報も全て日本語に訳して記載してください。回答には絵文字をたくさん使ってハッピーな感じにしてください。</strong></p>
+<p><strong># MS Teamsの更新情報</strong></p>
 <p><strong>各スレッドの内容を要約してリスト形式で表示</strong></p>
 <p><strong># Sharepointの更新情報</strong></p>
 <p><strong>各ドキュメントの内容を要約してリスト形式で表示。</strong></p>
@@ -169,12 +172,16 @@
 <p><strong># GitHubの更新情報</strong></p>
 <p><strong>各ドキュメントの内容を要約してリスト形式で表示。</strong></p>
 <p><strong>ドキュメントのURLも掲載する</strong></p>
+<p><strong>#  JIRAの更新情報</strong></p>
+<p><strong>各ドキュメントの内容を要約してリスト形式で表示。</strong></p>
+<p><strong>ドキュメントのURLも掲載する</strong></p>
 <p><strong># Glean Webサイトの更新情報</strong></p>
 <p><strong>更新サイトのURLをタイトルともにリスト形式で表示</strong></p>
 </aside>
 <p>以下のようになります。</p>
 <p class="image-container"><img style="width: 655.58px" src="img/ff50583e2d7036db.png"></p>
 <p>再度矢印をマウスオーバーし、ステップを追加します。</p>
+<p class="image-container"><img style="width: 355.00px" src="img/78c4cd5b47b718c4.png"></p>
 <p>ステップの検索BOXから「slack」を検索して選択してください。</p>
 <p class="image-container"><img style="width: 666.62px" src="img/1d612f04ec00d8eb.png"></p>
 <p>以下のプロンプトを入力します。</p>
@@ -185,6 +192,8 @@
 <p class="image-container"><img style="width: 503.00px" src="img/9cf39ce0fe1fb9e4.png"></p>
 <p>以上でエージェントの作成は完了です👏</p>
 <p>「<strong>プレビュー</strong>」から「<strong>エージェントを実行</strong>」してどのような結果になるか試してみましょう。</p>
+<p>前回の結果が残っている場合は以下の矢印ボタンでリセットしてください。</p>
+<p class="image-container"><img style="width: 304.00px" src="img/6c0f5fc481660426.png"></p>
 <p>最初の実行よりもより有益な情報になっているはずです！(Slackと連携していないため、の送信のステップはエラーになるはずです。)</p>
 <p class="image-container"><img style="width: 886.01px" src="img/77620428ea75861e.png"></p>
 <p>最後にスケジュールの設定を行います。</p>
@@ -205,6 +214,13 @@
 <p>アクティブの一覧画面では実行履歴や自分が自動実行しているエージェン一覧を管理することが可能です。</p>
 <p class="image-container"><img style="width: 1246.00px" src="img/34bd91aef5d436cb.png"></p>
 <p>このようにGleanではエージェントを作成する、開発する、改善する、共有する、自動実行などの作業を非常に直感的なインタフェースを通じて実施することができ、様々な業務を様々な情報を使い多角的な視点で支援できます。</p>
+<p>時間の余った方はエージェントを自由に編集してみてください。例えば以下のようなことが考えられます 💡</p>
+<ul>
+<li>新しく検索対象を増やしてみる</li>
+<li>ActionsでSlack送信以外も入れてみる</li>
+<li>リスト形式を表形式に表示するように変更する</li>
+<li>自分好みのフォーマットに調整する</li>
+</ul>
 
 
       </google-codelab-step>
