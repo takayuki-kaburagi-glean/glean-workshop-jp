@@ -114,49 +114,49 @@
     
       <google-codelab-step label="Tasked Based Agentを作成する" duration="10">
         <p>早速エージェントを作ってみましょう。今回は社内の更新方法を自動で収集しレポートしてくれるエージェントを作成します。</p>
-<p>左のナビゲーションバーからGlean Agentsのアイコンを選択し「エージェントを作成」をクリックしてください。</p>
+<p><strong>左のナビゲーションバーからGlean Agentsのアイコンを選択し「エージェントを作成」をクリック</strong>してください。</p>
 <p class="image-container"><img style="width: 1546.00px" src="img/2ba492364b382475.png"></p>
 <p class="image-container"><img style="width: 779.00px" src="img/dd723d412fec6c37.png"></p>
-<p>「AIを使用して下書きを生成」を選択します。このモードを利用すると自然言語で作りたいエージェントを記述するとワークフローを推定し自動生成してくれます。</p>
+<p><strong>「AIを使用して下書きを生成」を選択</strong>します。このモードを利用すると自然言語で作りたいエージェントを記述するとワークフローを推定し自動生成してくれます。</p>
 <p class="image-container"><img style="width: 579.50px" src="img/df7e4f45dd97219d.png"></p>
 <p>以下のプロンプトを入力します。（本来はできるだけ具体的に書くことがベストです！）</p>
 <aside class="special"><p><strong>&#34;Microsoft Teams&#34;、&#34;Sharepoint&#34;、&#34;Outlook&#34;、&#34;Gleanのウェブサイト&#34;から１週間以内の更新情報を検索してまとめてレポートしてください。</strong></p>
 </aside>
 <p class="image-container"><img style="width: 674.29px" src="img/c62c5dadf167fd75.png"></p>
-<p>「<strong>強化</strong>」のボタンを押すと入力した内容をAIがブラッシュアップしてくれます。</p>
+<p><strong>「強化」のボタンを押す</strong>と入力した内容をAIがブラッシュアップしてくれます。</p>
 <p class="image-container"><img style="width: 642.52px" src="img/5d770c4802a4a684.png"></p>
-<p>「<strong>エージェントを生成</strong>」をクリックすると以下のようなワークフローが作成されるはずです 🪄</p>
-<p>まずはこのエージェントをそのまま試してみましょう。「<strong>プレビュー</strong>」をクリックして「<strong>エージェントを実行</strong>」します。</p>
+<p><strong>「エージェントを生成」をクリック</strong>すると以下のようなワークフローが作成されるはずです 🪄</p>
+<p>まずはこのエージェントをそのまま試してみましょう。<strong>「プレビュー」をクリックして「エージェントを実行」</strong>します。</p>
 <p class="image-container"><img style="width: 763.50px" src="img/1a4529684de8d866.png"></p>
 <p>実行され、有用な情報が取得されているように見えますが、もう少し改善してみます。</p>
 <p class="image-container"><img style="width: 736.43px" src="img/f560425570f851b3.png"></p>
-<p>「トリガー」を選択し、「エージェントのスケジュール実行を許可」をチェックします。これによりエージェントを日次や週次でスケジューリングし、自動実行できます。</p>
+<p><strong>「トリガー」を選択</strong>し、<strong>「エージェントのスケジュール実行を許可」をチェック</strong>します。これによりエージェントを日次や週次でスケジューリングし、自動実行できます。</p>
 <p>トリガーにはこのほかに「チャットメッセージトリガー」、「コンテンツトリガー」などがありチャットメッセージやコンテンツの更新情報をトリガーにエージェントを稼働させることができます。</p>
 <p class="image-container"><img style="width: 710.00px" src="img/ab539aa693fa4fe9.png"></p>
-<p>次に「1.会社検索」を選択し、検索指示を以下に変更してください。</p>
+<p>次に<strong>「1.会社検索」を選択</strong>し、検索指示を以下に変更してください。</p>
 <aside class="special"><p><strong>過去１年以内の新しいMicrosoft Teamsのメッセージを検索してください。</strong></p>
 </aside>
 <p class="image-container"><img style="width: 606.32px" src="img/f284b87298620090.png"></p>
-<p>次に「2.会社検索」を選択し、検索指示を以下に変更してください。</p>
+<p>次に<strong>「2.会社検索」を選択</strong>し、検索指示を以下に変更してください。</p>
 <aside class="special"><p><strong>過去3ヶ月以内の新しいSharepoint投稿、ファイル、通知、記事を検索してください。</strong></p>
 </aside>
 <p class="image-container"><img style="width: 610.09px" src="img/90b51ba74ebf0680.png"></p>
-<p>次に「3..会社検索」を選択し、「手動」に切り替え、以下の検索クエリを「追加」してください。</p>
+<p>次に<strong>「3.会社検索」</strong>を選択し、「手動」に切り替え、以下の検索クエリを「追加」してください。</p>
 <aside class="special"><p><strong>* app:outlook</strong></p>
 </aside>
 <p>自然言語だけでなくクエリを明確に指定し検索を実行することも可能です。</p>
 <p class="image-container"><img style="width: 610.82px" src="img/91c504deb730b7c0.png"></p>
-<p>次に以下の例のように矢印にマウスオーバーしステップを追加ボタンをクリックしてください。</p>
+<p>次に以下の例のように<strong>矢印にマウスオーバーしステップを追加ボタンをクリック</strong>してください。</p>
 <p class="image-container"><img style="width: 360.00px" src="img/d067cca5fbdce96d.png"></p>
-<p>「会社検索」を選択してください。(そのほかにもどのようなステップが追加できるか、自由に探してみてください。)</p>
+<p><strong>「会社検索」を選択</strong>してください。(そのほかにもどのようなステップが追加できるか、自由に探してみてください。)</p>
 <p class="image-container"><img style="width: 517.00px" src="img/97b0c8da41365340.png"></p>
-<p>「手動」を選択し、以下の3つのクエリーを追加します。</p>
+<p><strong>「手動」を選択</strong>し、以下の3つのクエリーを追加します。</p>
 <aside class="special"><p><strong>* app:github updated:past_2_years</strong></p>
 <p><strong>* app:drive updated:past_year</strong></p>
 <p><strong>* app:jira</strong></p>
 </aside>
-<p>最後に検索結果の件数を「10件の結果」に変更します。<img style="width: 661.00px" src="img/f44ce7c50b642e6a.png"></p>
-<p>次に「応答」をクリックし、応答指示を以下に変更してください。</p>
+<p>最後に<strong>検索結果の件数を「10件の結果」に変更</strong>します。<img style="width: 661.00px" src="img/f44ce7c50b642e6a.png"></p>
+<p>次に「<strong>応答」をクリック</strong>し、応答指示を以下に変更してください。</p>
 <aside class="special"><p><strong>あなたは私のためにパーソナライズされたレポートを毎日送ってくれるアシスタントです。以下の情報をフォーマット通りにレポートしてください。</strong></p>
 <p><strong>また、回答は全て日本語で、英語の資料の情報も全て日本語に訳して記載してください。回答には絵文字をたくさん使ってハッピーな感じにしてください。</strong></p>
 <p><strong># MS Teamsの更新情報</strong></p>
@@ -181,19 +181,19 @@
 </aside>
 <p>以下のようになります。</p>
 <p class="image-container"><img style="width: 655.58px" src="img/ff50583e2d7036db.png"></p>
-<p>再度矢印をマウスオーバーし、ステップを追加します。</p>
+<p>再度<strong>矢印をマウスオーバーし、ステップを追加</strong>します。</p>
 <p class="image-container"><img style="width: 355.00px" src="img/78c4cd5b47b718c4.png"></p>
-<p>ステップの検索BOXから「slack」を検索して選択してください。</p>
+<p><strong>ステップの検索BOXから「slack」を検索して選択</strong>してください。</p>
 <p class="image-container"><img style="width: 666.62px" src="img/1d612f04ec00d8eb.png"></p>
 <p>以下のプロンプトを入力します。</p>
 <aside class="special"><p><strong>スラックのマークダウンに変換して、同様の内容を送信してください。</strong></p>
 </aside>
 <p class="image-container"><img style="width: 505.00px" src="img/78092788e73f734b.png"></p>
-<p>このタスクは非常に軽い処理になるのでLLMの選択メニューからGPT-4.1 miniを選択してLLMを変更してください。(どのようなLLMが選択可能か、自由に検索してみてください。)</p>
+<p>このタスクは非常に軽い処理になるのでL<strong>LMの選択メニューからGPT-4.1 miniを選択してLLMを変更</strong>してください。(どのようなLLMが選択可能か、自由に検索してみてください。)</p>
 <p class="image-container"><img style="width: 503.00px" src="img/9cf39ce0fe1fb9e4.png"></p>
 <p>以上でエージェントの作成は完了です👏</p>
-<p>「<strong>プレビュー</strong>」から「<strong>エージェントを実行</strong>」してどのような結果になるか試してみましょう。</p>
-<p>前回の結果が残っている場合は以下の矢印ボタンでリセットしてください。</p>
+<p><strong>「プレビュー」から「エージェントを実行」</strong>してどのような結果になるか試してみましょう。</p>
+<p><strong>前回の結果が残っている場合は以下の矢印ボタンでリセット</strong>してください。</p>
 <p class="image-container"><img style="width: 304.00px" src="img/6c0f5fc481660426.png"></p>
 <p>最初の実行よりもより有益な情報になっているはずです！(Slackと連携していないため、の送信のステップはエラーになるはずです。)</p>
 <p class="image-container"><img style="width: 886.01px" src="img/77620428ea75861e.png"></p>
@@ -202,15 +202,15 @@
 <aside class="special"><p><strong>[ご自身のお名前に置き換えてください] 最新情報週次横断レポート自動送信ワークフロー</strong></p>
 </aside>
 <p class="image-container"><img style="width: 559.72px" src="img/3c2a60cc0d8d3cf4.png"></p>
-<p>「公開」をクリックしてください。</p>
+<p><strong>「公開」をクリック</strong>してください。</p>
 <p class="image-container"><img style="width: 1065.00px" src="img/745600b9e55c9102.png"></p>
-<p>ワークフローの「<strong>トリガー</strong>」を選択して、「<strong>スケジュールを設定</strong>」を選択します。</p>
+<p><strong>ワークフローの「トリガー」を選択して、「スケジュールを設定」を選択</strong>します。</p>
 <p class="image-container"><img style="width: 879.00px" src="img/12ae0d60de69877b.png"></p>
 <p class="image-container"><img style="width: 837.00px" src="img/95d0bc7043995a99.png"></p>
 <p>スケジュールを設定する画面に切り替わります。各ドロップダウンを確認してどのような設定が可能かをブラウジングしてください。</p>
-<p>自由に設定したあと、「<strong>エージェントをアクティブ化</strong>」をクリックします。</p>
+<p>自由に設定したあと、<strong>「エージェントをアクティブ化」をクリック</strong>します。</p>
 <p class="image-container"><img style="width: 856.00px" src="img/bedf8c8016388dce.png"></p>
-<p>「<strong>アクティブタブ</strong>」をクリックしてください。</p>
+<p><strong>「アクティブタブ」をクリック</strong>してください。</p>
 <p class="image-container"><img style="width: 848.00px" src="img/e8d5e7b1c96c7f0f.png"></p>
 <p>以下のような画面が表示され一覧に載っていれば完了です👏</p>
 <p>アクティブの一覧画面では実行履歴や自分が自動実行しているエージェン一覧を管理することが可能です。</p>
@@ -228,41 +228,40 @@
       </google-codelab-step>
     
       <google-codelab-step label="(Optional) Conversational Agentを作成する" duration="10">
-        <p>次はConversational Agentを作成する手順をご説明します。左上の矢印をクリックしてエージェントディレクトリに戻ってください。</p>
+        <p>次はConversational Agentを作成する手順をご説明します。<strong>左上の矢印をクリック</strong>してエージェントディレクトリに戻ってください。</p>
 <p class="image-container"><img style="width: 496.50px" src="img/4000d6f177eb27c3.png"></p>
-<p><a href="https://app.glean.com/chat/agents" target="_blank">https://app.glean.com/chat/agents</a> に直接アクセスするか、Glean メニューの次のパスから移動することもできます: チャット &gt; エージェント。<br></p>
-<p>画面右上の「+ エージェントを作成」をクリックしてください。</p>
+<p>画面右上の<strong>「+ エージェントを作成」をクリック</strong>してください。</p>
 <p class="image-container"><img style="width: 343.50px" src="img/ec46dd104fc6eb5.png"></p>
 <p>これにより、以下の図のように「エージェント作成」ポップアップウィンドウが開きます：</p>
 <p class="image-container"><img style="width: 543.50px" src="img/2b9de6d2fe4f7469.png"></p>
 <h2 is-upgraded>テンプレートを選択</h2>
 <p>Gleanが提供するすべてのテンプレートを自由に閲覧し、構築を迅速に開始してください。</p>
 <p>また、エージェントの意図を自然言語で記述してエージェントを作成する機能もあります（AIを使用して下書きを生成）。</p>
-<p>このエージェントでは、「Q&amp;Aチャットボット」というテンプレートを使用します。そのテンプレートカードをクリックしてください。</p>
+<p>このエージェントでは、<strong>「Q&amp;Aチャットボット」というテンプレートを使用します。そのテンプレートカードをクリック</strong>してください。</p>
 <p class="image-container"><img style="width: 489.00px" src="img/b2a4548e960b67c7.png"></p>
 <p>これにより、以下のようなキャンバスを持つ新しいエージェントが生成されます：</p>
 <p class="image-container"><img style="width: 624.00px" src="img/b8d47e7805dbc924.png"></p>
-<p><br>このエージェントの名前を変更します。デフォルト名の左上にある鉛筆アイコンをクリックし、図のように変更します：</p>
+<p><br>このエージェントの名前を変更します。<strong>デフォルト名の左上にある鉛筆アイコンをクリック</strong>し、図のように変更します：</p>
 <p class="image-container"><img style="width: 381.00px" src="img/228281c2e45147ed.png"></p>
-<p>ポップアップウィンドウでエージェント名を入力してください。[Your Name]を実際のお名前(や識別可能な文字列)に置き換えてください。これにより、このワークショップの全ユーザーを区別できます。必要に応じて説明文も自由に変更してください。</p>
+<p><strong>ポップアップウィンドウでエージェント名を入力</strong>してください。[Your Name]を実際のお名前(や識別可能な文字列)に置き換えてください。これにより、このワークショップの全ユーザーを区別できます。必要に応じて説明文も自由に変更してください。</p>
 <p class="image-container"><img style="width: 391.50px" src="img/f3a394230a5b45f3.png"><br></p>
 <h2 is-upgraded>ステップ 0 - Trigger</h2>
-<p><strong>0. trigger </strong>をクリックしてこのステップを設定します。会話のきっかけとなる質問をいくつか追加し、ユーザーが会話を始める際に使用できるサンプル質問を提供します。</p>
-<p>会話のきっかけの下にある「+ 追加」ボタンをクリックします。</p>
+<p><strong>0. trigger をクリック</strong>してこのステップを設定します。会話のきっかけとなる質問をいくつか追加し、ユーザーが会話を始める際に使用できるサンプル質問を提供します。</p>
+<p>会話のきっかけの下にある<strong>「+ 追加」ボタンをクリック</strong>します。</p>
 <p class="image-container"><img style="width: 446.50px" src="img/ecca05565e628a2c.png"></p>
-<p><br>会話の開始ラベルには「<strong>有給休暇残高照会</strong>」と入力し、入力プロンプトボックスには以下を入力してください：</p>
+<p><strong>会話の開始ラベルには「有給休暇残高照会」と入力</strong>し、入力プロンプトボックスには以下を入力してください：</p>
 <aside class="special"><p><strong>残りの有給休暇はどれくらいありますか？</strong></p>
 </aside>
 <p>会話のきっかけとなるプロンプトは、以下のような形式になるはずです：</p>
 <p class="image-container"><img style="width: 478.50px" src="img/48010571cb494f5f.png"></p>
-<p><br>ラベル「<strong>休暇制度</strong>」を追加し、以下のプロンプトを設定してください：</p>
+<p><strong>ラベル「休暇制度」を追加</strong>し、以下のプロンプトを設定してください：</p>
 <aside class="special"><p><strong>「休暇制度の選択肢にはどのようなものがありますか？」</strong></p>
 </aside>
 <p class="image-container"><img style="width: 414.50px" src="img/f9f74166dac6b7bc.png"></p>
 <h2 is-upgraded>ステップ 1 - Branch</h2>
-<p><strong>1. Plan &amp; execute steps</strong> のアクションカードを選択して設定を開きます。このステップを分岐アクションに切り替えます。右上の「アクションを切り替える」ボタンをクリックしてください。</p>
+<p><strong>1. Plan &amp; execute steps のアクションカードを選択</strong>して設定を開きます。このステップを分岐アクションに切り替えます。<strong>右上の「アクションを切り替える」ボタンをクリック</strong>してください。</p>
 <p class="image-container"><img style="width: 456.50px" src="img/ffb306295cc1ef94.png"></p>
-<p>ステップ選択の検索バーに「branch」と入力し、図のようにブランチアクションを選択します：<br></p>
+<p><strong>ステップ選択の検索バーに「branch」と入力</strong>し、図のようにブランチアクションを選択します：<br></p>
 <p class="image-container"><img style="width: 460.50px" src="img/6bbfd40ea7040a1f.png"><br></p>
 <p>新しいビューは次のようになります：</p>
 <p class="image-container"><img style="width: 624.00px" src="img/47bdb60e03ff9b2f.png"></p>
@@ -271,30 +270,31 @@
 </aside>
 <p>設定ウィンドウは以下のような表示になるはずです：</p>
 <p class="image-container"><img style="width: 403.18px" src="img/821f55e1a25098b4.png"><br></p>
-<p>図のように、Fallbackブランチの下にあるプラスアイコンをクリックしてください：</p>
+<p>図のように、<strong>Fallbackブランチの下にあるプラスアイコンをクリック</strong>してください：</p>
 <p class="image-container"><img style="width: 329.50px" src="img/2058ce3ff98c7204.png"></p>
-<p>図のように「選択」ステップの検索ボックスに「plan」と入力し、プランを選択して「ステップを実行」アクションを選択します。</p>
+<p>図のように<strong>「選択」ステップの検索ボックスに「plan」と入力</strong>し、<strong>プランを選択して「ステップを実行」アクションを選択</strong>します。</p>
 <p class="image-container"><img style="width: 546.50px" src="img/ac0c1ef9f66340d2.png"></p>
 <p><br>次のステップでは、指示書を作成し、人事関連の問い合わせに対応するために必要な知識ソースを選択します。<br><br>計画と実行ステップのアクションで、以下の指示を指示テキストボックスに入力してください。</p>
 <aside class="special"><p><strong>あなたは親切なアシスタントです。回答は事実に基づき、丁寧な口調でお願いします。内容にユーザーから求められた情報が含まれていない場合は、hr@dummyco.com まで連絡するようユーザーにお伝えください。</strong></p>
 </aside>
 <p class="image-container"><img style="width: 538.50px" src="img/b5bf388f4564867d.png"></p>
-<p>会社検索セクションのテキストボックスをクリックすると、ユーザーの質問に回答するために使用されるインデックス付きコンテンツの検索が開始されます。<br><br><strong>「gco」</strong>と入力し、検索結果の下部にある「See all results for &#34;gco&#34;」リンクをクリックしてください。</p>
+<p><strong>会社検索セクションのテキストボックスをクリック</strong>すると、ユーザーの質問に回答するために使用されるインデックス付きコンテンツの検索が開始されます。<br><br><strong>「gco」と入力し、検索結果の下部にある「See all results for &#34;gco&#34;」リンクをクリック</strong>してください。</p>
 <p class="image-container"><img style="width: 456.00px" src="img/8ee528895abc3179.png"></p>
-<p>「Add a knowledge source」ポップアップウィンドウで、(Demo) GCo. HR Policiesフォルダーにカーソルを合わせ、図のように「Add Item」ボタンをクリックします：</p>
+<p>「Add a knowledge source」ポップアップウィンドウで、<strong>(Demo) GCo. HR Policiesフォルダーにカーソルを合わせ、図のように「Add Item」ボタンをクリック</strong>します：</p>
 <p class="image-container"><img style="width: 481.50px" src="img/fddaa1bd822749fc.png"></p>
-<p>検索ウィンドウを閉じるには、ポップアップの右上隅にあるXボタンをクリックしてください。</p>
+<p>検索ウィンドウを閉じるには、<strong>ポップアップの右上隅にあるXボタンをクリック</strong>してください。</p>
 <p class="image-container"><img style="width: 292.50px" src="img/3ac4795aa37e434d.png"></p>
-<p>計画と実行の手順は、以下のようなものになるはずです：<br><br><img style="width: 505.50px" src="img/ebe9fb6882440645.png"><br></p>
-<p>次に、ユーザーが有給休暇について問い合わせた場合の分岐の下にあるステップを設定します。デザインキャンバスで、最初の分岐の下にあるプラスアイコンをクリックしてください：</p>
+<p>計画と実行の手順は、以下のようなものになるはずです：</p>
+<p class="image-container"><img style="width: 505.50px" src="img/ebe9fb6882440645.png"><br></p>
+<p>次に、ユーザーが有給休暇について問い合わせた場合の分岐の下にあるステップを設定します。デザインキャンバスで、<strong>最初の分岐の下にあるプラスアイコンをクリック</strong>してください：</p>
 <p class="image-container"><img style="width: 498.00px" src="img/e6298f884e9da90e.png"></p>
-<p>ステップ選択の検索ボックスに「workday」と入力し、図のように「Workday: Get Paid Time Off Availabilit」を選択します。</p>
+<p><strong>ステップ選択の検索ボックスに「workday」と入力</strong>し、図のように<strong>「Workday: Get Paid Time Off Availabilit」を選択</strong>します。</p>
 <p class="image-container"><img style="width: 417.50px" src="img/a6e0eb7e27f74b25.png"></p>
 <p><br>これは本Gleanインスタンスに登録されたカスタムアクションです。ご覧の通り、このアクションはAPI経由でリアルタイムに呼び出しを行い、ユーザーの有給休暇残高を取得します。</p>
-<p>「Workday: Get Paid Time Off Availability」アクション設定画面の「Instruction」ウィンドウに「<strong>残りの有給休暇日数は？</strong>」と入力してください。</p>
+<p>「Workday: Get Paid Time Off Availability」アクション設定画面の<strong>「Instruction」ウィンドウに「残りの有給休暇日数は？」と入力</strong>してください。</p>
 <p class="image-container"><img style="width: 427.50px" src="img/ba97197d7b49257c.png"></p>
 <p>ユーザーの有給休暇残高を取得しましたので、その情報をユーザーに返信する必要があります。</p>
-<p>「Workday: Get Paid Time Off Availabilit」アクションの下で、プラスアイコンをクリックしてステップを追加します。</p>
+<p>「Workday: Get Paid Time Off Availabilit」アクションの下で、<strong>プラスアイコンをクリックしてステップを追加</strong>します。</p>
 <p class="image-container"><img style="width: 274.50px" src="img/2f39dcd5d0831872.png"></p>
 <p><br>Search for and select the <strong>Respond</strong> Action.</p>
 <p class="image-container"><img style="width: 444.50px" src="img/3e6c8533ae34d1f0.png"></p>
@@ -304,13 +304,13 @@
 </aside>
 <p>あなたの対応アクションは、以下のようなものになるはずです：</p>
 <p class="image-container"><img style="width: 462.50px" src="img/278ca899e287215f.png"></p>
-<p>新しい人事Q&amp;Aチャットボットが完成しました！右上の「保存」ボタンをクリックしてください。</p>
+<p>新しい人事Q&amp;Aチャットボットが完成しました！<strong>右上の「保存」ボタンをクリック</strong>してください。</p>
 <p class="image-container"><img style="width: 358.04px" src="img/df0edb1b27f735ab.png"></p>
-<p>さあ、試してみましょう！右上隅のプレビューボタンをクリックしてテストハーネスウィンドウを開きます。</p>
+<p>さあ、試してみましょう！<strong>右上隅のプレビューボタンをクリック</strong>してテストハーネスウィンドウを開きます。</p>
 <p class="image-container"><img style="width: 362.14px" src="img/20846b56b4f1dd5c.png"></p>
 <p>設定で指定したテキストをチャットウィンドウに事前入力するために、会話の開始ツールが使用できることがわかります。</p>
 <p class="image-container"><img style="width: 454.50px" src="img/6ae18ca8c5e450cb.png"></p>
-<p>新しいエージェントに対して、&#34;Conversation startes&#34; を試すか、または質問を自由に投げかけてください。</p>
+<p>新しいエージェントに対して、<strong>&#34;Conversation startes&#34; を試すか、または質問を自由に投げかけてください</strong>。</p>
 <p>有給休暇について質問する場合、またはその話題をきっかけにすると、チャットボットは「Workday: 有給休暇の取得可能日を確認するアクション」を呼び出す必要があります。それ以外の質問については、(デモ) GCo. HRポリシーフォルダ内のコンテンツから直接回答してください。</p>
 <aside class="warning"><p><strong>注：テスト実行中はいつでも、</strong><img style="width: 25.54px" src="img/b6c13e2a08e56488.png"><strong> をクリックすることでテストハーネスをリセットできます。</strong></p>
 </aside>
