@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2025-10-08T05:43:47Z",
+  "id": "1-glean-search",
+  "duration": 31,
+  "title": "Glean Search",
+  "authors": "Dejim Juang",
+  "summary": "このハンズオンラボでは、Glean Enterprise Search を体験し、なぜそれが世界をリードするエンタープライズ検索エンジンとなったのかを理解します。\nまた、Glean の高度な AI 搭載機能の基盤となる、コア検索機能について実践的に学ぶことができます。",
+  "source": "16x-OdU8ooq3FszzRhmj-8hLzJejvYKGIVADoPWnlvos",
+  "theme": "web",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "web"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/dejim-juang-glean/glean-workshop/issues",
+  "ga": "G-LR18FBLQHK",
+  "url": "1-glean-search"
+}

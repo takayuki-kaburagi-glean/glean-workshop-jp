@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2025-10-08T06:22:23Z",
+  "id": "3-glean-agents",
+  "duration": 28,
+  "title": "Glean Agents",
+  "authors": "Dejim Juang",
+  "summary": "Glean Agentsラボでは、Gleanプラットフォーム内でAIエージェントを探索・カスタマイズ・構築する実践演習を通じて、これらのエージェントが複雑な企業ワークフローを自動化し、データソースと連携し、ガバナンスとセキュリティを維持しながら生産性を向上させる方法を実演します。",
+  "source": "1tw7IPtWMpOumljfOmLRrQ3O_P8Fxt7U5rT8BpFCnA6w",
+  "theme": "web",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "web"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/dejim-juang-glean/glean-workshop/issues",
+  "ga": "G-LR18FBLQHK",
+  "url": "3-glean-agents"
+}

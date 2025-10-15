@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2025-10-15T00:46:58Z",
+  "id": "2-glean-assistant",
+  "duration": 24,
+  "title": "Glean Chat",
+  "authors": "Dejim Juang",
+  "summary": "このラボを通じてGlean Assistantの機能を探求しましょう。ユーザーはGlean Chatを活用した企業内検索、組織のナレッジベースとの連携、正確で信頼性の高い情報源に基づく回答の取得方法を学びます。",
+  "source": "1AYqOEx4SQ9UgA_0fSpwV0ydjjBLhK1sv1-r8uuje07w",
+  "theme": "web",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "web"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/dejim-juang-glean/glean-workshop/issues",
+  "ga": "G-LR18FBLQHK",
+  "url": "2-glean-assistant"
+}
